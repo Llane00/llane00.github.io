@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Tags on Llane00&#39;s Blog</title>
-    <link>http://example.org/tags/</link>
+    <link>http://llane00.github.io/tags/</link>
     <description>Recent content in Tags on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -15,7 +15,7 @@
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://llane00.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     

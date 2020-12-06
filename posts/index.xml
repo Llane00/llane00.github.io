@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Posts on Llane00&#39;s Blog</title>
-    <link>http://example.org/posts/</link>
+    <link>http://llane00.github.io/posts/</link>
     <description>Recent content in Posts on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,7 +16,7 @@
     <copyright>©{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 06 Dec 2020 13:31:42 +0800</lastBuildDate>
     
-        <atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
@@ -24,11 +24,11 @@
       
       <item>
         <title>使用命令行快速压缩图片</title>
-        <link>http://example.org/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
+        <link>http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
         <pubDate>Sun, 06 Dec 2020 13:31:42 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 06 Dec 2020 13:31:42 +0800</atom:modified>
-        <guid>http://example.org/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
+        <guid>http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
         <description>这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support External</description>
         
         <dc:creator>Llane00</dc:creator>

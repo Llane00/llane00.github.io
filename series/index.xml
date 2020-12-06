@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Series on Llane00&#39;s Blog</title>
-    <link>http://example.org/series/</link>
+    <link>http://llane00.github.io/series/</link>
     <description>Recent content in Series on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -15,7 +15,7 @@
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©{year}, All Rights Reserved</copyright>
     
-        <atom:link href="http://example.org/series/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://llane00.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     
