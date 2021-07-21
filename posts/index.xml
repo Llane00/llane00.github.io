@@ -13,14 +13,168 @@
     <language>zh</language>
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
-    <copyright>©{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 06 Dec 2020 13:31:42 +0800</lastBuildDate>
+    <copyright>©2021, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 19 Jul 2021 14:30:09 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    
 
+      
+      <item>
+        <title>javascript实现节流和防抖</title>
+        <link>http://llane00.github.io/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
+        <pubDate>Mon, 19 Jul 2021 14:30:09 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 19 Jul 2021 14:30:09 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
+        <description>大招技能有冷却 == 节流（throttle） /** * 节流原理：在一定时间内，只能触发一次 * * @param {Function} func 要执行的回调函数 * @param {Number} wait 延时的时间 * @param {Boolean} immediate 是否立即</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>用js实现</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Js原型</title>
+        <link>http://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</link>
+        <pubDate>Mon, 19 Jul 2021 09:06:52 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 19 Jul 2021 09:06:52 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</guid>
+        <description>关于Js原型 // 例子 function Person() { } var person = new Person(); console.log(person.__proto__ == Person.prototype) // true console.log(Person.prototype.constructor == Person) // true // 顺便学习一个ES5的方法,可以获得对象的原型 console.log(Object.getPrototypeOf(person) === Person.prototype) // true 实例与原型 当读取实例的属性时</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>重新理解BFC</title>
+        <link>http://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</link>
+        <pubDate>Tue, 13 Jul 2021 20:09:51 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Tue, 13 Jul 2021 20:09:51 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</guid>
+        <description>常见的定位方案 普通流(normal flow) 在普通流中，元素按照其在HTML中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到一行被占满</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>css基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>css</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Js大数相加</title>
+        <link>http://llane00.github.io/posts/js%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
+        <pubDate>Sun, 11 Jul 2021 20:09:12 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 11 Jul 2021 20:09:12 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/js%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
+        <description>背景： 在 JavaScript 里面，数字均为双精度浮点类型，即一个介于±2−1023和±2+1024之间的数字，或约为±10−308到±10+308，数字精度为</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>用js实现</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>使用命令行快速压缩图片</title>
@@ -36,6 +190,18 @@
         
         
         
+          
+            
+              <category>命令行</category>
+            
+          
+        
+        
+          
+            
+              <category>日常工具</category>
+            
+          
         
         
       </item>
