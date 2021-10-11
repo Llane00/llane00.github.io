@@ -1598,33 +1598,37 @@
       
       <pre><code>function Person() {}
 let Neo = new Person()
-</code></pre><p>Person 是一个构造函数</p>
-<p>Neo是构造函数Person创建的一个实例</p>
-<p>首先所有的函数都有一个prototype属性</p>
-<p>Person.prototype 代表的是调用Person构造函数创建的实例的原型（在这里即Neo的原型）</p>
-<p>而js中的对象也有指向原型的属性 <code>__proto__</code></p>
-<p>所以 <code>Person.prototype === Neo.__proto__</code> (他们会指向同一个原型)</p>
-<p>另外原型也有属性constructor可以指向其对应的构造函数</p>
-<p><code>Person.prototype.constructor === Person</code></p>
+</code></pre><p>Person 是一个构造函数<br />
+Neo是构造函数Person创建的一个实例</p>
+<p>首先所有的函数都有一个prototype属性<br />
+Person.prototype 代表的是调用Person构造函数创建的实例的原型<br />
+（即Person.prototype是Neo的原型）</p>
+<p>而js中的对象也有指向原型的属性 <code>__proto__</code><br />
+所以 <code>Person.prototype === Neo.__proto__</code></p>
+<p>另外原型也有属性constructor可以指向其对应的构造函数<br />
+<code>Person.prototype.constructor === Person</code></p>
 <hr />
 <p>原型和原型链是js实现继承的基础</p>
-<p>原型也是一个js对象，所以原型也有__proto__属性</p>
-<p>原型对象其实是构造函数Object创建的，所以原型的__proto__指向的是Object.prototype</p>
+<p>原型也是一个js对象，所以原型也有__proto__属性<br />
+原型对象其实是构造函数Object创建的，所以原型的__proto__指向的是Object.prototype</p>
 <p>当在调用一个对象的属性或方法时，如果该对象没有这个属性或方法，此时会去自动找他的原型是否有，如果还是没有则会继续向原型的原型去找，不断重复直到<code>Object.prototype.__proto__</code>，而Object.prototype.__proto__为null(即Object.prototype 没有原型)</p>
 <p>这个向上自动搜索父级原型的过程就是原型链的体现</p>
 <p>即如果Neo没有toString方法，通过原型链<br />
 Neo.toString() 依然可以执行，因为Object有toString方法</p>
 <p>换言之通过原型链Neo可以“获得”Object的所有属性和方法</p>
 <hr />
-<p>我经常会困惑函数是个什么东西，它是怎么储存的</p>
-<p>从变量的类型看，分为基本类型和引用类型</p>
-<p>函数应该是以引用类型中的对象形式储存的</p>
-<p>所以构造函数Person也是一个对象，它的__proto__指向了它的原型Function.prototype(所有构造函数的上一级原型都是Function.prototype)</p>
-<p>即<code>Person.__proto__ === Function.prototype</code></p>
-<p><code>Function.prototype.__proto__ === Object.prototype</code></p>
+<p>我过去经常会困惑函数是个什么东西，它是怎么储存的<br />
+从变量的类型看，分为基本类型和引用类型<br />
+所以函数只能是以引用类型中的对象形式储存的</p>
+<p>那构造函数Person也是一个对象，<br />
+它的<code>__proto__</code>指向了它的原型Function.prototype<br />
+(所有构造函数的上一级原型都是Function.prototype)</p>
+<p>即：<br />
+<code>Person.__proto__ === Function.prototype</code><br />
+<code>Function.prototype.__proto__ === Object.prototype</code></p>
 <p>同时构造函数Object的上一级原型也是Function.prototype</p>
 <h2 id="我们整理一下">我们整理一下：</h2>
-<p>对象的最终原型是 Object.prototype</p>
+<p>所有对象的最终原型都是 Object.prototype</p>
 <p>函数的原型是 -&gt; Function.prototype 的原型是 -&gt; Object.prototype 没有原型</p>
 <p>构造函数Object的原型是Function.prototype</p>
 <pre><code>Person.__proto__ === Function.prototype
@@ -1633,7 +1637,7 @@ Object.__proto__ === Function.prototype
 </code></pre><hr />
 <p>之前看到过一个看上去很奇怪的事情，<br />
 <code>Function.__proto__ === Function.prototype</code></p>
-<p>目前可以用上面的结论解释：所有函数的上一级原型都是Function.prototype</p>
+<p>目前可以用上面的结论解释：所有（构造）函数的上一级原型都是Function.prototype</p>
 <hr />
 <p>参考资料:</p>
 <p><a href="https://github.com/mqyqingfeng/Blog/issues/2">JavaScript深入之从原型到原型链</a></p>
