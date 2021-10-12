@@ -1608,14 +1608,20 @@ shift + a 在当前行结尾处insert<br />
 shift + i 在当前行开头处insert</p>
 <p>o 换行insert<br />
 shift + o 在上一行空一行insert</p>
+<p>/ + 字符为搜索 （n 和 shift + n 可以继续上下选择）</p>
+<p>f + 字符 光标定位到字符上（;继续下一个 ,继续上一个）<br />
+t + 字符 光标定位到字符前（;继续下一个 ,继续上一个）</p>
 <p>yy 复制当前行<br />
 dd 剪切当前行（删除）<br />
+shift + d 删除当前行光标后的内容<br />
+shift + d 删除当前行光标后的内容 + insert<br />
 p 黏贴内容到当前行的下一行<br />
 shift + p 黏贴内容到当前行的上一行</p>
 <p>u 撤销<br />
 x 删除光标选中内容<br />
 s 删除光标选中内容并insert<br />
-shift + s 删除当前行并insert</p>
+shift + s 删除当前行并insert<br />
+cw 等价于 dwi</p>
 <hr />
 <p>visual 模式：<br />
 v 单个字选择模式<br />
@@ -1624,6 +1630,12 @@ shift + v 行选择模式</p>
 v+d<br />
 v+x<br />
 v+s</p>
+<p>实用例子：<br />
+dt) 删除)前的所有内容<br />
+vf) 选中到)的所有内容包括右括号<br />
+tf) 同理<br />
+yt)<br />
+ct;</p>
 
     </article>
     
@@ -1995,6 +2007,13 @@ v+s</p>
       </a>
     
     <div class="grow"></div>
+    
+      <a href="http://llane00.github.io/posts/restart_js_2_js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">从头学习js-2-js的作用域</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2952,14 +2971,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     

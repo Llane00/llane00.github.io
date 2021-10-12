@@ -14,11 +14,51 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 11 Oct 2021 10:56:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Oct 2021 11:19:18 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>从头学习js-2-js的作用域</title>
+        <link>http://llane00.github.io/posts/restart_js_2_js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+        <pubDate>Tue, 12 Oct 2021 11:19:18 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Tue, 12 Oct 2021 11:19:18 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/restart_js_2_js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+        <description>作用域是程序如何储存和获取变量的约定 javascript采用了词法作用域（即静态作用域） 静态作用域在函数创建的时候就记下了，会在函数代码的书</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>从头学习js-1-js原型与原型链</title>
@@ -27,7 +67,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 11 Oct 2021 10:56:04 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/restart_js_1_js%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
-        <description>function Person() {} let Neo = new Person() Person 是一个构造函数 Neo是构造函数Person创建的一个实例 首先所有的函数都有一个prototype属性 Person.prototype 代表的是调用Pers</description>
+        <description>这个系列是我看冴羽老师的博客的理解笔记 博客原文 function Person() {} let Neo = new Person() Person 是一个构造函数 Neo是构造函数Person创建的一个实例 首先所有的函数都有一</description>
         
         <dc:creator>Llane00</dc:creator>
         

@@ -3,53 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://llane00.github.io/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://llane00.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://llane00.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://llane00.github.io/posts/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://llane00.github.io/tags/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://llane00.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://llane00.github.io/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://llane00.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://llane00.github.io/categories/</loc>
-    <lastmod>2021-10-11T10:56:04+08:00</lastmod>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,17 +19,37 @@
   
   <url>
     <loc>http://llane00.github.io/categories/javascript/</loc>
-    <lastmod>2021-10-11T10:56:04+08:00</lastmod>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-10-11T10:56:04+08:00</lastmod>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://llane00.github.io/</loc>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://llane00.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://llane00.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://llane00.github.io/posts/</loc>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://llane00.github.io/series/</loc>
-    <lastmod>2021-10-11T10:56:04+08:00</lastmod>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -88,8 +63,38 @@
   </url>
   
   <url>
+    <loc>http://llane00.github.io/tags/</loc>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://llane00.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://llane00.github.io/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</loc>
-    <lastmod>2021-10-11T10:56:04+08:00</lastmod>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://llane00.github.io/posts/restart_js_2_js%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://llane00.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-10-12T11:19:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
   </url>
   
   <url>
