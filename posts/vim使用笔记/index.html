@@ -1574,7 +1574,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年10月11日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;1&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1600,12 +1600,29 @@ visual 模式</p>
 <p>control + [ 从insert/visual回到normal<br />
 esc 也是从insert/visual回到normal</p>
 <hr />
-<p>normal 模式下:<br />
-hjkl 移动光标左下上右<br />
-a 在光标后insert<br />
-i 在光标前insert<br />
-shift + a 在当前行结尾处insert<br />
-shift + i 在当前行开头处insert</p>
+<dl>
+<dt>normal 模式下:</dt>
+<dt>hjkl 移动光标左下上右</dt>
+<dt>a 在光标后insert</dt>
+<dt>i 在光标前insert</dt>
+<dt>shift + a 在当前行结尾处insert</dt>
+<dt>shift + i 在当前行开头处insert</dt>
+<dt>gg 光标跳转到文档第一行</dt>
+<dt>shift + g 光标跳转到文档最后一行</dt>
+<dd><ul>
+<li>行号 + 回车 光标跳转到文行特定的行<br />
+数字 + j/k 光标上下移动指定行数<br />
+数字 + w/b 光标左右移动指定的单词个数</li>
+</ul>
+</dd>
+</dl>
+<p>[[ 光标跳转到文档第一行<br />
+]] 光标跳转到文档最后一行<br />
+shift + { 光标跳转到下一个段落<br />
+shift + } 光标跳转到上一个段落<br />
+control + u 向下翻页<br />
+control + d 向上翻页<br />
+% 用于在 () {} 之间跳转</p>
 <p>o 换行insert<br />
 shift + o 在上一行空一行insert</p>
 <p>/ + 字符为搜索 （n 和 shift + n 可以继续上下选择）</p>
@@ -1636,6 +1653,19 @@ vf) 选中到)的所有内容包括右括号<br />
 tf) 同理<br />
 yt)<br />
 ct;</p>
+<p>删除if花括号中的内容：</p>
+<pre><code>if {
+  delete me
+  haha
+  wow
+  ya
+}
+</code></pre><ol>
+<li>shift + v 3j d</li>
+<li>d 4 d</li>
+<li>d i {</li>
+<li>d 2 i {</li>
+</ol>
 
     </article>
     
