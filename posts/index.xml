@@ -67,7 +67,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 11 Oct 2021 15:09:31 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
-        <description>normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下: hjkl 移动光标左</description>
+        <description>normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下 hjkl 移动光标左下</description>
         
         <dc:creator>Llane00</dc:creator>
         

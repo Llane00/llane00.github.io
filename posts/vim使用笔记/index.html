@@ -18,9 +18,9 @@
 
 <script defer src="/js/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js"></script>
 
-<script defer src="/js/helper/getParents.min.1618c696be7c98933f9a92677f518b512a74e55bdbb976b09936b4182e93181b.js"></script>
+<script defer src="/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js"></script>
 
-<script defer src="/js/helper/fadeinout.min.efa35f4c090622130b3f4cfae6971448b5ffb61c5f0a8f21cdfd157fa712abc4.js"></script>
+<script defer src="/js/helper/fadeinout.min.1d13d3e810c3940e80cbba6216a1c76fbf42b5431fc83537ea6997863802362b.js"></script>
 
 <script defer src="/js/helper/closest.min.js"></script>
   
@@ -1349,7 +1349,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="Llane00&#39;s Blog.">
 
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-11T15:09:31+08:00",
     "dateModified": "2021-10-11T15:09:31+08:00",
     "url" : "http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/",
-    "description": "normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下: hjkl 移动光标左",
+    "description": "normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下 hjkl 移动光标左下",
     "keywords": ["学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1600,23 +1600,18 @@ visual 模式</p>
 <p>control + [ 从insert/visual回到normal<br />
 esc 也是从insert/visual回到normal</p>
 <hr />
-<dl>
-<dt>normal 模式下:</dt>
-<dt>hjkl 移动光标左下上右</dt>
-<dt>a 在光标后insert</dt>
-<dt>i 在光标前insert</dt>
-<dt>shift + a 在当前行结尾处insert</dt>
-<dt>shift + i 在当前行开头处insert</dt>
-<dt>gg 光标跳转到文档第一行</dt>
-<dt>shift + g 光标跳转到文档最后一行</dt>
-<dd><ul>
-<li>行号 + 回车 光标跳转到文行特定的行<br />
+<h2 id="normal-模式下">normal 模式下</h2>
+<p>hjkl 移动光标左下上右<br />
+a 在光标后insert<br />
+i 在光标前insert<br />
+shift + a 在当前行结尾处insert<br />
+shift + i 在当前行开头处insert<br />
+gg 光标跳转到文档第一行<br />
+shift + g 光标跳转到文档最后一行<br />
+: + 行号 + 回车 光标跳转到文行特定的行<br />
 数字 + j/k 光标上下移动指定行数<br />
-数字 + w/b 光标左右移动指定的单词个数</li>
-</ul>
-</dd>
-</dl>
-<p>[[ 光标跳转到文档第一行<br />
+数字 + w/b 光标左右移动指定的单词个数<br />
+[[ 光标跳转到文档第一行<br />
 ]] 光标跳转到文档最后一行<br />
 shift + { 光标跳转到下一个段落<br />
 shift + } 光标跳转到上一个段落<br />
@@ -1640,21 +1635,21 @@ s 删除光标选中内容并insert<br />
 shift + s 删除当前行并insert<br />
 cw 等价于 dwi</p>
 <hr />
-<p>visual 模式：<br />
-v 单个字选择模式<br />
+<h2 id="visual-模式下">visual 模式下</h2>
+<p>v 单个字选择模式<br />
 shift + v 行选择模式</p>
 <p>使用v来选中删除<br />
 v+d<br />
 v+x<br />
 v+s</p>
-<p>实用例子：<br />
-dt) 删除)前的所有内容<br />
+<hr />
+<h2 id="实用例子">实用例子：</h2>
+<p>dt) 删除)前的所有内容<br />
 vf) 选中到)的所有内容包括右括号<br />
-tf) 同理<br />
-yt)<br />
-ct;</p>
-<p>删除if花括号中的内容：</p>
-<pre><code>if {
+yt) 复制到)前的内容<br />
+ct; 删除到;前的所有内容并insert</p>
+<p>四种删除if花括号内容的办法（初始光标在if下一行）：</p>
+<pre tabindex="0"><code>if {
   delete me
   haha
   wow
@@ -2097,7 +2092,7 @@ ct;</p>
 </div>
 
 
-<script defer src="/js/swipe.min.b4b82839155519d9ca67746615a4c86ccbc1061c196fe6d8aa26e4fe22902718.js"></script>
+<script defer src="/js/swipe.min.989e074dfb92ce7f57a92c1df7027f88b53c50a54fd9ad450a673a64aa91bfa4.js"></script>
 
 <script defer src="/js/micromodal.min.de01b44b2f383056bbcaf6ee921fd385d79108ec1129afd0eb2f3f5a07e11f45.js"></script>
 
@@ -2399,7 +2394,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#normal-模式下">normal 模式下</a></li>
+    <li><a href="#visual-模式下">visual 模式下</a></li>
+    <li><a href="#实用例子">实用例子：</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 
@@ -3001,14 +3002,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
-        
-      
         
       
     
