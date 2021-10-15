@@ -14,19 +14,59 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 14 Oct 2021 11:33:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Oct 2021 13:25:39 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
-        <title>从头学习js-3-执行上下文</title>
-        <link>http://llane00.github.io/restart-js/3-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/</link>
+        <title>从头学习js-4-变量对象</title>
+        <link>http://llane00.github.io/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/</link>
+        <pubDate>Fri, 15 Oct 2021 13:25:39 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 15 Oct 2021 13:25:39 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/</guid>
+        <description>这个系列是我看冴羽老师的博客的理解笔记 博客原文 当javascript代码执行一段可执行代码(executable code)时，会创建对应的执</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>从头学习js-3-执行上下文栈</title>
+        <link>http://llane00.github.io/restart-js/3-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/</link>
         <pubDate>Thu, 14 Oct 2021 11:33:01 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 14 Oct 2021 11:33:01 +0800</atom:modified>
-        <guid>http://llane00.github.io/restart-js/3-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/</guid>
+        <guid>http://llane00.github.io/restart-js/3-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/</guid>
         <description>这个系列是我看冴羽老师的博客的理解笔记 博客原文 我们知道在js中有变量提升， 所以js引擎在解析代码的时候不是一行一行去执行的，而是一段一段去分</description>
         
         <dc:creator>Llane00</dc:creator>

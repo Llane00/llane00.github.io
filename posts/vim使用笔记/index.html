@@ -1645,10 +1645,12 @@ v+x<br />
 v+s</p>
 <hr />
 <h2 id="实用例子">实用例子：</h2>
+<h3 id="part-1">part 1:</h3>
 <p>dt) 删除)前的所有内容<br />
 vf) 选中到)的所有内容包括右括号<br />
 yt) 复制到)前的内容<br />
 ct; 删除到;前的所有内容并insert</p>
+<h3 id="part-2">part 2:</h3>
 <p>四种删除if花括号内容的办法（初始光标在if下一行）：</p>
 <pre tabindex="0"><code>if {
   delete me
@@ -1656,12 +1658,18 @@ ct; 删除到;前的所有内容并insert</p>
   wow
   ya
 }
-</code></pre><ol>
-<li>shift + v 3j d</li>
-<li>d 4 d</li>
-<li>d i {</li>
-<li>d 2 i {</li>
-</ol>
+</code></pre><p>1.shift + v 3j d<br />
+2.d 4 d<br />
+3.d i {<br />
+4.d 2 i {</p>
+<h3 id="part-3">part 3:</h3>
+<p>&ldquo;testdfat&rdquo;<br />
+假设光标停留在第一个t位置<br />
+di&quot;：delete all content inside &ldquo;，结果字符串为&rdquo;&quot;<br />
+dta：delete all content to a，结果字符串为&quot;at&quot;<br />
+dfa：delete all content from current location, until a is found，结果字符串为&quot;t&quot;</p>
+<h3 id="part-4">part 4</h3>
+<p>c i &quot; 会删除此行里光标后方最近的一个双引号里的内容并insert</p>
 
     </article>
     
@@ -2392,7 +2400,14 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li><a href="#normal-模式下">normal 模式下</a></li>
     <li><a href="#visual-模式下">visual 模式下</a></li>
-    <li><a href="#实用例子">实用例子：</a></li>
+    <li><a href="#实用例子">实用例子：</a>
+      <ul>
+        <li><a href="#part-1">part 1:</a></li>
+        <li><a href="#part-2">part 2:</a></li>
+        <li><a href="#part-3">part 3:</a></li>
+        <li><a href="#part-4">part 4</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
