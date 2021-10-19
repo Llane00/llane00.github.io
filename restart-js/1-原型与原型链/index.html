@@ -1614,7 +1614,7 @@ Person.prototype 代表的是调用Person构造函数创建的实例的原型<br
 <hr />
 <p>原型和原型链是js实现继承的基础</p>
 <p>原型也是一个js对象，所以原型也有__proto__属性<br />
-原型对象其实是构造函数Object创建的，所以原型的__proto__指向的是Object.prototype</p>
+原型对象其实是构造函数Object创建的一个实例，所以原型的__proto__指向的是Object.prototype</p>
 <p>当在调用一个对象的属性或方法时，如果该对象没有这个属性或方法，此时会去自动找他的原型是否有，如果还是没有则会继续向原型的原型去找，不断重复直到<code>Object.prototype.__proto__</code>，而Object.prototype.__proto__为null(即Object.prototype 没有原型)</p>
 <p>这个向上自动搜索父级原型的过程就是原型链的体现</p>
 <p>即如果Neo没有toString方法，通过原型链<br />
@@ -2971,14 +2971,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/restart-js/1-%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     

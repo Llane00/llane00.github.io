@@ -1602,7 +1602,7 @@
 </blockquote>
 <p>我们知道在js中有变量提升，<br />
 所以js引擎在解析代码的时候不是一行一行去执行的，而是一段一段去分析<br />
-（暂且以函数来划分段）</p>
+（暂且以函数花括号来划分段）</p>
 <p>实际环境中的函数可能是一层套一层执行的，加上函数有各自的静态作用域<br />
 javascript引擎创建了执行上下文栈（Execution context stack，ECS）来管理这些情况</p>
 <p>由于函数的执行是有顺序的，执行上下文栈是先进后出的栈结构</p>
@@ -1630,8 +1630,8 @@ a()
 ]
 </code></pre><p>发现执行函数a中，需要执行b函数（此时a还没执行完，没有出栈），在ECStack中压入函数b的执行上下文</p>
 <pre tabindex="0"><code>ECStack = [
-  &lt;a&gt; functionContext,
   &lt;b&gt; functionContext,
+  &lt;a&gt; functionContext,
   globalContext
 ]
 </code></pre><p>函数b执行完后，函数b的执行上下文出栈，ECStack.pop()<br />
@@ -3007,14 +3007,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/restart-js/3-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     

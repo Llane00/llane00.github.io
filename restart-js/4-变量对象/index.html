@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-15T13:25:39+08:00",
     "dateModified": "2021-10-15T13:25:39+08:00",
     "url" : "http://llane00.github.io/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/",
-    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文 当javascript代码执行一段可执行代码(executable code)时，会创建对应的执",
+    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文 上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1600,8 +1600,8 @@
 <p>这个系列是我看冴羽老师的博客的理解笔记<br />
 <a href="https://github.com/mqyqingfeng/Blog">博客原文</a></p>
 </blockquote>
-<p>当javascript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)</p>
-<p>对于每个执行上下文，都有三个重要属性：</p>
+<p>上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)</p>
+<p>那对于每个执行上下文，都有三个重要属性：</p>
 <ul>
 <li>变量对象(Variable object, VO)</li>
 <li>作用域链(Scope chain)</li>
@@ -1612,8 +1612,10 @@
 <h2 id="变量对象">变量对象</h2>
 <p>变量对象是与执行上下文相关的数据作用域，储存了在上下文中定义的变量和函数声明</p>
 <p>因为不同执行上下文的变量对象稍有不同，这里分全局上下文下的变量对象和函数上下文下的变量对象来讨论。</p>
+<p>全局上下文的变量对象就是全局对象，是全局变量的宿主。<br />
+在浏览器中，全局中的this和window都指向全局变量</p>
 <p>函数上下文中的变量对象称为活动对象（activation object，AO）<br />
-活动对象就是变量对象，只是函数上下文中的变量对象只有执行到被激活时才能被访问到，<br />
+活动对象就是变量对象，只是函数上下文中的变量对象只有函数代码在执行到被激活时才能被访问到，<br />
 活动对象就是在进入函数上下文时被创建的，它通过函数的arguments属性初始化。</p>
 <hr />
 <h2 id="执行上下文生命周期">执行上下文生命周期：</h2>
@@ -1663,7 +1665,7 @@
 foo(1)
 </code></pre><p>在进入执行上下文后，此时的AO为</p>
 <pre tabindex="0"><code>AO = {
-  //AO通过arguments初始化
+  //AO通过函数的arguments初始化，是一个伪数组
   arguments: {
     0: 1,
     length: 1
@@ -1677,7 +1679,8 @@ foo(1)
 
   //函数声明 由名称和对应值（函数对象（function-object））组成的一个变量对象的属性被创建
   c: reference to function c(){}, 
- 
+  
+  //同上变量声明
   d: undefined
 }
 </code></pre><p>函数执行后：<br />
@@ -1696,16 +1699,23 @@ foo(1)
 <h2 id="关于声明变量和函数时的补充">关于声明变量和函数时的补充:</h2>
 <p>这里认为声明变量和函数都有三个阶段：<br />
 1.创建create<br />
-2.初始化initialize（声明时首次初始化不是第三步的assign）<br />
-3.赋值assign<br />
-结论是：<br />
-let 的「创建」过程被提升了，但是初始化没有提升。<br />
-var 的「创建」和「初始化」都被提升了。<br />
+2.初始化initialize（声明时首次初始化不同于第三步的assign）<br />
+3.赋值assign</p>
+<p>关于声明语法的结论是：<br />
 function 的「创建」「初始化」和「赋值」都被提升了。<br />
-const 只有创建和初始化</p>
-<hr />
-<p>如果不同过关键词var let等声明变量，AO中不会创建对应该变量的key-value</p>
-<p>但是当这个变量被赋值assign的时候会创建到VO中</p>
+var 的「创建」和「初始化」都被提升了。<br />
+let 的「创建」过程被提升了，但是初始化没有提升，拥有块级作用(暂时性死区)。<br />
+const 只有创建和初始化，没有「赋值」,「创建」过程被提升了，拥有块级作用(暂时性死区)</p>
+<p>通常认为const不可变是片面的，<br />
+首先const必须初始化，且在栈中储存的值不可修改，<br />
+但当const声明的是引用类型时，堆中的储存值可以改变<br />
+如：</p>
+<pre tabindex="0"><code>const obj = {name: 'Neo', age: 20}
+obj.age = 25
+console.log(obj) //{name: 'Neo', age: 25}
+</code></pre><hr />
+<p>如果不通过关键词var let等声明变量，AO中不会创建对应该变量的key-value</p>
+<p>但是当这个变量被赋值assign的时候会创建变量对象到VO中</p>
 <hr />
 <h2 id="more-参考资料">more 参考资料：</h2>
 <ul>
@@ -3053,14 +3063,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     
