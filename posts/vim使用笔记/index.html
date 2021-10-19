@@ -1574,7 +1574,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年10月11日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;3&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1644,7 +1644,14 @@ shift + v 行选择模式</p>
 v+d<br />
 v+x<br />
 v+s</p>
-<hr />
+<p>V+G 会选中当前行到最后一行的内容</p>
+<p>control + v 可以进入visual block模式可以按块来选内容<br />
+例子：<br />
+批量删除每一行开头的-app-<br />
+<code>control + v + GIf-d</code></p>
+<p>如果要批量插入，每一行开头加入-web-<br />
+<code>control + v + GI-web-</code></p>
+<p>&ndash;</p>
 <h2 id="实用例子">实用例子：</h2>
 <h3 id="part-1">part 1:</h3>
 <p>dt) 删除)前的所有内容<br />
@@ -1671,6 +1678,10 @@ ci&quot; 删除当前光标最近的&quot;&ldquo;里的内容</p>
 di&rdquo;：delete all content inside &ldquo;，结果字符串为&rdquo;&quot;<br />
 dta：delete all content to a，结果字符串为&quot;at&quot;<br />
 dfa：delete all content from current location, until a is found，结果字符串为&quot;t&quot;</p>
+<h2 id="在vim中的特殊处理在vscode插件中无效">在vim中的特殊处理（在vscode插件中无效）：</h2>
+<p>当在visual模式下选中内容按下:可以对选中的多个行做批处理<br />
+比如选中后 :+<code>normal A.png</code>+回车<br />
+会在每个选中行后加上.png的内容</p>
 <h2 id="分享一下我的vimrc配置">分享一下我的vimrc配置</h2>
 <p><a href="https://github.com/Llane00/my-configs/blob/main/.vimrc">https://github.com/Llane00/my-configs/blob/main/.vimrc</a></p>
 
@@ -2410,6 +2421,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#part-3">part 3:</a></li>
       </ul>
     </li>
+    <li><a href="#在vim中的特殊处理在vscode插件中无效">在vim中的特殊处理（在vscode插件中无效）：</a></li>
     <li><a href="#分享一下我的vimrc配置">分享一下我的vimrc配置</a></li>
   </ul>
 </nav>
@@ -3014,14 +3026,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
-        
-      
         
       
     

@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-16T15:04:05+08:00",
     "dateModified": "2021-10-16T15:04:05+08:00",
     "url" : "http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/",
-    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文",
+    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文 上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1574,7 +1574,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年10月16日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;1&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1600,7 +1600,102 @@
 <p>这个系列是我看冴羽老师的博客的理解笔记<br />
 <a href="https://github.com/mqyqingfeng/Blog">博客原文</a></p>
 </blockquote>
-
+<p>上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)</p>
+<p>那对于每个执行上下文，都有三个重要属性：</p>
+<ul>
+<li>变量对象(Variable object, VO)</li>
+<li>作用域链(Scope chain)</li>
+<li>this</li>
+</ul>
+<p>本文主要讲执行上下文中的作用域链，注意本章将会把之前的内容穿起来很重要</p>
+<hr />
+<p>在之前第2篇作用域和第4篇变量对象中有提到，<br />
+当查到变量时首先从当前上下文的变量对象中查到，<br />
+如果没有找到会从父级（词法静态层面上的）执行上下文的变量对象中查找，<br />
+一直找到全局变量对象（全局对象）</p>
+<p>这样由多个执行上下文的变量对象构成的链表就叫做作用域链</p>
+<hr />
+<h2 id="函数创建">函数创建</h2>
+<p>在第2篇中提到js中函数的作用域在函数定义的时候就决定了</p>
+<p>这是因为函数有一个内部属性`[[scope]]``, 当函数创建的时候会把函数的父变量对象保存到其中，但不是完整的作用链</p>
+<p>如：</p>
+<pre tabindex="0"><code>function foo() {
+  function bar() {
+    ...
+  }
+}
+</code></pre><p>此时函数的各自作用域为：</p>
+<pre tabindex="0"><code>foo.[[scope]] = [
+  globalContext.VO
+];
+bar.[[scope]] = [
+  fooContext.AO,
+  globalContext.VO
+];
+</code></pre><hr />
+<h2 id="函数激活">函数激活</h2>
+<p>当函数激活的时候，进入函数上下文，创建VO/AO后，就会将函数活动对象加到作用域的最前端，</p>
+<pre tabindex="0"><code>Scope = [AO].concat([[scope]])
+</code></pre><p>此时作用域链创建完毕</p>
+<h2 id="总结事例">总结事例</h2>
+<p>例子：</p>
+<pre tabindex="0"><code>var scope = 'global scope';
+function checkscope() {
+  var scope2 = 'local scope';
+  return scope2;
+}
+checkscope();
+</code></pre><p>函数执行上下文中作用域和变量对象创建过程如下：<br />
+1.checkscope函数被创建，保存作用域到内部属性<code>[[scope]]</code></p>
+<pre tabindex="0"><code>checkscope.[[scope]] = [
+  globalContext.VO
+]
+</code></pre><p>2.执行checkscope函数，创建checkscope函数执行上下文，checkscope函数执行上下文压入执行上下栈</p>
+<pre tabindex="0"><code>ECStack = [
+  checkscopeContext,
+  globalContext
+];
+</code></pre><p>3.checkscope函数进入准备阶段<br />
+3.1 复制函数内部属性<code>[[scope]]</code>到函数执行上文中</p>
+<pre tabindex="0"><code>checkscopeContext = {
+  Scope: checkscope.[[scope]]
+}
+</code></pre><p>3.2 用函数的arguments属性创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明</p>
+<pre tabindex="0"><code>checkscopeContext = {
+  AO: {
+    arguments: {
+      length: 0,
+    },
+    scope2: undefined
+  },
+  Scope: checkscope.[[scope]]
+}
+</code></pre><p>3.3 将活动对象压入作用域顶端</p>
+<pre tabindex="0"><code>checkscopeContext = {
+  AO: {
+    arguments: {
+      length: 0,
+    },
+    scope2: undefined
+  },
+  Scope: [AO, [[scope]]]
+}
+</code></pre><p>准备工作完毕</p>
+<p>4.开始执行checkscope函数，随着函数执行，修改AO的属性值</p>
+<pre tabindex="0"><code>checkscopeContext = {
+  AO: {
+    arguments: {
+      length: 0,
+    },
+    scope2: 'local scope' 
+  },
+  Scope: [AO, [[scope]]]
+}
+</code></pre><p>5.查找到scope2的值，返回后函数执行完毕，checkscope函数上下文从执行上下文中弹出</p>
+<pre tabindex="0"><code>ECStack = [
+  globalContext
+]
+</code></pre>
     </article>
     
     
@@ -2326,7 +2421,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#函数创建">函数创建</a></li>
+    <li><a href="#函数激活">函数激活</a></li>
+    <li><a href="#总结事例">总结事例</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 
@@ -2928,14 +3029,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
-        
-      
         
       
     
