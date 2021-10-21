@@ -1684,6 +1684,18 @@ dfa：delete all content from current location, until a is found，结果字符�
 会在每个选中行后加上.png的内容</p>
 <h2 id="分享一下我的vimrc配置">分享一下我的vimrc配置</h2>
 <p><a href="https://github.com/Llane00/my-configs/blob/main/.vimrc">https://github.com/Llane00/my-configs/blob/main/.vimrc</a></p>
+<p>在安装vim 插件时遇到的问题：<br />
+1.you-complete-me无法安装，原因是其中一个依赖在google资源下，那么可以去官方github issue中查找，替换依赖路径<br />
+2.还是ycm插件，首先需要去vim plugin目录下找到you-complete-me目录，找到install.py，手动去安装<code>python3 install.py</code><br />
+然后安装时发现缺少cmake，那么就另外<code>brew install cmake</code><br />
+3.完成安装后由于我的电脑上默认的vim版本太旧了，不支持最新的python3提示ycm有报错（没错还是这个插件），<br />
+我重新用brew 安装了vim <code>brew install vim</code>, 下载完毕后需要在zshrc中加一个alias把vim和vi命令指向到brew新下载的vim下<br />
+可以通过brew list vim去找vim下载的地址,这里只要vim和vi对应的地址<br />
+在.zshrc中加入下面两行</p>
+<pre tabindex="0"><code>alias vim='/usr/local/xxx/xxx/vim'
+alias vi='/usr/local/xxx/xxx/vi'
+</code></pre><p>保存并source zshrc后就可以生效使用新的vim了<br />
+you-complete-me不亏为最难安装的vim 插件</p>
 
     </article>
     
