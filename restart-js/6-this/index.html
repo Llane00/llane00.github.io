@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>从头学习js-5-作用域链 – Llane00&#39;s Blog</title>
+    <title>从头学习js-6-This – Llane00&#39;s Blog</title>
     
 
 
@@ -653,7 +653,7 @@
     
     var baseurl = JSON.parse("\"http://llane00.github.io/\"");
     
-    var permalink = JSON.parse("\"http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/\"");
+    var permalink = JSON.parse("\"http://llane00.github.io/restart-js/6-this/\"");
     
     var langprefix = JSON.parse("\"\"");
     var searchResults = null;
@@ -1336,16 +1336,16 @@
 
 <meta name="keywords" content="js基础,学习笔记">
 
-<meta name="created" content="2021-10-16T15:04:05&#43;0800">
-<meta name="modified" content="2021-10-16T15:04:05&#43;0800">
-<meta property="article:published_time" content="2021-10-16T15:04:05&#43;0800">
+<meta name="created" content="2021-10-23T10:45:29&#43;0800">
+<meta name="modified" content="2021-10-23T10:45:29&#43;0800">
+<meta property="article:published_time" content="2021-10-23T10:45:29&#43;0800">
 
 <meta name="author" content="Llane00">
 
 
 <meta property="og:site_name" content="Llane00&#39;s Blog">
-<meta property="og:title" content="从头学习js-5-作用域链">
-<meta property="og:url" content="http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">
+<meta property="og:title" content="从头学习js-6-This">
+<meta property="og:url" content="http://llane00.github.io/restart-js/6-this/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="Llane00&#39;s Blog.">
 
@@ -1358,7 +1358,7 @@
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
 
-<link rel="canonical" href="http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/">
+<link rel="canonical" href="http://llane00.github.io/restart-js/6-this/">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -1372,11 +1372,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "从头学习js-5-作用域链",
-    "datePublished": "2021-10-16T15:04:05+08:00",
-    "dateModified": "2021-10-16T15:04:05+08:00",
-    "url" : "http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/",
-    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文 上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创",
+    "headline": "从头学习js-6-This",
+    "datePublished": "2021-10-23T10:45:29+08:00",
+    "dateModified": "2021-10-23T10:45:29+08:00",
+    "url" : "http://llane00.github.io/restart-js/6-this/",
+    "description": "这个系列是我看冴羽老师的博客的理解笔记 博客原文 this一直都是学习js的时候很头疼的东西， 继续接着上篇说，当javascript代码执行一段",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1555,7 +1555,7 @@
   
   <li  class="is-active" >
     
-      <span>从头学习js-5-作用域链</span>
+      <span>从头学习js-6-This</span>
     
   </li>
   
@@ -1567,14 +1567,14 @@
   <div class="single ">
     <div class="single__nojs">Please enable Javascript to view the contents</div>
     <script>document.querySelector('.single').classList.remove('hide'); document.querySelector('.single__nojs').classList.add('hide');</script>
-    <h2 class="single__title" data-ani="true">从头学习js-5-作用域链</h2>
+    <h2 class="single__title" data-ani="true">从头学习js-6-This</h2>
     <h3 class="single__subtitle"></h3>
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="创建日期">📅&nbsp;2021年10月16日 </time>
+  <time class="single__info" title="创建日期">📅&nbsp;2021年10月23日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;5&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1600,102 +1600,173 @@
 <p>这个系列是我看冴羽老师的博客的理解笔记<br />
 <a href="https://github.com/mqyqingfeng/Blog">博客原文</a></p>
 </blockquote>
-<p>上篇说到，当javascript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)</p>
+<p>this一直都是学习js的时候很头疼的东西，</p>
+<p>继续接着上篇说，当javascript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)</p>
 <p>那对于每个执行上下文，都有三个重要属性：</p>
 <ul>
 <li>变量对象(Variable object, VO)</li>
 <li>作用域链(Scope chain)</li>
 <li>this</li>
 </ul>
-<p>本文主要讲执行上下文中的作用域链，注意本章将会把之前的内容穿起来很重要</p>
+<p>本文主要讲执行上下文中的this</p>
 <hr />
-<p>在之前第2篇作用域和第4篇变量对象中有提到，<br />
-当查到变量时首先从当前上下文的变量对象中查到，<br />
-如果没有找到会从父级（词法静态层面上的）执行上下文的变量对象中查找，<br />
-一直找到全局变量对象（全局对象）</p>
-<p>这样由多个执行上下文的变量对象构成的链表就叫做作用域链</p>
-<hr />
-<h2 id="函数创建">函数创建</h2>
-<p>在第2篇中提到js中函数的作用域在函数定义的时候就决定了</p>
-<p>这是因为函数有一个内部属性`[[scope]]``, 当函数创建的时候会把函数的父变量对象保存到其中，但不是完整的作用链</p>
-<p>如：</p>
-<pre tabindex="0"><code>function foo() {
-  function bar() {
-    ...
+<h2 id="首先了解ecmascript规范">首先了解ECMAScript规范</h2>
+<p>我们根据ECMAScript规范来解读this<br />
+ECMAScript 5.1 规范地址：<br />
+英文版：<a href="http://es5.github.io/#x15.1">http://es5.github.io/#x15.1</a><br />
+中文版：<a href="http://yanhaijing.com/es5/#115">http://yanhaijing.com/es5/#115</a></p>
+<p>javascript 有8种数据类型，Undefined,Null,Boolean,Number,String,Object,Symbol,Bigint<br />
+这是我们在编程时可以直接操作使用的数据类型，</p>
+<p>在javascript的底层逻辑中还有一些只存在于规范里的抽象类型：<br />
+Reference，<br />
+List，<br />
+Completion，<br />
+Property，<br />
+Descriptor，<br />
+Property Identifier，<br />
+Lexical Environment，<br />
+Environment Record<br />
+这些规范类型是用算法描述ECMAScript语言结构和语言类型的，<br />
+其中与this的指向有关的是Reference类型</p>
+<p>Reference由三个部分组成：<br />
+1.base value (属性所在的对象或者是EnvironmentRecord，所以它的值只能是undefined, an Object, a Boolean, a String, a, Number or an environment record)<br />
+2.reference name (属性名称)<br />
+3.strict reference</p>
+<p>举个例子：</p>
+<pre tabindex="0"><code>var foo = 1;
+
+//foo对应的Reference是
+var fooReference = {
+  base: EnvironmentRecoed,
+  name: 'foo',
+  strict: false
+}
+</code></pre><pre tabindex="0"><code>var foo = {
+  bar: function() {
+    return this;
   }
 }
-</code></pre><p>此时函数的各自作用域为：</p>
-<pre tabindex="0"><code>foo.[[scope]] = [
-  globalContext.VO
-];
-bar.[[scope]] = [
-  fooContext.AO,
-  globalContext.VO
-];
-</code></pre><hr />
-<h2 id="函数激活">函数激活</h2>
-<p>当函数激活的时候，进入函数上下文，创建VO/AO后，就会将函数活动对象加到作用域的最前端，</p>
-<pre tabindex="0"><code>Scope = [AO].concat([[scope]])
-</code></pre><p>此时作用域链创建完毕</p>
-<h2 id="总结事例">总结事例</h2>
+
+foo.bar();
+
+//bar对应的Reference是
+var barReference = {
+  base: foo,
+  propertyName: 'bar',
+  strict: false
+};
+</code></pre><p>Reference涉及到的方法有：<br />
+1.GetBase 返回base value<br />
+2.isProperty 判断base value是不是一个对象<br />
+3.GetVlaue 从Reference处返回一个真正的值（具体的值，不是Reference）</p>
+<hr />
+<h2 id="按步骤确定this的指向">按步骤确定this的指向</h2>
+<p>规范中确定this的值，有明确的步骤判断：<br />
+1.计算MemberExpression的结果赋值给ref<br />
+2.判断ref是不是一个Reference类型<br />
+2.1 如果ref是Reference，并且base value值是一个对象（isProperty(ref)为true），那么this的值就是base value（用getBase获得）<br />
+2.2 如果ref是Reference，并且base value值是Environment Record，那么this的值是ImplicitThisValue(ref)<br />
+2.3 如果ref不是Reference，那么this的值是undefined</p>
+<p>步骤1中 MemberExpression分别有：<br />
+PrimaryExpression //原始表达式<br />
+FunctionExpression //函数表达式<br />
+MemberExpression [Expression] //属性[]访问表达式<br />
+MemberExpression.IdentifierName //属性.访问表达式<br />
+new MemberExpression Arguments //对象创建表达式</p>
 <p>例子：</p>
-<pre tabindex="0"><code>var scope = 'global scope';
-function checkscope() {
-  var scope2 = 'local scope';
-  return scope2;
+<pre tabindex="0"><code>function foo() {
+  console.log(this)
 }
-checkscope();
-</code></pre><p>函数执行上下文中作用域和变量对象创建过程如下：<br />
-1.checkscope函数被创建，保存作用域到内部属性<code>[[scope]]</code></p>
-<pre tabindex="0"><code>checkscope.[[scope]] = [
-  globalContext.VO
-]
-</code></pre><p>2.执行checkscope函数，创建checkscope函数执行上下文，checkscope函数执行上下文压入执行上下栈</p>
-<pre tabindex="0"><code>ECStack = [
-  checkscopeContext,
-  globalContext
-];
-</code></pre><p>3.checkscope函数进入准备阶段<br />
-3.1 复制函数内部属性<code>[[scope]]</code>到函数执行上文中</p>
-<pre tabindex="0"><code>checkscopeContext = {
-  Scope: checkscope.[[scope]]
+
+foo(); //MemberExpression是foo
+
+function foo() {
+  return function () {
+    console.log(this)
+  }
 }
-</code></pre><p>3.2 用函数的arguments属性创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明</p>
-<pre tabindex="0"><code>checkscopeContext = {
-  AO: {
-    arguments: {
-      length: 0,
-    },
-    scope2: undefined
-  },
-  Scope: checkscope.[[scope]]
+
+foo()(); //MemberExpression是foo()
+
+var foo = {
+  bar: function() {
+    return this
+  }
 }
-</code></pre><p>3.3 将活动对象压入作用域顶端</p>
-<pre tabindex="0"><code>checkscopeContext = {
-  AO: {
-    arguments: {
-      length: 0,
-    },
-    scope2: undefined
-  },
-  Scope: [AO, [[scope]]]
+
+foo.bar(); //MemberExpression是foo.bar
+</code></pre><p>可以简单判断MemberExpression是()左边的部分</p>
+<p>步骤2中判断ref是不是一个Reference类型</p>
+<p>例子：</p>
+<pre tabindex="0"><code>var value = 1;
+
+var foo = {
+  value: 2,
+  bar: function() {
+    return this.value;
+  }
 }
-</code></pre><p>准备工作完毕</p>
-<p>4.开始执行checkscope函数，随着函数执行，修改AO的属性值</p>
-<pre tabindex="0"><code>checkscopeContext = {
-  AO: {
-    arguments: {
-      length: 0,
-    },
-    scope2: 'local scope' 
-  },
-  Scope: [AO, [[scope]]]
+
+//example1
+console.log(foo.bar())
+
+//example2
+console.log((foo.bar)())
+
+//example3
+console.log((foo.bar = foo.bar)())
+
+//example4
+console.log((false || foo.bar)())
+
+//example5
+console.log((foo.bar, foo.bar)())
+</code></pre><p>example1<br />
+MemberExpression为foo.bar属于规范11.2中提到的属性访问，他会返回一个值类型的引用<br />
+所以foo.bar会返回一个Reference类型</p>
+<pre tabindex="0"><code>var Reference = {
+  base: foo,
+  name: 'bar',
+  strict: false
 }
-</code></pre><p>5.查找到scope2的值，返回后函数执行完毕，checkscope函数上下文从执行上下文中弹出</p>
-<pre tabindex="0"><code>ECStack = [
-  globalContext
-]
-</code></pre>
+</code></pre><p>符合确定this的步骤中2.1，IsPropertyReference(ref) 为 true，且base value为foo<br />
+所以this指向foo<br />
+console.log打印1</p>
+<p>example2<br />
+(foo.bar)是规范11.1.6中提到的分组表达式，会返回一个Reference类型，<br />
+后面的步骤和example1一样所以this指向foo<br />
+console.log打印1</p>
+<p>example3<br />
+(foo.bar = foo.bar)是规范11.13.1中提到的简单赋值会返回一个rval不是一个Reference，<br />
+对照this判断步骤的2.3，this的值就是undefined（非严格模式下会隐式转换为全局变量，浏览器中就是window）<br />
+console.log打印2</p>
+<p>example4<br />
+(false || foo.bar)是规范11.11中提到的二元逻辑运算符会返回GetValue(rref)不是一个Reference，<br />
+对照this判断步骤2.3，this的值就是undefined<br />
+console.log打印2</p>
+<p>example5<br />
+(foo.bar, foo.bar)是规范11.14中提到的逗号运算符会返回GetValue(rref)不是一个Reference，<br />
+对照this判断步骤2.3，this的值是undefined<br />
+console.log打印2</p>
+<hr />
+<p>看一个最常见的情况</p>
+<pre tabindex="0"><code>//example6
+function foo() {
+  console.log(this)
+}
+
+foo()
+</code></pre><p>MemberExpression是foo，是规范10.3.1中提到的标识符解析会返回一个引用对象Reference，</p>
+<pre tabindex="0"><code>var fooReference = {
+  base: Environment,
+  name: 'foo',
+  strict: false
+}
+</code></pre><p>对照this判断步骤2.2, this的值为 ImplicitThisValue(ref)<br />
+在规范10.2.1.1.6中对ImplicitThisValue的解释他始终返回undefined<br />
+所以this指向undefined</p>
+<p>不管怎么样按照规范去解读this指向从步骤和逻辑上是更为清晰的</p>
+
     </article>
     
     
@@ -1894,13 +1965,13 @@ checkscope();
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fllane00.github.io%2frestart-js%2f5-%25E4%25BD%259C%25E7%2594%25A8%25E5%259F%259F%25E9%2593%25BE%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fllane00.github.io%2frestart-js%2f6-this%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
     
       
-        <a href="https://twitter.com/intent/tweet?text=%e4%bb%8e%e5%a4%b4%e5%ad%a6%e4%b9%a0js-5-%e4%bd%9c%e7%94%a8%e5%9f%9f%e9%93%be&url=http%3a%2f%2fllane00.github.io%2frestart-js%2f5-%25E4%25BD%259C%25E7%2594%25A8%25E5%259F%259F%25E9%2593%25BE%2f&hashtags=js%e5%9f%ba%e7%a1%80%2c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&via=" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://twitter.com/intent/tweet?text=%e4%bb%8e%e5%a4%b4%e5%ad%a6%e4%b9%a0js-6-This&url=http%3a%2f%2fllane00.github.io%2frestart-js%2f6-this%2f&hashtags=js%e5%9f%ba%e7%a1%80%2c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&via=" title="Twitter" aria-label="Twitter Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="twitter" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z"/></svg>
         </a>
       
@@ -2032,6 +2103,10 @@ checkscope();
     <ul class="related-ul">
         
         <li>
+          <a href="/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" class="related__link">从头学习js-5-作用域链</a>
+        </li>
+        
+        <li>
           <a href="/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/" class="related__link">从头学习js-4-变量对象</a>
         </li>
         
@@ -2047,10 +2122,6 @@ checkscope();
           <a href="/restart-js/1-%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/" class="related__link">从头学习js-1-原型与原型链</a>
         </li>
         
-        <li>
-          <a href="/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/" class="related__link">javascript实现节流和防抖</a>
-        </li>
-        
     </ul>
     
   </section>
@@ -2058,21 +2129,14 @@ checkscope();
 <nav class="pagination-single">
   
     
-      <a href="http://llane00.github.io/restart-js/4-%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/" class="pagination-single__left">
+      <a href="http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" class="pagination-single__left">
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="pagination-single__left-title">从头学习js-4-变量对象</div>      
+        <div class="pagination-single__left-title">从头学习js-5-作用域链</div>      
       </a>
     
     <div class="grow"></div>
-    
-      <a href="http://llane00.github.io/restart-js/6-this/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">从头学习js-6-This</div>
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-        </div>
-      </a>
     
   
 </nav>
@@ -2430,9 +2494,8 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#函数创建">函数创建</a></li>
-    <li><a href="#函数激活">函数激活</a></li>
-    <li><a href="#总结事例">总结事例</a></li>
+    <li><a href="#首先了解ecmascript规范">首先了解ECMAScript规范</a></li>
+    <li><a href="#按步骤确定this的指向">按步骤确定this的指向</a></li>
   </ul>
 </nav>
   </div>
@@ -3041,7 +3104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
           
             
-              <a href="http://llane00.github.io/restart-js/5-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
+              <a href="http://llane00.github.io/restart-js/6-this/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
         
