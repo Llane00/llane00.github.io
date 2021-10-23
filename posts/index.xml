@@ -14,11 +14,29 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 11 Oct 2021 15:09:31 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Oct 2021 09:36:00 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>学习React_hooks_1</title>
+        <link>http://llane00.github.io/posts/react_hooks_1/</link>
+        <pubDate>Sat, 23 Oct 2021 09:36:00 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sat, 23 Oct 2021 09:36:00 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/react_hooks_1/</guid>
+        <description>React理念：UI = f(data) 纯函数在加载不同数据后产生了不同的UI useState const [n, setN] = useState(0); console.log(n) //读 onClick = () =&amp;gt; (setN(n+1)) //写 onClick2 = () =&amp;gt; (setN(i =&amp;gt; i + 1)) //也支持传入一个匿名函</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>Vim使用笔记</title>

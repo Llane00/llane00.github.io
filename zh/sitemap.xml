@@ -2,6 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://llane00.github.io/</loc>
+    <lastmod>2021-10-23T09:36:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://llane00.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://llane00.github.io/"
+                />
+  </url><url>
+    <loc>http://llane00.github.io/posts/</loc>
+    <lastmod>2021-10-23T09:36:00+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/posts/react_hooks_1/</loc>
+    <lastmod>2021-10-23T09:36:00+08:00</lastmod>
+  </url><url>
     <loc>http://llane00.github.io/categories/</loc>
     <lastmod>2021-10-16T15:04:05+08:00</lastmod>
     <xhtml:link
@@ -20,19 +39,6 @@
   </url><url>
     <loc>http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-10-16T15:04:05+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/</loc>
-    <lastmod>2021-10-16T15:04:05+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://llane00.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://llane00.github.io/"
-                />
   </url><url>
     <loc>http://llane00.github.io/restart-js/</loc>
     <lastmod>2021-10-16T15:04:05+08:00</lastmod>
@@ -80,9 +86,6 @@
   </url><url>
     <loc>http://llane00.github.io/restart-js/2-%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
     <lastmod>2021-10-12T11:19:18+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/posts/</loc>
-    <lastmod>2021-10-11T15:09:31+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-10-11T15:09:31+08:00</lastmod>
