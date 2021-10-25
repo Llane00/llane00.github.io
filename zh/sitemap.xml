@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://llane00.github.io/categories/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,13 +16,13 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/categories/javascript/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -35,10 +35,10 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/restart-js/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/series/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -51,7 +51,7 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/tags/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -64,12 +64,15 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
   </url><url>
-    <loc>http://llane00.github.io/restart-js/6-this/</loc>
-    <lastmod>2021-10-23T10:45:29+08:00</lastmod>
+    <loc>http://llane00.github.io/restart-js/7-%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%B1%87%E6%80%BB%E7%AF%87/</loc>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-10-23T16:26:08+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/restart-js/6-this/</loc>
     <lastmod>2021-10-23T10:45:29+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/posts/</loc>
