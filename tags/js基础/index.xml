@@ -14,11 +14,51 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 25 Oct 2021 13:30:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Oct 2021 09:38:26 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>从头学习js-8-闭包</title>
+        <link>http://llane00.github.io/restart-js/8-%E9%97%AD%E5%8C%85/</link>
+        <pubDate>Tue, 26 Oct 2021 09:38:26 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Tue, 26 Oct 2021 09:38:26 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/8-%E9%97%AD%E5%8C%85/</guid>
+        <description>这个系列是我看冴羽老师的博客的理解笔记 博客原文 在MDN广泛定义中闭包指的是能访问自由变量的函数（自由变量指的是即不是这个函数的参数也不是这个</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>从头学习js-7-执行上下文汇总篇</title>
