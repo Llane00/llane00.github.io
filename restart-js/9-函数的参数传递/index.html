@@ -1616,7 +1616,7 @@ b(值为一个指针，一个指向堆中对象数据的地址假设为1000)</p>
 <p>在堆中有：<br />
 {name: &lsquo;Neo&rsquo;, age: 25}</p>
 <p>其中指针1000指向{name: &lsquo;Neo&rsquo;, age: 25}</p>
-<table role="table">
+<table role="table" style="margin-bottom: 1.75rem">
 	<tbody>
     <tr>
       <td colspan="2" align="center">栈内存</td><td align="center">堆内存</td>
@@ -1643,7 +1643,7 @@ console.log(value) // 1
 1</p>
 <p>foo(value) 函数开始执行时，初始化AO，然后加入形参<br />
 执行了像<code>var v = value</code>这样的一个操作，把value赋值给了函数内的参数v</p>
-<table>
+<table style="margin-bottom: 1.75rem">
 	<tbody>
     <tr>
       <td colspan="2" align="center">栈内存</td><td colspan="2" align="center">堆内存</td>
@@ -1657,7 +1657,7 @@ console.log(value) // 1
   </tbody>
 </table>
 <p>再执行<code>v = 2</code>，重新赋值v</p>
-<table>
+<table style="margin-bottom: 1.75rem">
   <tbody>
     <tr>
       <td colspan="2" align="center">栈内存</td><td colspan="2" align="center">堆内存</td>
@@ -1683,7 +1683,7 @@ foo(obj);
 console.log(obj.value) // 2
 </code></pre><p>foo(obj) 函数开始执行时，初始化AO，然后加入形参<br />
 <code>var o = obj</code>，把obj值的引用赋值给了o</p>
-<table role="table">
+<table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>
 		<td colspan="2" align="center">栈内存</td><td align="center">堆内存</td>
 	</tr>
@@ -1692,7 +1692,7 @@ console.log(obj.value) // 2
 	</tr>
 </tbody></table>
 <p>此时<code>o.value = 2</code>会沿着引用找到obj指向的值并修改</p>
-<table role="table">
+<table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>
 		<td colspan="2" align="center">栈内存</td><td align="center">堆内存</td>
 	</tr>
@@ -1713,7 +1713,7 @@ foo(obj);
 console.log(obj.value) // 1
 </code></pre><p>foo(o) 函数开始执行时，初始化AO，然后加入形参<br />
 <code>var o = obj</code>，把obj值的引用赋值给了o</p>
-<table role="table">
+<table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>
 		<td colspan="2" align="center">栈内存</td><td align="center">堆内存</td>
 	</tr>
@@ -1722,7 +1722,7 @@ console.log(obj.value) // 1
 	</tr>
 </tbody></table>
 <p>此时<code>o = 2</code>会赋值o把指针的值覆盖修改为2</p>
-<table role="table">
+<table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>
 		<td colspan="2" align="center">栈内存</td><td align="center">堆内存</td>
 	</tr>

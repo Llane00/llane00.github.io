@@ -14,11 +14,29 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 27 Oct 2021 09:54:45 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Oct 2021 11:15:15 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>菜鸟算法</title>
+        <link>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</link>
+        <pubDate>Wed, 27 Oct 2021 11:15:15 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        
+        <guid>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</guid>
+        <description></description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>从头学习js</title>

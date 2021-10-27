@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>菜鸟算法 on Llane00&#39;s Blog</title>
+    <link>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 菜鸟算法 on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2021, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 27 Oct 2021 11:15:15 +0800</lastBuildDate>
+    
+        <atom:link href="http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>菜鸟学算法-1-简单版快速排序</title>
+        <link>http://llane00.github.io/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
+        <pubDate>Wed, 27 Oct 2021 11:15:15 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 27 Oct 2021 11:15:15 +0800</atom:modified>
+        <guid>http://llane00.github.io/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
+        <description>我想知道这是为什么 &amp;ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 let pivot = array[array.length-1] let left = array.filter((item, index) =&amp;gt; item &amp;lt;= pivot &amp;amp;&amp;amp; index != array.length-1) let right = array.filter((item,</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>算法基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>菜鸟算法</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
