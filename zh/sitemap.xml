@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://llane00.github.io/algorithm/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
-  </url><url>
     <loc>http://llane00.github.io/categories/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,10 +16,13 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/categories/javascript/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -34,8 +34,11 @@
                 href="http://llane00.github.io/"
                 />
   </url><url>
+    <loc>http://llane00.github.io/restart-js/</loc>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
+  </url><url>
     <loc>http://llane00.github.io/series/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -48,7 +51,7 @@
                 />
   </url><url>
     <loc>http://llane00.github.io/tags/</loc>
-    <lastmod>2021-10-27T11:15:15+08:00</lastmod>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -60,7 +63,16 @@
                 href="http://llane00.github.io/tags/"
                 />
   </url><url>
+    <loc>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</loc>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/restart-js/10-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0call%E5%92%8Capply/</loc>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
+  </url><url>
     <loc>http://llane00.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-10-27T18:55:39+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/algorithm/</loc>
     <lastmod>2021-10-27T11:15:15+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
@@ -71,15 +83,6 @@
   </url><url>
     <loc>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-10-27T11:15:15+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/tags/js%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2021-10-27T09:54:45+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/restart-js/</loc>
-    <lastmod>2021-10-27T09:54:45+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</loc>
-    <lastmod>2021-10-27T09:54:45+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/restart-js/9-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/</loc>
     <lastmod>2021-10-27T09:54:45+08:00</lastmod>

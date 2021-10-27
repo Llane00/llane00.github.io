@@ -14,11 +14,51 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 27 Oct 2021 11:15:15 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 Oct 2021 18:55:39 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>从头学习js-10-模拟实现call和apply</title>
+        <link>http://llane00.github.io/restart-js/10-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0call%E5%92%8Capply/</link>
+        <pubDate>Wed, 27 Oct 2021 18:55:39 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 27 Oct 2021 18:55:39 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/10-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0call%E5%92%8Capply/</guid>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 call使用的例子： var foo = { value: 1 }; function bar(name, age) { console.log(name) console.log(age) console.log(this.value); } bar.call(foo, &#39;kevin&#39;, 18); // kevin // 18 // 1 用js模</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>菜鸟学算法-1-简单版快速排序</title>
