@@ -14,11 +14,51 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 27 Oct 2021 11:15:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Oct 2021 13:15:12 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>菜鸟学算法-2-冒泡排序</title>
+        <link>http://llane00.github.io/algorithm/2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
+        <pubDate>Thu, 28 Oct 2021 13:15:12 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 28 Oct 2021 13:15:12 +0800</atom:modified>
+        <guid>http://llane00.github.io/algorithm/2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
+        <description>我想知道这是为什么 &amp;ndash;费曼 冒泡排序我想是大部分人接触的第一个排序算法，原理也很形象， 每一次轮询都会将最大（小）的数字通过一个个相邻</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>算法基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>菜鸟算法</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>菜鸟学算法-1-简单版快速排序</title>
