@@ -14,7 +14,7 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 27 Oct 2021 18:55:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Oct 2021 10:19:05 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -40,6 +40,86 @@
         
       
 
+      
+      <item>
+        <title>从头学习js-12-模拟实现new</title>
+        <link>http://llane00.github.io/restart-js/12-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0new/</link>
+        <pubDate>Thu, 28 Oct 2021 10:19:05 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 28 Oct 2021 10:19:05 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/12-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0new/</guid>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 我们先分析一下new做了什么， function Person(name, age) { this.name = name; this.age = age; } Person.prototype.runSpeed = 10; // 10km/h Person.prototype.run = function() { console.log(&amp;quot;running&amp;quot;); } var</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>从头学习js-11-模拟实现bind</title>
+        <link>http://llane00.github.io/restart-js/11-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0bind/</link>
+        <pubDate>Thu, 28 Oct 2021 09:34:41 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 28 Oct 2021 09:34:41 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/11-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0bind/</guid>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 MDN对bing的定义： bind()方法会创建一个新函数。当这个函数被调用时</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>从头学习js-10-模拟实现call和apply</title>
