@@ -2,6 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://llane00.github.io/</loc>
+    <lastmod>2021-10-29T15:22:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://llane00.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="http://llane00.github.io/"
+                />
+  </url><url>
+    <loc>http://llane00.github.io/posts/</loc>
+    <lastmod>2021-10-29T15:22:40+08:00</lastmod>
+  </url><url>
+    <loc>http://llane00.github.io/posts/react_hooks_2/</loc>
+    <lastmod>2021-10-29T15:22:40+08:00</lastmod>
+  </url><url>
     <loc>http://llane00.github.io/algorithm/</loc>
     <lastmod>2021-10-29T11:43:27+08:00</lastmod>
   </url><url>
@@ -20,19 +39,6 @@
   </url><url>
     <loc>http://llane00.github.io/categories/javascript/</loc>
     <lastmod>2021-10-29T11:43:27+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/</loc>
-    <lastmod>2021-10-29T11:43:27+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://llane00.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="http://llane00.github.io/"
-                />
   </url><url>
     <loc>http://llane00.github.io/series/</loc>
     <lastmod>2021-10-29T11:43:27+08:00</lastmod>
@@ -72,9 +78,6 @@
     <loc>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-10-29T11:43:27+08:00</lastmod>
   </url><url>
-    <loc>http://llane00.github.io/posts/</loc>
-    <lastmod>2021-10-29T11:03:27+08:00</lastmod>
-  </url><url>
     <loc>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</loc>
     <lastmod>2021-10-29T11:03:27+08:00</lastmod>
   </url><url>
@@ -92,9 +95,6 @@
   </url><url>
     <loc>http://llane00.github.io/restart-js/13-%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8Earguments/</loc>
     <lastmod>2021-10-29T09:50:38+08:00</lastmod>
-  </url><url>
-    <loc>http://llane00.github.io/posts/react_hooks_2/</loc>
-    <lastmod>2021-10-28T15:22:40+08:00</lastmod>
   </url><url>
     <loc>http://llane00.github.io/algorithm/2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2021-10-28T13:15:12+08:00</lastmod>
