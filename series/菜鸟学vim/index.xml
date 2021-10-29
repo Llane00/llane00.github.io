@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>菜鸟学vim on Llane00&#39;s Blog</title>
+    <link>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</link>
+    <description>Recent content in 菜鸟学vim on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2021, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 29 Oct 2021 11:03:27 +0800</lastBuildDate>
+    
+        <atom:link href="http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Vim使用笔记2</title>
+        <link>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</link>
+        <pubDate>Fri, 29 Oct 2021 11:03:27 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 29 Oct 2021 11:03:27 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</guid>
+        <description>由于我目前还是用vscode居多，vscode的插件和环境配置对前端开发更加友好，我打算还是在vscode上开发，辅助用vscode+vim</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>菜鸟学vim</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Vim使用笔记</title>
+        <link>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 11 Oct 2021 15:09:31 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 11 Oct 2021 15:09:31 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+        <description>normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下 hjkl 移动光标左下</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>菜鸟学vim</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
