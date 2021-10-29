@@ -1605,7 +1605,7 @@
 <pre tabindex="0"><code>let array = [5,4,3,2,1]
 for (let i=0; i&lt;array.length - 1; i++) {
   if (array[i] &gt; array[i+1]) {
-    let [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
+    [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
   }
 }
 </code></pre><p>array有n个元素，就要做n次轮询的操作</p>
@@ -1613,7 +1613,7 @@ for (let i=0; i&lt;array.length - 1; i++) {
 for (let j=0; j&lt;array.length; j++) {
   for (let i=0; i&lt;array.length - 1; i++) {
     if (array[i] &gt; array[i+1]) {
-      let [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
+      [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
     }
   }
 }
@@ -1628,13 +1628,19 @@ i==1时就把最大值交换到最后了</p>
 i==0时就把最大值交换到最后了</p>
 <p>也就是每次开始新的轮询时，length都比上一次少1</p>
 <pre tabindex="0"><code>let array = [5,4,3,2,1]
-for (let j=0; j&lt;array.length; j++) {
-  for (let i=0; i&lt;array.length - 1 - j; i++) {
-    if (array[i] &gt; array[i+1]) {
-      let [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
+
+function bubbleSort(array) {
+  for (let j=0; j&lt;array.length; j++) {
+    for (let i=0; i&lt;array.length - 1 - j; i++) {
+      if (array[i] &gt; array[i+1]) {
+        [array[i+1], array[i]] = [array[i], array[i+1]]; //swap
+      }
     }
   }
+  return array
 }
+
+console.log(bubbleSort(array))
 </code></pre><p>总结：<br />
 冒泡排序不需要额外空间，是本地排序，相等元素是不会交换前后顺序，因而也是稳定排序，时间复杂度为O(n^2)，适用于少量数据排序，但实际中用得不多</p>
 <hr />
@@ -2011,6 +2017,13 @@ for (let j=0; j&lt;array.length; j++) {
       </a>
     
     <div class="grow"></div>
+    
+      <a href="http://llane00.github.io/algorithm/3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">菜鸟学算法-3-选择排序</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2968,14 +2981,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/algorithm/2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     
