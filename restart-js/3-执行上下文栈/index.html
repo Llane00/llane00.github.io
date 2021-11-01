@@ -1607,72 +1607,177 @@
 javascript引擎创建了执行上下文栈（Execution context stack，ECS）来管理这些情况</p>
 <p>由于函数的执行是有顺序的，执行上下文栈是先进后出的栈结构</p>
 <p>我们这里用数组来模拟它</p>
-<pre tabindex="0"><code>ECStack = []
-</code></pre><p>首先执行全局代码，此时在ECStack中压入一个 globalContext</p>
-<pre tabindex="0"><code>ECStack = [
-  globalContext
-]
-</code></pre><p>然后我们执行下面的实例代码</p>
-<pre tabindex="0"><code>function a() {
-  console.log(&quot;run a&quot;)
-  b()
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>首先执行全局代码，此时在ECStack中压入一个 globalContext</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们执行下面的实例代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;run a&#34;</span><span class="p">)</span>
+  <span class="nx">b</span><span class="p">()</span>
+<span class="p">}</span>
 
-function b() {
-  console.log(&quot;run b&quot;)
-}
+<span class="kd">function</span> <span class="nx">b</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;run b&#34;</span><span class="p">)</span>
+<span class="p">}</span>
 
-a()
-</code></pre><p>首先执行a函数，在ECStack中压入函数a的执行上下文，</p>
-<pre tabindex="0"><code>ECStack = [
-  &lt;a&gt; functionContext,
-  globalContext
-]
-</code></pre><p>发现执行函数a中，需要执行b函数（此时a还没执行完，没有出栈），在ECStack中压入函数b的执行上下文</p>
-<pre tabindex="0"><code>ECStack = [
-  &lt;b&gt; functionContext,
-  &lt;a&gt; functionContext,
-  globalContext
-]
-</code></pre><p>函数b执行完后，函数b的执行上下文出栈，ECStack.pop()<br />
+<span class="nx">a</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>首先执行a函数，在ECStack中压入函数a的执行上下文，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="o">&lt;</span><span class="nx">a</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>发现执行函数a中，需要执行b函数（此时a还没执行完，没有出栈），在ECStack中压入函数b的执行上下文</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="o">&lt;</span><span class="nx">b</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">,</span>
+  <span class="o">&lt;</span><span class="nx">a</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>函数b执行完后，函数b的执行上下文出栈，ECStack.pop()<br />
 然后函数a也执行完了，继续 ECStack.pop()</p>
 <p>就是这么一个执行栈</p>
 <hr />
 <p>另一个例子：<br />
 代码A</p>
-<pre tabindex="0"><code>var scope = &quot;global scope&quot;;
-function checkscope(){
-    var scope = &quot;local scope&quot;;
-    function f(){
-        return scope;
-    }
-    return f();
-}
-checkscope();
-</code></pre><p>代码B</p>
-<pre tabindex="0"><code>var scope = &quot;global scope&quot;;
-function checkscope(){
-    var scope = &quot;local scope&quot;;
-    function f(){
-        return scope;
-    }
-    return f;
-}
-checkscope()();
-</code></pre><p>首先代码A和代码B 都会打印 localscope，具体原因在上一篇作用域中有解释<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;global scope&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;local scope&#34;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">checkscope</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>代码B</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;global scope&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;local scope&#34;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">checkscope</span><span class="p">()();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>首先代码A和代码B 都会打印 localscope，具体原因在上一篇作用域中有解释<br />
 但不同的是A和B的执行上下文的顺序不同<br />
 伪代码是这样的</p>
-<pre tabindex="0"><code>//代码A
-ECStack.push(&lt;checkscope&gt; functionContext)
-ECStack.push(&lt;f&gt; functionContext)
-ECStack.pop() //f 执行结束
-ECStack.pop() //checkscope 执行结束
-</code></pre><pre tabindex="0"><code>//代码B
-ECStack.push(&lt;checkscope&gt; functionContext)
-ECStack.pop() //checkcope 执行结束
-ECStack.push(&lt;f&gt; functionContext)
-ECStack.pop() //f 执行结束
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//代码A
+</span><span class="c1"></span><span class="nx">ECStack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">checkscope</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">)</span>
+<span class="nx">ECStack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">f</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">)</span>
+<span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="c1">//f 执行结束
+</span><span class="c1"></span><span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="c1">//checkscope 执行结束
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//代码B
+</span><span class="c1"></span><span class="nx">ECStack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">checkscope</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">)</span>
+<span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="c1">//checkcope 执行结束
+</span><span class="c1"></span><span class="nx">ECStack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">f</span><span class="o">&gt;</span> <span class="nx">functionContext</span><span class="p">)</span>
+<span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span> <span class="c1">//f 执行结束
+</span></code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     

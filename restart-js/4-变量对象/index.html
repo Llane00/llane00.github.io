@@ -1654,48 +1654,104 @@
 创建上下文后，开始执行代码，</li>
 </ol>
 <p>例子：</p>
-<pre tabindex="0"><code>function foo(a) {
-  var b = 2;
-  function c() {}
-  var d = function() {};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 
-  b = 3;
-}
+  <span class="nx">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
 
-foo(1)
-</code></pre><p>在进入执行上下文后，此时的AO为</p>
-<pre tabindex="0"><code>AO = {
-  //AO通过函数的arguments初始化，是一个伪数组
-  arguments: {
-    0: 1,
-    length: 1
-  },
+<span class="nx">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在进入执行上下文后，此时的AO为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">AO</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//AO通过函数的arguments初始化，是一个伪数组
+</span><span class="c1"></span>  <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">length</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
   
-  //函数所有形参 由名称和对应值组成的一个变量对象的属性被创建
-  a: 1,
+  <span class="c1">//函数所有形参 由名称和对应值组成的一个变量对象的属性被创建
+</span><span class="c1"></span>  <span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 
-  //变量声明 名称和对应值（undefined）组成的一个变量对象的属性被创建
-  b: undefined,
+  <span class="c1">//变量声明 名称和对应值（undefined）组成的一个变量对象的属性被创建
+</span><span class="c1"></span>  <span class="nx">b</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
 
-  //函数声明 由名称和对应值（函数对象（function-object））组成的一个变量对象的属性被创建
-  c: reference to function c(){}, 
+  <span class="c1">//函数声明 由名称和对应值（函数对象（function-object））组成的一个变量对象的属性被创建
+</span><span class="c1"></span>  <span class="nx">c</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="kd">function</span> <span class="nx">c</span><span class="p">(){},</span> 
   
-  //同上变量声明
-  d: undefined
-}
-</code></pre><p>函数执行后：<br />
+  <span class="c1">//同上变量声明
+</span><span class="c1"></span>  <span class="nx">d</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>函数执行后：<br />
 按顺序执行代码，初始化变量和给变量赋值</p>
-<pre tabindex="0"><code>AO = {
-  arguments: {
-      0: 1,
-      length: 1
-  },
-  a: 1,
-  b: 3,
-  c: reference to function c() {},
-  d: reference to FunctionExpression &quot;d&quot;
-}
-</code></pre><hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">AO</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="mi">0</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nx">b</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nx">c</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{},</span>
+  <span class="nx">d</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="nx">FunctionExpression</span> <span class="s2">&#34;d&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <h2 id="关于声明变量和函数时的补充">关于声明变量和函数时的补充:</h2>
 <p>这里认为声明变量和函数都有三个阶段：<br />
 1.创建create<br />
@@ -1710,10 +1766,19 @@ const 只有创建和初始化，没有「赋值」,「创建」过程被提升�
 首先const必须初始化，且在栈中储存的值不可修改，<br />
 但当const声明的是引用类型时，堆中的储存值可以改变<br />
 如：</p>
-<pre tabindex="0"><code>const obj = {name: 'Neo', age: 20}
-obj.age = 25
-console.log(obj) //{name: 'Neo', age: 25}
-</code></pre><hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">20</span><span class="p">}</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">//{name: &#39;Neo&#39;, age: 25}
+</span></code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>如果不通过关键词var let等声明变量，AO中不会创建对应该变量的key-value</p>
 <p>但是当这个变量被赋值assign的时候会创建变量对象到VO中</p>
 <hr />

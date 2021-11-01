@@ -1633,29 +1633,63 @@ Environment Record<br />
 2.reference name (属性名称)<br />
 3.strict reference</p>
 <p>举个例子：</p>
-<pre tabindex="0"><code>var foo = 1;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-//foo对应的Reference是
-var fooReference = {
-  base: EnvironmentRecoed,
-  name: 'foo',
-  strict: false
-}
-</code></pre><pre tabindex="0"><code>var foo = {
-  bar: function() {
-    return this;
-  }
-}
+<span class="c1">//foo对应的Reference是
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">fooReference</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">base</span><span class="o">:</span> <span class="nx">EnvironmentRecoed</span><span class="p">,</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>
+  <span class="nx">strict</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-foo.bar();
+<span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">();</span>
 
-//bar对应的Reference是
-var barReference = {
-  base: foo,
-  propertyName: 'bar',
-  strict: false
-};
-</code></pre><p>Reference涉及到的方法有：<br />
+<span class="c1">//bar对应的Reference是
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">barReference</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">base</span><span class="o">:</span> <span class="nx">foo</span><span class="p">,</span>
+  <span class="nx">propertyName</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+  <span class="nx">strict</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Reference涉及到的方法有：<br />
 1.GetBase 返回base value<br />
 2.isProperty 判断base value是不是一个对象<br />
 3.GetVlaue 从Reference处返回一个真正的值（具体的值，不是Reference）</p>
@@ -1674,62 +1708,129 @@ MemberExpression [Expression] //属性[]访问表达式<br />
 MemberExpression.IdentifierName //属性.访问表达式<br />
 new MemberExpression Arguments //对象创建表达式</p>
 <p>例子：</p>
-<pre tabindex="0"><code>function foo() {
-  console.log(this)
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span>
 
-foo(); //MemberExpression是foo
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">//MemberExpression是foo
+</span><span class="c1"></span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-function foo() {
-  return function () {
-    console.log(this)
-  }
-}
+<span class="nx">foo</span><span class="p">()();</span> <span class="c1">//MemberExpression是foo()
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-foo()(); //MemberExpression是foo()
-
-var foo = {
-  bar: function() {
-    return this
-  }
-}
-
-foo.bar(); //MemberExpression是foo.bar
-</code></pre><p>可以简单判断MemberExpression是()左边的部分</p>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">();</span> <span class="c1">//MemberExpression是foo.bar
+</span></code></pre></td></tr></table>
+</div>
+</div><p>可以简单判断MemberExpression是()左边的部分</p>
 <p>步骤2中判断ref是不是一个Reference类型</p>
 <p>例子：</p>
-<pre tabindex="0"><code>var value = 1;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-var foo = {
-  value: 2,
-  bar: function() {
-    return this.value;
-  }
-}
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-//example1
-console.log(foo.bar())
+<span class="c1">//example1
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">())</span>
 
-//example2
-console.log((foo.bar)())
+<span class="c1">//example2
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">)())</span>
 
-//example3
-console.log((foo.bar = foo.bar)())
+<span class="c1">//example3
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">)())</span>
 
-//example4
-console.log((false || foo.bar)())
+<span class="c1">//example4
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="kc">false</span> <span class="o">||</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">)())</span>
 
-//example5
-console.log((foo.bar, foo.bar)())
-</code></pre><p>example1<br />
+<span class="c1">//example5
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">,</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class="p">)())</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>example1<br />
 MemberExpression为foo.bar属于规范11.2中提到的属性访问，他会返回一个值类型的引用<br />
 所以foo.bar会返回一个Reference类型</p>
-<pre tabindex="0"><code>var Reference = {
-  base: foo,
-  name: 'bar',
-  strict: false
-}
-</code></pre><p>符合确定this的步骤中2.1，IsPropertyReference(ref) 为 true，且base value为foo<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Reference</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">base</span><span class="o">:</span> <span class="nx">foo</span><span class="p">,</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+  <span class="nx">strict</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>符合确定this的步骤中2.1，IsPropertyReference(ref) 为 true，且base value为foo<br />
 所以this指向foo<br />
 console.log打印1</p>
 <p>example2<br />
@@ -1750,19 +1851,42 @@ console.log打印2</p>
 console.log打印2</p>
 <hr />
 <p>看一个最常见的情况</p>
-<pre tabindex="0"><code>//example6
-function foo() {
-  console.log(this)
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//example6
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span>
 
-foo()
-</code></pre><p>MemberExpression是foo，是规范10.3.1中提到的标识符解析会返回一个引用对象Reference，</p>
-<pre tabindex="0"><code>var fooReference = {
-  base: Environment,
-  name: 'foo',
-  strict: false
-}
-</code></pre><p>对照this判断步骤2.2, this的值为 ImplicitThisValue(ref)<br />
+<span class="nx">foo</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>MemberExpression是foo，是规范10.3.1中提到的标识符解析会返回一个引用对象Reference，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">fooReference</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">base</span><span class="o">:</span> <span class="nx">Environment</span><span class="p">,</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>
+  <span class="nx">strict</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对照this判断步骤2.2, this的值为 ImplicitThisValue(ref)<br />
 在规范10.2.1.1.6中对ImplicitThisValue的解释他始终返回undefined<br />
 所以this指向undefined</p>
 <p>不管怎么样按照规范去解读this指向从步骤和逻辑上是更为清晰的</p>

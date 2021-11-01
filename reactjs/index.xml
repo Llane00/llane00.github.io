@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Reactjs on Llane00&#39;s Blog</title>
+    <link>http://llane00.github.io/reactjs/</link>
+    <description>Recent content in Reactjs on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2021, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 29 Oct 2021 17:26:43 +0800</lastBuildDate>
+    
+        <atom:link href="http://llane00.github.io/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>3-React-哲学</title>
+        <link>http://llane00.github.io/reactjs/3-react-%E5%93%B2%E5%AD%A6/</link>
+        <pubDate>Fri, 29 Oct 2021 17:26:43 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 29 Oct 2021 17:26:43 +0800</atom:modified>
+        <guid>http://llane00.github.io/reactjs/3-react-%E5%93%B2%E5%AD%A6/</guid>
+        <description>我们可以在React官网-React哲学这里找到React对自己的定义： 我们认为，React 是用 JavaScript 构建快速响应的大型 Web 应用程序的首选方式。 关</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>学习React_hooks_2</title>
+        <link>http://llane00.github.io/reactjs/2-react-hooks/</link>
+        <pubDate>Fri, 29 Oct 2021 15:22:40 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 29 Oct 2021 15:22:40 +0800</atom:modified>
+        <guid>http://llane00.github.io/reactjs/2-react-hooks/</guid>
+        <description>从函数的角度来理解hooks的概念 React理念：UI = f(data) 视图UI会根据自变量变化 自变量： useState 定义自变量 useReducer(复杂版的useS</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>学习React_hooks_1</title>
+        <link>http://llane00.github.io/reactjs/1-react-hooks/</link>
+        <pubDate>Sat, 23 Oct 2021 09:36:00 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sat, 23 Oct 2021 09:36:00 +0800</atom:modified>
+        <guid>http://llane00.github.io/reactjs/1-react-hooks/</guid>
+        <description>React理念：UI = f(data) 纯函数在加载不同数据后产生了不同的UI useState 1 2 3 4 const [n, setN] = useState(0); console.log(n) //读 onClick = () =&amp;gt; (setN(n+1)) //写 onClick2 = () =&amp;gt; (setN(i =&amp;gt; i + 1)) //也支持传入一</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

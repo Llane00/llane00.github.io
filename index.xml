@@ -14,7 +14,7 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 29 Oct 2021 15:22:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Oct 2021 17:13:53 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -42,12 +42,88 @@
 
       
       <item>
+        <title>从头学习js-14-创建对象</title>
+        <link>http://llane00.github.io/restart-js/14-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</link>
+        <pubDate>Sat, 30 Oct 2021 17:13:53 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sat, 30 Oct 2021 17:13:53 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/14-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</guid>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 本文会介绍不同创建对象的方法，来探究不同解决方案的优缺点 1.工厂模式 创建一个</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>3-React-哲学</title>
+        <link>http://llane00.github.io/reactjs/3-react-%E5%93%B2%E5%AD%A6/</link>
+        <pubDate>Fri, 29 Oct 2021 17:26:43 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 29 Oct 2021 17:26:43 +0800</atom:modified>
+        <guid>http://llane00.github.io/reactjs/3-react-%E5%93%B2%E5%AD%A6/</guid>
+        <description>我们可以在React官网-React哲学这里找到React对自己的定义： 我们认为，React 是用 JavaScript 构建快速响应的大型 Web 应用程序的首选方式。 关</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+      </item>
+      
+      <item>
         <title>学习React_hooks_2</title>
-        <link>http://llane00.github.io/posts/react_hooks_2/</link>
+        <link>http://llane00.github.io/reactjs/2-react-hooks/</link>
         <pubDate>Fri, 29 Oct 2021 15:22:40 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 29 Oct 2021 15:22:40 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/react_hooks_2/</guid>
+        <guid>http://llane00.github.io/reactjs/2-react-hooks/</guid>
         <description>从函数的角度来理解hooks的概念 React理念：UI = f(data) 视图UI会根据自变量变化 自变量： useState 定义自变量 useReducer(复杂版的useS</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -55,7 +131,25 @@
         
         
         
+          
+            
+              <category>React</category>
+            
+          
         
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
         
       </item>
       
@@ -220,7 +314,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 28 Oct 2021 10:19:05 +0800</atom:modified>
         <guid>http://llane00.github.io/restart-js/12-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0new/</guid>
-        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 我们先分析一下new做了什么， function Person(name, age) { this.name = name; this.age = age; } Person.prototype.runSpeed = 10; // 10km/h Person.prototype.run = function() { console.log(&amp;quot;running&amp;quot;); } var</description>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 我们先分析一下new做了什么， 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 function Person(name, age) {</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -300,7 +394,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Wed, 27 Oct 2021 18:55:39 +0800</atom:modified>
         <guid>http://llane00.github.io/restart-js/10-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0call%E5%92%8Capply/</guid>
-        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 call使用的例子： var foo = { value: 1 }; function bar(name, age) { console.log(name) console.log(age) console.log(this.value); } bar.call(foo, &#39;kevin&#39;, 18); // kevin // 18 // 1 用js模</description>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 call使用的例子： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var foo = { value: 1 }; function bar(name, age) { console.log(name) console.log(age) console.log(this.value);</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -340,7 +434,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Wed, 27 Oct 2021 11:15:15 +0800</atom:modified>
         <guid>http://llane00.github.io/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
-        <description>我想知道这是为什么 &amp;ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 let pivot = array[array.length-1] let left = array.filter((item, index) =&amp;gt; item &amp;lt;= pivot &amp;amp;&amp;amp; index != array.length-1) let right = array.filter((item,</description>
+        <description>我想知道这是为什么 &amp;ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 1 2 3 let pivot = array[array.length-1] let left = array.filter((item, index) =&amp;gt; item &amp;lt;= pivot &amp;amp;&amp;amp; index != array.length-1) let</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -535,19 +629,37 @@
       
       <item>
         <title>学习React_hooks_1</title>
-        <link>http://llane00.github.io/posts/react_hooks_1/</link>
+        <link>http://llane00.github.io/reactjs/1-react-hooks/</link>
         <pubDate>Sat, 23 Oct 2021 09:36:00 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sat, 23 Oct 2021 09:36:00 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/react_hooks_1/</guid>
-        <description>React理念：UI = f(data) 纯函数在加载不同数据后产生了不同的UI useState const [n, setN] = useState(0); console.log(n) //读 onClick = () =&amp;gt; (setN(n+1)) //写 onClick2 = () =&amp;gt; (setN(i =&amp;gt; i + 1)) //也支持传入一个匿名函</description>
+        <guid>http://llane00.github.io/reactjs/1-react-hooks/</guid>
+        <description>React理念：UI = f(data) 纯函数在加载不同数据后产生了不同的UI useState 1 2 3 4 const [n, setN] = useState(0); console.log(n) //读 onClick = () =&amp;gt; (setN(n+1)) //写 onClick2 = () =&amp;gt; (setN(i =&amp;gt; i + 1)) //也支持传入一</description>
         
         <dc:creator>Llane00</dc:creator>
         
         
         
         
+          
+            
+              <category>React</category>
+            
+          
         
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
         
       </item>
       
@@ -752,7 +864,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 11 Oct 2021 10:56:04 +0800</atom:modified>
         <guid>http://llane00.github.io/restart-js/1-%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</guid>
-        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 function Person() {} let Neo = new Person() Person 是一个构造函数 Neo是构造函数Person创建的一个实例 首</description>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 1 2 function Person() {} let Neo = new Person() Person 是一个构造函数 Neo是构造函数Person创建的一个实</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -792,7 +904,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 14:30:09 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
-        <description>大招技能有冷却 == 节流（throttle） /** * 节流原理：在一定时间内，只能触发一次 * * @param {Function} func 要执行的回调函数 * @param {Number} wait 延时的时间 * @param {Boolean} immediate 是否立即</description>
+        <description>大招技能有冷却 == 节流（throttle） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 /** * 节流原理：在一定时间内，只能触</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -832,7 +944,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 09:06:52 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</guid>
-        <description>关于Js原型 // 例子 function Person() { } var person = new Person(); console.log(person.__proto__ == Person.prototype) // true console.log(Person.prototype.constructor == Person) // true // 顺便学习一个ES5的方法,可以获得对象的原型 console.log(Object.getPrototypeOf(person) === Person.prototype) // true 实例与原型 当读取实例的属性时</description>
+        <description>关于Js原型 1 2 3 4 5 6 7 8 9 10 11 // 例子 function Person() { } var person = new Person(); console.log(person.__proto__ == Person.prototype) // true console.log(Person.prototype.constructor == Person) // true // 顺便学习一个ES5的方法,可以获得对象的原型 console.log(Object.getPrototypeOf(person) === Person.prototype) // true 实例与</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -948,7 +1060,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 06 Dec 2020 13:31:42 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
-        <description>这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support External</description>
+        <description>这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt 1 npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support</description>
         
         <dc:creator>Llane00</dc:creator>
         

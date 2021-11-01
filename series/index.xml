@@ -14,11 +14,47 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 29 Oct 2021 11:43:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Oct 2021 17:13:53 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>从头学习js</title>
+        <link>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</link>
+        <pubDate>Sat, 30 Oct 2021 17:13:53 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        
+        <guid>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</guid>
+        <description></description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>React</title>
+        <link>http://llane00.github.io/series/react/</link>
+        <pubDate>Fri, 29 Oct 2021 17:26:43 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        
+        <guid>http://llane00.github.io/series/react/</guid>
+        <description></description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>菜鸟算法</title>
@@ -45,24 +81,6 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         
         <guid>http://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</guid>
-        <description></description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>从头学习js</title>
-        <link>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</link>
-        <pubDate>Fri, 29 Oct 2021 09:50:38 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        
-        <guid>http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>

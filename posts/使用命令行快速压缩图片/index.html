@@ -1376,7 +1376,7 @@
     "datePublished": "2020-12-06T13:31:42+08:00",
     "dateModified": "2020-12-06T13:31:42+08:00",
     "url" : "http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/",
-    "description": "这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support External",
+    "description": "这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt 1 npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support",
     "keywords": ["命令行"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1598,21 +1598,49 @@
 <p>稍微看了下，算是一个压缩图片的工具合集<br />
 <img src="/2020-12-06/1.png" alt="" /></p>
 <h2 id="安装optimizt">安装optimizt</h2>
-<pre tabindex="0"><code>npm i -g @funboxteam/optimizt
-</code></pre><p>也支持WebStorm, PhpStorm等插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm i -g @funboxteam/optimizt
+</code></pre></td></tr></table>
+</div>
+</div><p>也支持WebStorm, PhpStorm等插件</p>
 <blockquote>
 <p>also support External Tool in WebStorm, PhpStorm, etc</p>
 </blockquote>
 <hr />
 <h2 id="diy一下">DIY一下</h2>
 <p>optimizt 支持用find命令查找图片</p>
-<pre tabindex="0"><code>optimizt `find . -type f -name '*.jpg'`
-</code></pre><p>于是我在.bash_profile（或者其他Shell配置文件）中添加别名 + 自定义的搜索方式</p>
-<pre tabindex="0"><code>alias yasuo='optimizt `find . -name &quot;*.png&quot; -o -name &quot;*.jpg&quot; -o -name &quot;*.jpeg&quot; -o -name &quot;*.gif&quot; -o -name &quot;*.svg&quot;`'
-</code></pre><p>这个命令可以压缩当前目录下所有找到的jpg/jpeg/png/gif/svg后缀的图片（支持多层目录迭代查找）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">optimizt <span class="sb">`</span>find . -type f -name <span class="s1">&#39;*.jpg&#39;</span><span class="sb">`</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>于是我在.bash_profile（或者其他Shell配置文件）中添加别名 + 自定义的搜索方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">yasuo</span><span class="o">=</span><span class="s1">&#39;optimizt `find . -name &#34;*.png&#34; -o -name &#34;*.jpg&#34; -o -name &#34;*.jpeg&#34; -o -name &#34;*.gif&#34; -o -name &#34;*.svg&#34;`&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个命令可以压缩当前目录下所有找到的jpg/jpeg/png/gif/svg后缀的图片（支持多层目录迭代查找）</p>
 <p>加入参数 -l 后lossless可无损压缩</p>
-<pre tabindex="0"><code>alias yasuo2='optimizt -l `find . -name &quot;*.png&quot; -o -name &quot;*.jpg&quot; -o -name &quot;*.jpeg&quot; -o -name &quot;*.gif&quot; -o -name &quot;*.svg&quot;`'
-</code></pre><p><img src="/2020-12-06/2.png" alt="压缩成功" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">alias</span> <span class="nv">yasuo2</span><span class="o">=</span><span class="s1">&#39;optimizt -l `find . -name &#34;*.png&#34; -o -name &#34;*.jpg&#34; -o -name &#34;*.jpeg&#34; -o -name &#34;*.gif&#34; -o -name &#34;*.svg&#34;`&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/2020-12-06/2.png" alt="压缩成功" /></p>
 <hr />
 <p>more:<br />
 最后推荐一波自制命令行查看天气工具 <a href="https://github.com/Llane00/llane-weather">llane-weather</a><br />

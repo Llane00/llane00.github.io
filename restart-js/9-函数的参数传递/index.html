@@ -1607,9 +1607,17 @@
 <p>那么js中的参数分为基本类型和引用类型</p>
 <p>在内存中有栈和堆两个区域，栈用于储存基本类型的数据，而堆用于存放引用类型的数据<br />
 （后续还有常量区先不讲）</p>
-<pre tabindex="0"><code>let a = 1;
-let b = {name: 'Neo', age: 25};
-</code></pre><p>以上的代码会在内存中储存数据形式大致如下：<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">25</span><span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上的代码会在内存中储存数据形式大致如下：<br />
 在栈中有：<br />
 a(值为1)<br />
 b(值为一个指针，一个指向堆中对象数据的地址假设为1000)</p>
@@ -1631,14 +1639,27 @@ b(值为一个指针，一个指向堆中对象数据的地址假设为1000)</p>
 </table>
 <hr />
 <p>例子1：</p>
-<pre tabindex="0"><code>var value = 1;
-function foo(v) {
-    v = 2;
-    console.log(v); //2
-}
-foo(value);
-console.log(value) // 1
-</code></pre><p>例子1会打印<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">v</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span> <span class="c1">//2
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">foo</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>例子1会打印<br />
 2<br />
 1</p>
 <p>foo(value) 函数开始执行时，初始化AO，然后加入形参<br />
@@ -1672,16 +1693,31 @@ console.log(value) // 1
 </table>
 <hr />
 <p>例子2:</p>
-<pre tabindex="0"><code>var obj = {
-    value: 1
-};
-function foo(o) {
-    o.value = 2;
-    console.log(o.value); //2
-}
-foo(obj);
-console.log(obj.value) // 2
-</code></pre><p>foo(obj) 函数开始执行时，初始化AO，然后加入形参<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">o</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">//2
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">foo</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div><p>foo(obj) 函数开始执行时，初始化AO，然后加入形参<br />
 <code>var o = obj</code>，把obj值的引用赋值给了o</p>
 <table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>
@@ -1702,16 +1738,31 @@ console.log(obj.value) // 2
 </tbody></table>
 <hr />
 <p>例子3:</p>
-<pre tabindex="0"><code>var obj = {
-    value: 1
-};
-function foo(o) {
-    o = 2;
-    console.log(o); //2
-}
-foo(obj);
-console.log(obj.value) // 1
-</code></pre><p>foo(o) 函数开始执行时，初始化AO，然后加入形参<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">o</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span> <span class="c1">//2
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">foo</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>foo(o) 函数开始执行时，初始化AO，然后加入形参<br />
 <code>var o = obj</code>，把obj值的引用赋值给了o</p>
 <table role="table" style="margin-bottom: 1.75rem">
 	<tbody><tr>

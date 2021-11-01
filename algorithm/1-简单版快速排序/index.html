@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-27T11:15:15+08:00",
     "dateModified": "2021-10-27T11:15:15+08:00",
     "url" : "http://llane00.github.io/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/",
-    "description": "我想知道这是为什么 \u0026ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 let pivot = array[array.length-1] let left = array.filter((item, index) =\u0026gt; item \u0026lt;= pivot \u0026amp;\u0026amp; index != …",
+    "description": "我想知道这是为什么 \u0026ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 1 2 3 let pivot = array[array.length-1] let left = array.filter((item, index) =\u0026gt; item \u0026lt;= pivot \u0026amp;\u0026amp; index …",
     "keywords": ["算法基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1601,33 +1601,74 @@
 </blockquote>
 <h2 id="快速排序从形式上为归分算法">快速排序从形式上为归分算法</h2>
 <p>1.分的核心是把数组按分界点一分为三</p>
-<pre tabindex="0"><code>let pivot = array[array.length-1]
-let left = array.filter((item, index) =&gt; item &lt;= pivot &amp;&amp; index != array.length-1)
-let right = array.filter((item, index) =&gt; item &gt; pivot)
-</code></pre><p>2.归需要合并三个部分为一个数组</p>
-<pre tabindex="0"><code>let result = [...left, pivot, ...right]
-</code></pre><p>3.最后利用递归的思想，完成算法<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&lt;=</span> <span class="nx">pivot</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">!=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&gt;</span> <span class="nx">pivot</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.归需要合并三个部分为一个数组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">left</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">right</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.最后利用递归的思想，完成算法<br />
 递归步骤：<br />
 1.数组分为3部分，left pivot right，left&lt;=pivot&lt;right<br />
 2.递归处理左边的部分<br />
 3.递归处理右边的部分<br />
 4.合并三者的结果</p>
-<pre tabindex="0"><code>function quickSort(array) {
-  let pivot = array[array.length - 1]
-  let left = array.filter((item, index) =&gt; item &lt;= pivot &amp;&amp; index != array.length-1)
-  let right = array.filter((item, index) =&gt; item &gt; pivot)
-  return [...left, pivot, ...right]
-}
-</code></pre><p>递归是调用自身，不能无限次调用下去，因此需要有递归的出口（初始条件）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&lt;=</span> <span class="nx">pivot</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">!=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&gt;</span> <span class="nx">pivot</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">left</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">right</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>递归是调用自身，不能无限次调用下去，因此需要有递归的出口（初始条件）</p>
 <p>当数组元素长度小于2时，就已经是排好序了，不用再递归了，我们完善下代码</p>
-<pre tabindex="0"><code>function quickSort(array) {
-  if (array.length &lt; 2) return array
-  let pivot = array[array.length-1]
-  let left = array.filter((item, index) =&gt; item &lt;= pivot &amp;&amp; index != array.length -1)
-  let right = array.filter((item, index) =&gt; item &gt;pivot)
-  return [...left, pivot, ...right]
-}
-</code></pre><h2 id="时间复杂度">时间复杂度</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nx">array</span>
+  <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&lt;=</span> <span class="nx">pivot</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">!=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&gt;</span><span class="nx">pivot</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">left</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">right</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="时间复杂度">时间复杂度</h2>
 <p>我之前一直对时间复杂度的log感觉很模糊，看了下面这句话才恍然大悟</p>
 <blockquote>
 <p>时间复杂度，2的64次方个有序数据二分查找也顶多循环64次</p>

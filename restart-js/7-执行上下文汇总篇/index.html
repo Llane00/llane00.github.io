@@ -1574,7 +1574,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年10月25日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;3&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;4&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1602,161 +1602,405 @@
 </blockquote>
 <p>本篇是3、4、5、6篇的汇总，会用两个例子来详细说明执行上下文的运行流程</p>
 <h2 id="例子1">例子1</h2>
-<pre tabindex="0"><code>var scope = &quot;global scope&quot;;
-function checkscope(){
-    var scope = &quot;local scope&quot;;
-    function f(){
-        return scope;
-    }
-    return f();
-}
-checkscope();
-</code></pre><hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;global scope&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;local scope&#34;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">checkscope</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>1.执行全局代码，创建全局上下文，全局上下文压入执行上下栈</p>
-<pre tabindex="0"><code>ECStack = [
-  globalContext
-]
-</code></pre><p>2.初始化全局上下文</p>
-<pre tabindex="0"><code>globalContext = {
-  VO: [global],
-  scope: [globalContext.VO],
-  this: globalContext.VO
-}
-</code></pre><p>2.初始化的同时，创建checkScope函数，checkscope函数保存作用域链到函数内部属性</p>
-<pre tabindex="0"><code>checkscope.[[scope]] = [globalContext.VO];
-</code></pre><p>3.执行checkscope函数，创建checkScope执行上下文，压入执行上下文栈</p>
-<pre tabindex="0"><code>ECStack = [
-  checkscopeContext,
-  globalContext
-]
-</code></pre><p>4.初始化checkScope执行上下文，<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.初始化全局上下文</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">globalContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">VO</span><span class="o">:</span> <span class="p">[</span><span class="nx">global</span><span class="p">],</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">],</span>
+  <span class="k">this</span><span class="o">:</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.初始化的同时，创建checkScope函数，checkscope函数保存作用域链到函数内部属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">checkscope</span><span class="p">.[[</span><span class="nx">scope</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.执行checkscope函数，创建checkScope执行上下文，压入执行上下文栈</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">checkscopeContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>4.初始化checkScope执行上下文，<br />
 4.1复制checkscope函数的内部属性[[scope]]创建作用域链<br />
 4.2用arguments创建AO活动对象，<br />
 4.3初始化活动对象，即加入函数形参，函数声明，变量声明<br />
 4.4将活动对象压入checkscope的作用域顶端</p>
-<pre tabindex="0"><code>checkscopeContext = {
-  AO: {
-    arguments: {
-      length: 0
-    },
-    scope: undefined,
-    f: reference to fucntion f(){}
-  },
-  scope: [AO, globalContext.VO],
-  this: undefined
-}
-</code></pre><p>同时f函数被创建，保存作用域链到f函数内部属性[[scope]]</p>
-<pre tabindex="0"><code>f.[[scope]] = [checkscopeContext.AO, globalContext.VO];
-</code></pre><p>5.执行f函数，创建f函数执行上下文，将其压入执行上下文栈</p>
-<pre tabindex="0"><code>ECStack = [
-  fContext,
-  checkscopeContext,
-  globalContext
-]
-</code></pre><p>6.f函数执行上下文初始化，<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">checkscopeContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">AO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="nx">scope</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">f</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="nx">fucntion</span> <span class="nx">f</span><span class="p">(){}</span>
+  <span class="p">},</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">],</span>
+  <span class="k">this</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同时f函数被创建，保存作用域链到f函数内部属性[[scope]]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">f</span><span class="p">.[[</span><span class="nx">scope</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">checkscopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>5.执行f函数，创建f函数执行上下文，将其压入执行上下文栈</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">fContext</span><span class="p">,</span>
+  <span class="nx">checkscopeContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6.f函数执行上下文初始化，<br />
 6.1复制函数[[scope]]属性创建作用域链<br />
 6.2用arguments创建活动对象<br />
 6.3舒适化活动对象，即加入形参，函数声明，变量声明<br />
 6.4将活动对象压入f作用域顶端</p>
-<pre tabindex="0"><code>fContext = {
-  AO: {
-    arguments: {
-      length: 0
-    },
-  },
-  scope: [AO, checkScopeContext.AO, globalContext.VO],
-  this: undefined
-}
-</code></pre><p>7.执行函数f，沿着作用域链找到scope的值，返回scope的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">fContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">AO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">checkScopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">],</span>
+  <span class="k">this</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>7.执行函数f，沿着作用域链找到scope的值，返回scope的值</p>
 <p>8.函数f执行完毕后，在ECStack中出栈</p>
-<pre tabindex="0"><code>ECStack.pop()
-ECStack = [
-  checkscopeContext,
-  globalContext
-]
-</code></pre><p>9.函数checkScope执行完毕后在ECStack出栈，</p>
-<pre tabindex="0"><code>ECStack.pop()
-ECStack = [
-  globalContext
-]
-</code></pre><h2 id="例子2">例子2</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+<span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">checkscopeContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>9.函数checkScope执行完毕后在ECStack出栈，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+<span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="例子2">例子2</h2>
 <p>例子2和例子很相似</p>
-<pre tabindex="0"><code>var scope = &quot;global scope&quot;;
-function checkscope(){
-    var scope = &quot;local scope&quot;;
-    function f(){
-        return scope;
-    }
-    return f;
-}
-checkscope()();
-</code></pre><hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;global scope&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;local scope&#34;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">checkscope</span><span class="p">()();</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>1.开始执行全局代码，创建全局上下文，并将其压入上下文执行栈</p>
-<pre tabindex="0"><code>ECStack = [
-  globalContext
-]
-</code></pre><p>2.初始化全局上下文</p>
-<pre tabindex="0"><code>globalContext = {
-  VO: [global],
-  scope: globalContext.VO,
-  this: globalContext.VO
-}
-</code></pre><p>2.初始化的同时创建函数checkscope，函数checkScope保存作用域链到其内部属性[[scope]]</p>
-<pre tabindex="0"><code>checkscope.[[scope]] = [globalContext.VO];
-</code></pre><p>3.执行函数checkScope，创建checkScope函数的执行上下文，并将其压入上下文执行栈</p>
-<pre tabindex="0"><code>ECStack = [
-  checkScopeContext,
-  globalContext
-]
-</code></pre><p>4.初始化checkScope执行上下文，<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.初始化全局上下文</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">globalContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">VO</span><span class="o">:</span> <span class="p">[</span><span class="nx">global</span><span class="p">],</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">,</span>
+  <span class="k">this</span><span class="o">:</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.初始化的同时创建函数checkscope，函数checkScope保存作用域链到其内部属性[[scope]]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">checkscope</span><span class="p">.[[</span><span class="nx">scope</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.执行函数checkScope，创建checkScope函数的执行上下文，并将其压入上下文执行栈</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">checkScopeContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>4.初始化checkScope执行上下文，<br />
 4.1保存函数的内部属性[[scope]]到执行上下文的作用域链<br />
 4.2根据函数的arguments创建活动对象AO<br />
 4.3初始化活动对象，即加入函数形参，函数声明，变量声明<br />
 4.4将活动对象压入checkscope作用域的顶端</p>
-<pre tabindex="0"><code>checkScopeContext = {
-  AO: {
-    arguments: {
-      length: 0
-    },
-    scope: undefined,
-    f: reference to fucntion f(){}
-  },
-  scope: [AO, globalContext],
-  this: undefined
-}
-</code></pre><p>4.同时创建函数f，保存作用域链到f函数内部属性[[scope]]</p>
-<pre tabindex="0"><code>f.[[scope]] = [checkscopeContext.AO, globalContext.VO];
-</code></pre><p>5.沿着作用域找到函数f的指向，返回函数f的指向，函数checkScope执行完毕后在ECStack出栈</p>
-<pre tabindex="0"><code>ECStack.pop()
-ECStack = [
-  globalContext
-]
-</code></pre><p>6.执行checkScope返回的函数f，创建函数f的执行上下文，将其压入执行上下文栈</p>
-<pre tabindex="0"><code>ECStack = [
-  fContext,
-  globalContext
-]
-</code></pre><p>7.初始化f的执行上下文fContext<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">checkScopeContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">AO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">},</span>
+    <span class="nx">scope</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+    <span class="nx">f</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="nx">fucntion</span> <span class="nx">f</span><span class="p">(){}</span>
+  <span class="p">},</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">],</span>
+  <span class="k">this</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>4.同时创建函数f，保存作用域链到f函数内部属性[[scope]]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">f</span><span class="p">.[[</span><span class="nx">scope</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">checkscopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>5.沿着作用域找到函数f的指向，返回函数f的指向，函数checkScope执行完毕后在ECStack出栈</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+<span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>6.执行checkScope返回的函数f，创建函数f的执行上下文，将其压入执行上下文栈</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">fContext</span><span class="p">,</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>7.初始化f的执行上下文fContext<br />
 7.1复制函数内部属性scope到函数上下文的作用域链<br />
 7.2根据函数的arguments创建活动对象AO<br />
 7.3初始化活动对象，即加入函数形参，函数声明，变量声明<br />
 7.4将活动对象压入函数上下文作用域链的顶端</p>
-<pre tabindex="0"><code>fContext = {
-  AO: {
-    arguments: {
-      length: 0
-    }
-  }
-  scope: [AO, checkScopeContext.AO, globalContext]
-  this: undefined
-}
-</code></pre><p>8.执行函数f，沿着作用域链找到scope的值（这里是在checkScopeContext.AO里找到scope的，即便checkScopeContext.AO已经在ECStack中出栈，这就是闭包的原理），返回scope的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">fContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">AO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">checkScopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">]</span>
+  <span class="k">this</span><span class="o">:</span> <span class="kc">undefined</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>8.执行函数f，沿着作用域链找到scope的值（这里是在checkScopeContext.AO里找到scope的，即便checkScopeContext.AO已经在ECStack中出栈，这就是闭包的原理），返回scope的值</p>
 <p>7.函数f执行完毕后，f的执行上下文从执行上下文栈中弹出</p>
-<pre tabindex="0"><code>ECStack.pop()
-ECStack = [
-  globalContext
-]
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">ECStack</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
+<span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">globalContext</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     

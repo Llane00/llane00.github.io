@@ -1608,93 +1608,191 @@
 2.在代码中引用了自由变量</p>
 <hr />
 <p>分析一个例子：</p>
-<pre tabindex="0"><code>var scope = &quot;global scope&quot;;
-function checkscope(){
-    var scope = &quot;local scope&quot;;
-    function f(){
-        return scope;
-    }
-    return f;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;global scope&#34;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkscope</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&#34;local scope&#34;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+        <span class="k">return</span> <span class="nx">scope</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">;</span>
+<span class="p">}</span>
 
-var foo = checkscope();
-foo(); //这里会打印local scope
-</code></pre><p>例子中的函数f在父函数checkScope中，<br />
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">checkscope</span><span class="p">();</span>
+<span class="nx">foo</span><span class="p">();</span> <span class="c1">//这里会打印local scope
+</span></code></pre></td></tr></table>
+</div>
+</div><p>例子中的函数f在父函数checkScope中，<br />
 由于父函数会return f且在之后赋值给foo调用了，所以即使父函数checkScope执行结束，函数f也存在<br />
 函数f中引用了父函数中的变量scope所以函数f符合闭包的定义</p>
 <p>通过之前的文章，我们其实知道更深的原因了，就是函数f在创建的时候就根据上下文保存了一个作用域链<br />
 在函数f初始化执行上下文的时候复制了这个作用域链</p>
-<pre tabindex="0"><code>f.[[scope]] = [checkscopeContext.AO, globalContext.VO]
-fContext = {
-  scope: [AO, checkscopeContext.AO, globalContext.VO]
-}
-</code></pre><p>在沿着作用域链查找scope变量时，AO中没有，而继续查checkscopeContext.AO时找到了scope变量（值为local scope）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">f</span><span class="p">.[[</span><span class="nx">scope</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">checkscopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">]</span>
+<span class="nx">fContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">checkscopeContext</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在沿着作用域链查找scope变量时，AO中没有，而继续查checkscopeContext.AO时找到了scope变量（值为local scope）</p>
 <hr />
 <p>例子2:</p>
-<pre tabindex="0"><code>var data = [];
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
 
-for (var i = 0; i &lt; 3; i++) {
-  data[i] = function () {
-    console.log(i);
-  };
-}
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
 
-data[0]();
-data[1]();
-data[2]();
-</code></pre><p>这道题是非常经典的闭包问题，当时作为初学者的我无法理解真正的原因最后只能硬记下结论<br />
+<span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]();</span>
+<span class="nx">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]();</span>
+<span class="nx">data</span><span class="p">[</span><span class="mi">2</span><span class="p">]();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这道题是非常经典的闭包问题，当时作为初学者的我无法理解真正的原因最后只能硬记下结论<br />
 现在我们用作用域链和执行上下文的知识点就可以拨开云雾了</p>
 <p>首先for不是函数for 中var声明的i其实是全局变量，<br />
 for循环执行完后的情况是这样的</p>
-<pre tabindex="0"><code>globalContext = {
-  VO: {
-    data: [
-      0: reference to function(){console.log(i)}, //这个匿名函数的内部属性[[scope]]=[globalContext.VO]
-      1: reference to function(){console.log(i)}, //这个匿名函数的内部属性[[scope]]=[globalContext.VO]
-      2: reference to function(){console.log(i)}, //这个匿名函数的内部属性[[scope]]=[globalContext.VO]
-    ],
-    i: 3
-  }
-}
-</code></pre><p>函数的内部代码如果只是创建是不会去执行的，匿名函数内部还是变量i的指向状态，<br />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">globalContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">VO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
+      <span class="mi">0</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="kd">function</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)},</span> <span class="c1">//这个匿名函数的内部属性[[scope]]=[globalContext.VO]
+</span><span class="c1"></span>      <span class="mi">1</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="kd">function</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)},</span> <span class="c1">//这个匿名函数的内部属性[[scope]]=[globalContext.VO]
+</span><span class="c1"></span>      <span class="mi">2</span><span class="o">:</span> <span class="nx">reference</span> <span class="nx">to</span> <span class="kd">function</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)},</span> <span class="c1">//这个匿名函数的内部属性[[scope]]=[globalContext.VO]
+</span><span class="c1"></span>    <span class="p">],</span>
+    <span class="nx">i</span><span class="o">:</span> <span class="mi">3</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>函数的内部代码如果只是创建是不会去执行的，匿名函数内部还是变量i的指向状态，<br />
 在之后真正开始执行的时候data<a href="">0</a>,开始创建AO，完善执行上下文的作用域链scope=[AO, globalContext.VO]<br />
 AO中没有i，就找到了globalContext中的i，而此时globalContext中的i已经是3了，<br />
 所以三个匿名函数最后都会打印3</p>
 <p>通常要解决这个问题会用一个新的匿名函数形成闭包或者用let<br />
 我们想在data[0]的执行上下文作用域链接里塞上真正期望的i，scope=[AO, xContext.AO, globalContext.VO]<br />
 xContext.AO中存有不同的i</p>
-<pre tabindex="0"><code>var data = []
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[]</span>
 
-for (var i = 0; i &lt; 3; i++) {
-  data[i] = (function(i){
-    return function(){
-      console.log(i)
-    }
-  })(i);
-}
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">){</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">})(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
 
-data[0]();
-data[1]();
-data[2]();
-</code></pre><p>(functionx(i){})(i)相当于</p>
+<span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]();</span>
+<span class="nx">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]();</span>
+<span class="nx">data</span><span class="p">[</span><span class="mi">2</span><span class="p">]();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(functionx(i){})(i)相当于</p>
 <p>function x(i){}<br />
 x(i)</p>
 <p>这个匿名函数会在data[0]的执行上下文的作用域中插入，<br />
 此时data[0]在执行时，作用域变为</p>
-<pre tabindex="0"><code>data[0]Context = {
-  scope: [AO, 匿名函数Context.AO, globalContext.VO]
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="nx">Context</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">scope</span><span class="o">:</span> <span class="p">[</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">匿名函数Context</span><span class="p">.</span><span class="nx">AO</span><span class="p">,</span> <span class="nx">globalContext</span><span class="p">.</span><span class="nx">VO</span><span class="p">]</span>
+<span class="p">}</span>
 
-匿名函数Context = {
-  AO: {
-    arguments: {
-      0:0,
-      length: 1
-    },
-    i: 0
-  }
-}
-</code></pre><p>data[0]Context.AO中没有i值，沿着作用域找到了匿名函数Context中的i<br />
+<span class="nx">匿名函数Context</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">AO</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arguments</span><span class="o">:</span> <span class="p">{</span>
+      <span class="mi">0</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nx">i</span><span class="o">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>data[0]Context.AO中没有i值，沿着作用域找到了匿名函数Context中的i<br />
 在for循环的时候匿名函数立即执行了才在AO中保留了不同的i，如果没有立即执行也只是保留了一个指向i的值</p>
 
     </article>

@@ -1606,132 +1606,290 @@
 1.返回一个函数<br />
 2.可以传入参数</p>
 <p>例子1:</p>
-<pre tabindex="0"><code>var foo = {
-  value: 1
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span>
 
-function bar(){
-  console.log(this.value)
-}
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+<span class="p">}</span>
 
-var bindFoo = bar.bind(foo)
-bindFoo() //1
-</code></pre><h2 id="第一版">第一版</h2>
-<pre tabindex="0"><code>function myBind(context) {
-  var self = this;
-  return function() {
-    return self.apply(context)
-  }
-}
-</code></pre><hr />
+<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">)</span>
+<span class="nx">bindFoo</span><span class="p">()</span> <span class="c1">//1
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="第一版">第一版</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>刚才的定义中提到bind还支持传参数来看个例子：</p>
-<pre tabindex="0"><code>var foo = {
-    value: 1
-};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
 
-function bar(name, age) {
-    console.log(this.value);
-    console.log(name);
-    console.log(age);
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
 
-}
+<span class="p">}</span>
 
-var bindFoo = bar.bind(foo, 'daisy');
-bindFoo('18');
-// 1
-// daisy
-// 18
-</code></pre><h2 id="第二版">第二版</h2>
-<pre tabindex="0"><code>function myBind(context) {
-  var self = this;
-  var args = Array.prototype.slice.call(arguments, 1)
+<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">);</span>
+<span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">);</span>
+<span class="c1">// 1
+</span><span class="c1">// daisy
+</span><span class="c1">// 18
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="第二版">第二版</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-  return function() {
-    var bindArgs = Array.prototype.slice.call(arguments)
-    return self.apply(context, args.concat(bindArgs))
-  }
-}
-</code></pre><hr />
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>此时到了最难的部分，bind还有一个特性：<br />
 一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
 <p>来看例子：</p>
-<pre tabindex="0"><code>var value = 2;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
-var foo = {
-    value: 1
-};
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
 
-function bar(name, age) {
-    this.habit = 'shopping';
-    console.log(this.value);
-    console.log(name);
-    console.log(age);
-}
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">habit</span> <span class="o">=</span> <span class="s1">&#39;shopping&#39;</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+<span class="p">}</span>
 
-bar.prototype.friend = 'kevin';
+<span class="nx">bar</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">friend</span> <span class="o">=</span> <span class="s1">&#39;kevin&#39;</span><span class="p">;</span>
 
-var bindFoo = bar.bind(foo, 'daisy');
+<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">);</span>
 
-var obj = new bindFoo('18');
-// undefined 提供的this值被忽略
-// daisy 调用bind时的参数被一起提供了
-// 18
-console.log(obj.habit);
-console.log(obj.friend);
-// shopping
-// kevin
-</code></pre><h2 id="第三版">第三版</h2>
-<pre tabindex="0"><code>function myBind(context) {
-  var self = this;
-  var args = Array.prototype.slice.call(arguments, 1)
-  var fBound = function(){
-    var bindArgs = Array.prototype.slice.call(arguments)
-    return self.apply(this instanceOf fBound? this : context, args.concat(bindArgs))
-  }
-  fBound.prototype = this.prototype;
-  return fBound;
-}
-</code></pre><p>但是在这个写法中，我们直接将 fBound.prototype = this.prototype，<br />
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">);</span>
+<span class="c1">// undefined 提供的this值被忽略
+</span><span class="c1">// daisy 调用bind时的参数被一起提供了
+</span><span class="c1">// 18
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">habit</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">friend</span><span class="p">);</span>
+<span class="c1">// shopping
+</span><span class="c1">// kevin
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="第三版">第三版</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">fBound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span> <span class="nx">instanceOf</span> <span class="nx">fBound</span><span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
+  <span class="p">}</span>
+  <span class="nx">fBound</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">fBound</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是在这个写法中，我们直接将 fBound.prototype = this.prototype，<br />
 我们直接修改 fBound.prototype 的时候，也会直接修改绑定函数的 prototype。<br />
 这个时候，我们可以通过一个空函数来进行中转：</p>
-<pre tabindex="0"><code>function myBind(context) {
-  var self = this;
-  var args = Array.prototype.slice.call(arguments, 1)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-  var fNop = function(){}
-  var fBound = function(){
-    var bindArgs = Array.prototype.slice.call(arguments)
-    return self.apply(this instanceOf fNop? this : context, args.concat(bindArgs))
-  }
+  <span class="kd">var</span> <span class="nx">fNop</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){}</span>
+  <span class="kd">var</span> <span class="nx">fBound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span> <span class="nx">instanceOf</span> <span class="nx">fNop</span><span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
+  <span class="p">}</span>
   
 
-  fNop.prototype = this.prototype;
-  fBound.prototype = new fNop()
-  return fBound;
-}
-</code></pre><hr />
+  <span class="nx">fNop</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+  <span class="nx">fBound</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">fNop</span><span class="p">()</span>
+  <span class="k">return</span> <span class="nx">fBound</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 <p>以后要在生产环境中使用时，我们再补上对参数和函数名字的判断</p>
 <h2 id="第四版">第四版</h2>
-<pre tabindex="0"><code>Function.prototype.bind = Function.prototype.bind || function(context) {
-  if (typeof this !== &quot;function&quot;) {
-    throw new Error(this + &quot;.bind is not a function!&quot;)
-  }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bind</span> <span class="o">=</span> <span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bind</span> <span class="o">||</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="k">this</span> <span class="o">!==</span> <span class="s2">&#34;function&#34;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="k">this</span> <span class="o">+</span> <span class="s2">&#34;.bind is not a function!&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
 
-  var self = this;
-  var args = Array.prototype.slice.call(arguments, 1);
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-  var fNop = function(){}
+  <span class="kd">var</span> <span class="nx">fNop</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){}</span>
 
-  var fBound = function() {
-    var bindArgs = Array.prototype.slice.call(arguments)
-    return self.apply(this instanceOf fNop? this : context, args.concat(bindArgs))
-  }
+  <span class="kd">var</span> <span class="nx">fBound</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span> <span class="nx">instanceOf</span> <span class="nx">fNop</span><span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
+  <span class="p">}</span>
 
-  fNop.prototype = this.prototype;
-  fBound.prototype = new fNop();
-  return fBound;
-}
-</code></pre>
+  <span class="nx">fNop</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+  <span class="nx">fBound</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">fNop</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nx">fBound</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     

@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-27T18:55:39+08:00",
     "dateModified": "2021-10-27T18:55:39+08:00",
     "url" : "http://llane00.github.io/restart-js/10-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0call%E5%92%8Capply/",
-    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 call使用的例子： var foo = { value: 1 }; function bar(name, age) { console.log(name) console.log(age) console.log(this.value); } bar.call(foo, …",
+    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 call使用的例子： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 var foo = { value: 1 }; function bar(name, age) { console.log(name) console.log(age) …",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1601,60 +1601,126 @@
 加入了个人的解读和练习题的解答</p>
 </blockquote>
 <p>call使用的例子：</p>
-<pre tabindex="0"><code>var foo = {
-    value: 1
-};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">};</span>
 
-function bar(name, age) {
-    console.log(name)
-    console.log(age)
-    console.log(this.value);
-}
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
 
-bar.call(foo, 'kevin', 18);
-// kevin
-// 18
-// 1
-</code></pre><p>用js模拟call：</p>
-<pre tabindex="0"><code>Function.prototype.myCall = function (newContext) {
-  var context = Object(newContext) || window; //如果传的对象是null，默认指向window
-  context.fn = this; //将当前方法作为对象的一个属性
-  
-  //梳理一下参数，从第二个参数开始(下标为1)
-  var args = [];
-  for(var i = 1, len = arguments.length; i &lt; len; i++) {
-    args.push('arguments[' + i + ']');
-  }
+<span class="nx">bar</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;kevin&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+<span class="c1">// kevin
+</span><span class="c1">// 18
+</span><span class="c1">// 1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>用js模拟call：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myCall</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newContext</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">(</span><span class="nx">newContext</span><span class="p">)</span> <span class="o">||</span> <span class="nb">window</span><span class="p">;</span> <span class="c1">//如果传的对象是null，默认指向window
+</span><span class="c1"></span>  <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span> <span class="c1">//将当前方法作为对象的一个属性
+</span><span class="c1"></span>  
+  <span class="c1">//梳理一下参数，从第二个参数开始(下标为1)
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">args</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;arguments[&#39;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  //执行方法
-  var result = eval('context.fn(' + args + ')');
-  delete context.fn; //删除临时属性方法
-  return result;
-}
-</code></pre><p>apply和call非常类似，两者的区别只是接受的参数形式不同：<br />
+  <span class="c1">//执行方法
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;context.fn(&#39;</span> <span class="o">+</span> <span class="nx">args</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+  <span class="k">delete</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">;</span> <span class="c1">//删除临时属性方法
+</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>apply和call非常类似，两者的区别只是接受的参数形式不同：<br />
 bar.call(foo, &lsquo;kevin&rsquo;, 18)<br />
 bar.apply(foo, [&lsquo;kevin&rsquo;, 18])</p>
 <p>用js模拟apply:</p>
-<pre tabindex="0"><code>Function.prototype.myApply = function (newContext, arr) {
-  var context = Object(newContext) || window; //如果传的对象是null，默认指向window
-  context.fn = this; //将当前方法作为对象的一个属性
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myApply</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newContext</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">(</span><span class="nx">newContext</span><span class="p">)</span> <span class="o">||</span> <span class="nb">window</span><span class="p">;</span> <span class="c1">//如果传的对象是null，默认指向window
+</span><span class="c1"></span>  <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span> <span class="c1">//将当前方法作为对象的一个属性
+</span><span class="c1"></span>
+  <span class="c1">//梳理参数，这次从下标0开始，并执行方法
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">result</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">args</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;arr[&#39;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;context.fn(&#39;</span> <span class="o">+</span> <span class="nx">args</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  //梳理参数，这次从下标0开始，并执行方法
-  var result;
-  if (!arr) {
-    result = context.fn()
-  } else {
-    var args = [];
-    for(var i = 0, len = arr.length; i &lt; len; i++) {
-      args.push('arr[' + i + ']')
-    }
-    result = eval('context.fn(' + args + ')');
-  }
-
-  delete context.fn; //删除临时属性方法
-  return result;
-}
-</code></pre>
+  <span class="k">delete</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">;</span> <span class="c1">//删除临时属性方法
+</span><span class="c1"></span>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
