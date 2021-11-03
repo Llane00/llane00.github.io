@@ -14,11 +14,51 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 30 Oct 2021 17:13:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Nov 2021 09:54:18 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>从头学习js-15-继承</title>
+        <link>http://llane00.github.io/restart-js/15-%E7%BB%A7%E6%89%BF/</link>
+        <pubDate>Wed, 03 Nov 2021 09:54:18 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 03 Nov 2021 09:54:18 +0800</atom:modified>
+        <guid>http://llane00.github.io/restart-js/15-%E7%BB%A7%E6%89%BF/</guid>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 本文讲解javascript的各种继承和优缺点 1.原型链继承 1 2 3 4 5 6 7 8</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>从头学习js</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>从头学习js-14-创建对象</title>

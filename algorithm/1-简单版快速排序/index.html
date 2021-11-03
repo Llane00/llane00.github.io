@@ -1349,7 +1349,7 @@
 <meta property="og:type" content="article">
 <meta property="og:description" content="Llane00&#39;s Blog.">
 
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.89.0" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-27T11:15:15+08:00",
     "dateModified": "2021-10-27T11:15:15+08:00",
     "url" : "http://llane00.github.io/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/",
-    "description": "我想知道这是为什么 \u0026ndash;费曼 快速排序从形式上为归分算法 1.分的核心是把数组按分界点一分为三 1 2 3 let pivot = array[array.length-1] let left = array.filter((item, index) =\u0026gt; item \u0026lt;= pivot \u0026amp;\u0026amp; index …",
+    "description": "我想知道这是为什么 \u0026ndash;费曼 快速排序从形式上为归分算法 1.分 核心是把数组按分界点一分为三 1 2 3 let pivot = array[array.length-1] let left = array.filter((item, index) =\u0026gt; item \u0026lt;= pivot \u0026amp;\u0026amp; index …",
     "keywords": ["算法基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1600,7 +1600,7 @@
 <p>我想知道这是为什么 &ndash;费曼</p>
 </blockquote>
 <h2 id="快速排序从形式上为归分算法">快速排序从形式上为归分算法</h2>
-<p>1.分的核心是把数组按分界点一分为三</p>
+<p>1.分 核心是把数组按分界点一分为三</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1613,7 +1613,7 @@
 <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&gt;</span> <span class="nx">pivot</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>2.归需要合并三个部分为一个数组</p>
+</div><p>2.归 需要合并三个部分为一个数组</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1664,7 +1664,7 @@
   <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
   <span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&lt;=</span> <span class="nx">pivot</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">!=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
   <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span> <span class="o">&gt;</span><span class="nx">pivot</span><span class="p">)</span>
-  <span class="k">return</span> <span class="p">[...</span><span class="nx">left</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">right</span><span class="p">]</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nx">qucikSort</span><span class="p">(</span><span class="nx">left</span><span class="p">),</span> <span class="nx">pivot</span><span class="p">,</span> <span class="p">...</span><span class="nx">quickSort</span><span class="p">(</span><span class="nx">right</span><span class="p">)]</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
