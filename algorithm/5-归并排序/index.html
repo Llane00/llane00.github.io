@@ -1376,7 +1376,7 @@
     "datePublished": "2021-11-03T15:41:41+08:00",
     "dateModified": "2021-11-03T15:41:41+08:00",
     "url" : "http://llane00.github.io/algorithm/5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/",
-    "description": "我想知道这是为什么 \u0026ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好没一部分，最后合并 这个算法",
+    "description": "我想知道这是为什么 \u0026ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好没一部分，最后合并 并 这个算",
     "keywords": ["算法基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1601,8 +1601,8 @@
 </blockquote>
 <p>《归并》指的是递归+合并，是典型的分而治之算法</p>
 <p>把一个数组一分为二，递归地排序好没一部分，最后合并</p>
-<p>这个算法的核心点是如何合并两个各自已经排好序的数组</p>
 <h2 id="并">并</h2>
+<p>这个算法的核心点是如何合并两个各自已经排好序的数组，所以先从合并开始</p>
 <p>两权相较取其轻</p>
 <p>数组A 有一个指针i<br />
 数组B 有一个指针j<br />
@@ -1641,15 +1641,27 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">//1,2,3,4,6,6,9
 </span></code></pre></td></tr></table>
 </div>
-</div><p>仔细看result里还漏了right里的10和11，因为left的数字都已经放到result里了，i==left.length</p>
+</div><p>仔细看result里还漏了right里的10和11，因为left的数字都已经放到result里了，i==left.length，循环就跳出了</p>
 <p>所有还需要处理这种情况</p>
-<pre tabindex="0"><code>if (i&lt;left.length) {
-  result.push(...left.slice(i))
-}
-if (j&lt;right.length) {
-  result.push(...right.slice(j))
-}
-</code></pre><p>为了清晰表达二者谁都可能剩余，这里没有直接使用if&hellip;else。事实上不会出现二者都有剩余情况的（while循环保证的）。另外，这里使用了数组相关API（concat也可以），也可以直接使用循环来做。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">left</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">j</span><span class="o">&lt;</span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">right</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">j</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>为了清晰表达二者谁都可能剩余，这里没有直接使用if&hellip;else。事实上不会出现二者都有剩余情况的（while循环保证的）。另外，这里使用了数组相关API（concat也可以），也可以直接使用循环来做。</p>
 <h2 id="分">分</h2>
 <p>把一个数组一分为二</p>
 <div class="highlight"><div class="chroma">
@@ -1659,8 +1671,8 @@ if (j&lt;right.length) {
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">middlePoint</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">middle</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">middlePoint</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//length可能为奇数，向下取整
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">middle</span><span class="p">)</span>
 <span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">middle</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -1688,8 +1700,8 @@ if (j&lt;right.length) {
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>递归的出口是</p>
-<p>当数组元素个数小于2时，就已经是排好序的不用再分了</p>
+</div><p>这里递归的出口是<br />
+当数组元素个数小于2时，就已经是排好序的不用再分了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1703,6 +1715,7 @@ if (j&lt;right.length) {
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<p>下面是完整代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1778,16 +1791,16 @@ if (j&lt;right.length) {
 </code></pre></td></tr></table>
 </div>
 </div><hr />
-<h3 id="复杂度">复杂度</h3>
+<h2 id="复杂度">复杂度</h2>
 <p>归并排序需要额外空间，空间复杂度为O(n)，不是本地排序，相等元素是不会交换前后顺序，因而是稳定排序。<br />
 时间复杂度为O(nlogn)，是比较优秀的算法</p>
 <hr />
 <p>我创建了一个集合jest可以测试算法的靶场项目：<br />
 <a href="https://github.com/Llane00/algorithm-range-tests">https://github.com/Llane00/algorithm-range-tests</a><br />
-文章将同步文章中的代码到这个项目下</p>
+将同步文章中的代码到这个项目下</p>
 <p>使用vscode的读者可以安装拓展插件jest，这个插件可以自动检测test文件自动运行，非常方便。</p>
 <hr />
-<p>感谢老姚的文章 <a href="https://juejin.cn/post/6844903937242300430">原文：手写算法并记住它：归并排序</a></p>
+<p>感谢老姚的文章 <a href="https://juejin.cn/post/6844903937242300430">手写算法并记住它：归并排序</a></p>
 
     </article>
     
@@ -2160,6 +2173,13 @@ if (j&lt;right.length) {
     
     <div class="grow"></div>
     
+      <a href="http://llane00.github.io/algorithm/6-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%AE%8C%E6%95%B4%E7%89%88/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">菜鸟学算法-6-快速排序完整版</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
+    
   
 </nav>
     
@@ -2518,11 +2538,8 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li><a href="#并">并</a></li>
     <li><a href="#分">分</a></li>
-    <li><a href="#递归">递归</a>
-      <ul>
-        <li><a href="#复杂度">复杂度</a></li>
-      </ul>
-    </li>
+    <li><a href="#递归">递归</a></li>
+    <li><a href="#复杂度">复杂度</a></li>
   </ul>
 </nav>
   </div>
