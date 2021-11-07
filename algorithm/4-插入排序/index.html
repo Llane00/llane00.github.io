@@ -1574,7 +1574,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年11月02日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;1&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1623,22 +1623,24 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">insertionSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">lenth</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
-    <span class="k">while</span><span class="p">(</span><span class="nx">j</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-      <span class="nx">j</span><span class="o">--</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span>
+    <span class="kd">let</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+      <span class="nx">j</span><span class="o">--</span>
     <span class="p">}</span>
-    <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">target</span><span class="p">;</span>
+    <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">target</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">array</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>我创建了一个集合jest可以测试算法的靶场项目：<br />
+</div><h2 id="复杂度--总结">复杂度 &amp;&amp; 总结</h2>
+<p>插入排序不需要额外空间，是本地排序，相等元素是不会交换前后顺序，因而也是稳定排序，时间复杂度为 O(n^2)，适用于少量数据排序。相比冒泡排序和选择排序，插入排序的使用相对多一些。因为前两者是交换排序，本质上需要 3 次原子操作的。</p>
+<p>我创建了一个集合 jest 可以测试算法的靶场项目：<br />
 <a href="https://github.com/Llane00/algorithm-range-tests">https://github.com/Llane00/algorithm-range-tests</a><br />
 后续的文章将同步代码到这个项目下</p>
-<p>使用vscode的读者可以安装拓展插件jest，这个插件可以自动检测test文件自动运行，非常方便。</p>
+<p>使用 vscode 的读者可以安装拓展插件 jest，这个插件可以自动检测 test 文件自动运行，非常方便。</p>
 <hr />
 <p>感谢老姚的文章 <a href="https://juejin.cn/post/6844903936877395982">手写算法并记住它：插入排序</a></p>
 
@@ -2374,7 +2376,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#复杂度--总结">复杂度 &amp;&amp; 总结</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 
