@@ -1525,14 +1525,14 @@
         
         
           
-        
-          
           
             
               
                 <a href="http://llane00.github.io/algorithm/6-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%AE%8C%E6%95%B4%E7%89%88/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
               
             
+          
+        
           
         
       
@@ -1636,7 +1636,7 @@
       <blockquote>
 <p>我想知道这是为什么 &ndash;费曼</p>
 </blockquote>
-<p>在菜鸟算法<a href="http://jetdream.xyz/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">第一篇</a>中我们学习了简易版的快速排序，本篇介绍的是完整版的快速排序，马上你就知道简易版的有多屑！</p>
+<p>在菜鸟算法<a href="https://jetdream.xyz/algorithm/1-%E7%AE%80%E5%8D%95%E7%89%88%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">第一篇</a>中我们学习了简易版的快速排序，本篇介绍的是完整版的快速排序，马上你就知道简易版的有多屑！</p>
 <p>相对于第五篇中的归并排序，快速排序完整版从原理是可以称为归分排序</p>
 <p>具体过程：<br />
 选取最后一个元素为分界点，便利数组找到小于等于分界点的元素，然后往数组前面交换<br />
@@ -1658,16 +1658,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
-<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//这是左边部分最后一位的index
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">//这是左边部分最后一位的index
 </span><span class="c1"></span><span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="c1">//交换array[i] 到最前面
-</span><span class="c1"></span>    <span class="nx">j</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">;[</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="c1">//交换array[i] 到最前面
+</span><span class="c1"></span>    <span class="nx">j</span><span class="o">++</span>
   <span class="p">}</span>
 <span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span> <span class="c1">//[2, 4, 1, 6, 3, 5, 7, 9, 8] 小于等于分界点所以分界点自己也交换位置到中间了
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="c1">//[2, 4, 1, 6, 3, 5, 7, 9, 8] 小于等于分界点所以分界点自己也交换位置到中间了
 </span></code></pre></td></tr></table>
 </div>
 </div><p>我们将其封装为函数</p>
@@ -1689,21 +1689,18 @@
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">partition</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">start</span>
   <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">end</span><span class="p">]</span>
-  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">pivot</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">start</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">pivot</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
-      <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span>
+      <span class="p">;[</span><span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span>
       <span class="nx">j</span><span class="o">++</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//减去for循环最后多加的一次，返回的是分界点交换到中间位置后的index
+  <span class="k">return</span> <span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1">//减去for循环最后多加的一次，返回的是分界点交换到中间位置后的index
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="递归">递归</h2>
-<p>回忆一下在简易版里的递归步骤：<br />
-1.将数组分为三部分<br />
-2.递归处理左边的部分<br />
-3.递归处理右边的部分</p>
+<p>回忆一下在简易版里的递归步骤： 1.将数组分为三部分 2.递归处理左边的部分 3.递归处理右边的部分</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1714,15 +1711,15 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">pivotIndex</span> <span class="o">=</span> <span class="nx">partition</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">);</span>
-  <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">pivotIndex</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-  <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">pivotIndex</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">pivotIndex</span> <span class="o">=</span> <span class="nx">partition</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
+  <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span><span class="p">,</span> <span class="nx">pivotIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">pivotIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span>
   <span class="k">return</span> <span class="nx">array</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>递归的出口是，当数组元素小于2就不用递归了<br />
+</div><p>递归的出口是，当数组元素小于 2 就不用递归了<br />
 即：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1737,7 +1734,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">end</span> <span class="o">-</span> <span class="nx">start</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">array</span>
   <span class="p">}</span>
@@ -1749,8 +1746,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="复杂度">复杂度</h2>
-<p>快速排序的时间复杂度平均是O(nlogn)，在最坏的情况下，去排序一个已经排好序的数组，时间复杂度会提升至O(n^2)</p>
-<p>所以partition方法是可以优化的，常见策略有选中间、随机选、三选一等。假如这里我们随机选一个分区点，再与最后的元素交换，就能大概率避免最坏情形的出现。</p>
+<p>快速排序的时间复杂度平均是 O(nlogn)，在最坏的情况下，去排序一个已经排好序的数组，时间复杂度会提升至 O(n^2)</p>
+<p>所以 partition 方法是可以优化的，常见策略有选中间、随机选、三选一等。假如这里我们随机选一个分区点，再与最后的元素交换，就能大概率避免最坏情形的出现。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1765,12 +1762,12 @@
 <span class="kd">let</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">array</span><span class="p">[</span><span class="nx">end</span><span class="p">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>由于是原地排序，所以没有空间复杂度，但是递归需要调用栈，所以总体的空间复杂度为O(logn)，这里相较于简单版的快速排序的空间复杂度O(nlogn)是有优化的</p>
+</div><p>由于是原地排序，所以没有空间复杂度，但是递归需要调用栈，所以总体的空间复杂度为 O(logn)，这里相较于简单版的快速排序的空间复杂度 O(nlogn)是有优化的</p>
 <hr />
-<p>我创建了一个集合jest可以测试算法的靶场项目：<br />
+<p>我创建了一个集合 jest 可以测试算法的靶场项目：<br />
 <a href="https://github.com/Llane00/algorithm-range-tests">https://github.com/Llane00/algorithm-range-tests</a><br />
 将同步文章中的代码到这个项目下</p>
-<p>使用vscode的读者可以安装拓展插件jest，这个插件可以自动检测test文件自动运行，非常方便。</p>
+<p>使用 vscode 的读者可以安装拓展插件 jest，这个插件可以自动检测 test 文件自动运行，非常方便。</p>
 <hr />
 <p>感谢老姚的文章 <a href="https://juejin.cn/post/6844903937242300430">手写算法并记住它：快速排序（最易理解版）</a></p>
 
@@ -2166,8 +2163,8 @@
     clientID: '7199140576264bcbff51',
     clientSecret: 'dca74d2462fe5834339a729d5f842c902f77c381',
     repo: 'blogtalk',
-    owner: '14214967',
-    admin: ['14214967'],
+    owner: 'Llane00',
+    admin: ['Llane00'],
     body: decodeURI(location.href)
   });
   gitalk.render('gitalk-container');
@@ -3132,14 +3129,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/algorithm/6-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%AE%8C%E6%95%B4%E7%89%88/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     

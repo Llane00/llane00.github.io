@@ -187,7 +187,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 04 Nov 2021 10:21:52 +0800</atom:modified>
         <guid>http://llane00.github.io/restart-js/16-%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B2%BE%E5%BA%A6/</guid>
-        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 关于浮点数精度导致js的计算错误问题，我之前在Js大数相加有提到过，那这篇文</description>
+        <description>这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 关于浮点数精度导致 js 的计算错误问题，我之前在Js 大数相加有提到过，那这篇文章</description>
         
         <dc:creator>Llane00</dc:creator>
         
