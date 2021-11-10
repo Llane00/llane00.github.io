@@ -14,11 +14,29 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 09 Nov 2021 10:35:07 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Nov 2021 16:53:45 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>技术团队评价</title>
+        <link>http://llane00.github.io/posts/%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%E8%AF%84%E4%BB%B7/</link>
+        <pubDate>Wed, 10 Nov 2021 16:53:45 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 10 Nov 2021 16:53:45 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%E8%AF%84%E4%BB%B7/</guid>
+        <description>这篇文章来自 StackOverFlow 的创始人 Joel 在 20 年前写下的一篇文章原文 现在我翻译成中文 你可以用 13 个问题来衡量你的技术团队 分数评估： &amp;gt;= 10 优秀 &amp;gt;= 7 还可以 &amp;gt;= 5 需要加强</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>读书笔记《图解HTTP》</title>
