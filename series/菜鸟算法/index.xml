@@ -267,7 +267,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 29 Oct 2021 11:43:27 +0800</atom:modified>
         <guid>http://llane00.github.io/algorithm/3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
-        <description>我想知道这是为什么 &amp;ndash;费曼 选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面 5 4 3 2 1 第一次遍历发现最小的是1 把5和1</description>
+        <description>我想知道这是为什么 &amp;ndash;费曼 选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面 有点像从小到大，依次找到每个位置上正确的数</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -307,7 +307,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 28 Oct 2021 13:15:12 +0800</atom:modified>
         <guid>http://llane00.github.io/algorithm/2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
-        <description>我想知道这是为什么 &amp;ndash;费曼 冒泡排序我想是大部分人接触的第一个排序算法，原理也很形象， 每一次轮询都会将最大（小）的数字通过一个个相邻</description>
+        <description>我想知道这是为什么 &amp;ndash;费曼 冒泡排序我想是大部分人接触的第一个排序算法，原理也很形象， 每一次轮询都会将这一轮里能找到的最大（小）的数</description>
         
         <dc:creator>Llane00</dc:creator>
         

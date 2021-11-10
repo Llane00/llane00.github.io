@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-29T11:43:27+08:00",
     "dateModified": "2021-10-29T11:43:27+08:00",
     "url" : "http://llane00.github.io/algorithm/3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/",
-    "description": "我想知道这是为什么 \u0026ndash;费曼 选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面 5 4 3 2 1 第一次遍历发现最小的是1 把5和1",
+    "description": "我想知道这是为什么 \u0026ndash;费曼 选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面 有点像从小到大，依次找到每个位置上正确的数",
     "keywords": ["算法基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1525,14 +1525,14 @@
         
         
           
-        
-          
           
             
               
                 <a href="http://llane00.github.io/algorithm/3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
               
             
+          
+        
           
         
       
@@ -1611,7 +1611,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年10月29日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;1&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;2&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1636,17 +1636,18 @@
       <blockquote>
 <p>我想知道这是为什么 &ndash;费曼</p>
 </blockquote>
-<p>选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面</p>
+<p>选择排序，是每次遍历都选最小的一个数交换到已经排好的序列的后面<br />
+有点像从小到大，依次找到每个位置上正确的数</p>
 <hr />
 <p>5 4 3 2 1</p>
-<p>第一次遍历发现最小的是1<br />
-把5和1交换<br />
+<p>第一次遍历发现最小的是 1<br />
+把 5 和 1 交换<br />
 1 4 3 2 5</p>
-<p>第二次遍历从4开始（1已经是排好的序列了）开始发现在（4 3 2 5）里最小的是2<br />
-把4和2交换<br />
+<p>第二次遍历从 4 开始（1 已经是排好的序列了）开始发现在（4 3 2 5）里最小的是 2<br />
+把 4 和 2 交换<br />
 1 2 3 4 5</p>
-<p>第三次遍历从3开始在（3 4 5）里3已经是最小的了，这次不交换</p>
-<p>第四次遍历从4开始，同上发现4也已经是最小的了</p>
+<p>第三次遍历从 3 开始在（3 4 5）里 3 已经是最小的了，这次不交换</p>
+<p>第四次遍历从 4 开始，同上发现 4 也已经是最小的了</p>
 <p>第五次最后这次遍历不用做了，在前面都是从小到大排好序的，最后这个数字就是最大的</p>
 <hr />
 <p>我们开始写代码：</p>
@@ -1664,10 +1665,10 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//先看在一次遍历里做了什么
 </span><span class="c1"></span>
-<span class="kd">let</span> <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">])</span> <span class="p">{</span>
-    <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">])</span> <span class="p">{</span>
+    <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="nx">i</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -1691,25 +1692,25 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">selectionSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">])</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="nx">j</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">])</span> <span class="p">{</span>
         <span class="nx">minNumberIndex</span> <span class="o">=</span> <span class="nx">i</span>
       <span class="p">}</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">minNumberIndex</span> <span class="o">!==</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
-      <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span>
+      <span class="p">;[</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">array</span><span class="p">[</span><span class="nx">minNumberIndex</span><span class="p">],</span> <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span>
     <span class="p">}</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">array</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">array</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>选择排序和冒泡排序很类似都是在每一次遍历的时候去找最大或者最小的值，然后把找到的值去（通过交换）排好序列，<br />
 下一次的遍历从余下的数字里进行</p>
 <p>总结：<br />
-选择排序不需要额外空间，是本地排序，相等元素是不会交换前后顺序，因而也是稳定排序，时间复杂度为O(n^2)，适用于少量数据排序，但实际中用得不多</p>
+选择排序不需要额外空间，是本地排序，相等元素是不会交换前后顺序，因而也是稳定排序，时间复杂度为 O(n^2)，适用于少量数据排序，但实际中用得不多</p>
 <hr />
 <p>非常感谢老姚的文章：<br />
 <a href="https://juejin.cn/post/6844903934620860429">手写算法并记住它：选择排序</a></p>
@@ -3066,14 +3067,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="http://llane00.github.io/algorithm/3-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     
