@@ -1376,7 +1376,7 @@
     "datePublished": "2021-11-03T15:41:41+08:00",
     "dateModified": "2021-11-03T15:41:41+08:00",
     "url" : "http://llane00.github.io/algorithm/5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/",
-    "description": "我想知道这是为什么 \u0026ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好没一部分，最后合并 并 这个算",
+    "description": "我想知道这是为什么 \u0026ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好每一部分，最后合并 并 这个算",
     "keywords": ["算法基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1525,14 +1525,14 @@
         
         
           
+        
+          
           
             
               
                 <a href="http://llane00.github.io/algorithm/5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
               
             
-          
-        
           
         
       
@@ -1637,12 +1637,12 @@
 <p>我想知道这是为什么 &ndash;费曼</p>
 </blockquote>
 <p>《归并》指的是递归+合并，是典型的分而治之算法</p>
-<p>把一个数组一分为二，递归地排序好没一部分，最后合并</p>
+<p>把一个数组一分为二，递归地排序好每一部分，最后合并</p>
 <h2 id="并">并</h2>
 <p>这个算法的核心点是如何合并两个各自已经排好序的数组，所以先从合并开始</p>
 <p>两权相较取其轻</p>
-<p>数组A 有一个指针i<br />
-数组B 有一个指针j<br />
+<p>数组 A 有一个指针 i<br />
+数组 B 有一个指针 j<br />
 将他们从头一个个比较，较小的就放到结果数组里，然后对应的指针++</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1660,12 +1660,16 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">],</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">left</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+  <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kd">let</span> <span class="nx">right</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+  <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">while</span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
     <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
     <span class="nx">i</span><span class="o">++</span>
@@ -1678,7 +1682,7 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">//1,2,3,4,6,6,9
 </span></code></pre></td></tr></table>
 </div>
-</div><p>仔细看result里还漏了right里的10和11，因为left的数字都已经放到result里了，i==left.length，循环就跳出了</p>
+</div><p>仔细看 result 里还漏了 right 里的 10 和 11，因为 left 的数字都已经放到 result 里了，i==left.length，循环就跳出了</p>
 <p>所有还需要处理这种情况</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1690,15 +1694,15 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">left</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">left</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span>
 <span class="p">}</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">j</span><span class="o">&lt;</span><span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">right</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">j</span><span class="p">))</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>为了清晰表达二者谁都可能剩余，这里没有直接使用if&hellip;else。事实上不会出现二者都有剩余情况的（while循环保证的）。另外，这里使用了数组相关API（concat也可以），也可以直接使用循环来做。</p>
+</div><p>为了清晰表达二者谁都可能剩余，这里没有直接使用 if&hellip;else。事实上不会出现二者都有剩余情况的（while 循环保证的）。另外，这里使用了数组相关 API（concat 也可以），也可以直接使用循环来做。</p>
 <h2 id="分">分</h2>
 <p>把一个数组一分为二</p>
 <div class="highlight"><div class="chroma">
@@ -1714,11 +1718,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="递归">递归</h2>
-<p>递归的步骤：<br />
-1.数组分成两半<br />
-2.递归处理左边的部分<br />
-3.递归处理右边的部分<br />
-4.合并二者的结果</p>
+<p>递归的步骤： 1.数组分成两半 2.递归处理左边的部分 3.递归处理右边的部分 4.合并二者的结果</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1738,7 +1738,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>这里递归的出口是<br />
-当数组元素个数小于2时，就已经是排好序的不用再分了</p>
+当数组元素个数小于 2 时，就已经是排好序的不用再分了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1792,8 +1792,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
   <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">left</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
@@ -1829,13 +1829,13 @@
 </div>
 </div><hr />
 <h2 id="复杂度">复杂度</h2>
-<p>归并排序需要额外空间，空间复杂度为O(n)，不是本地排序，相等元素是不会交换前后顺序，因而是稳定排序。<br />
-时间复杂度为O(nlogn)，是比较优秀的算法</p>
+<p>归并排序需要额外空间，空间复杂度为 O(n)，不是本地排序，相等元素是不会交换前后顺序，因而是稳定排序。<br />
+时间复杂度为 O(nlogn)，是比较优秀的算法</p>
 <hr />
-<p>我创建了一个集合jest可以测试算法的靶场项目：<br />
+<p>我创建了一个集合 jest 可以测试算法的靶场项目：<br />
 <a href="https://github.com/Llane00/algorithm-range-tests">https://github.com/Llane00/algorithm-range-tests</a><br />
 将同步文章中的代码到这个项目下</p>
-<p>使用vscode的读者可以安装拓展插件jest，这个插件可以自动检测test文件自动运行，非常方便。</p>
+<p>使用 vscode 的读者可以安装拓展插件 jest，这个插件可以自动检测 test 文件自动运行，非常方便。</p>
 <hr />
 <p>感谢老姚的文章 <a href="https://juejin.cn/post/6844903937242300430">手写算法并记住它：归并排序</a></p>
 
@@ -3198,14 +3198,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="http://llane00.github.io/algorithm/5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
-        
-      
         
       
     

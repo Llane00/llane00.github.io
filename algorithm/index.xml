@@ -187,7 +187,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Wed, 03 Nov 2021 15:41:41 +0800</atom:modified>
         <guid>http://llane00.github.io/algorithm/5-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</guid>
-        <description>我想知道这是为什么 &amp;ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好没一部分，最后合并 并 这个算</description>
+        <description>我想知道这是为什么 &amp;ndash;费曼 《归并》指的是递归+合并，是典型的分而治之算法 把一个数组一分为二，递归地排序好每一部分，最后合并 并 这个算</description>
         
         <dc:creator>Llane00</dc:creator>
         
