@@ -67,7 +67,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 12 Nov 2021 17:15:59 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
-        <description>使用场景： 默认选项 部分修改 1.最简单版本 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 不支持函数，比如对象里有有一个 key，value 的 value</description>
+        <description>深拷贝使用场景： 默认选项 部分修改 版本 0.1 最简单版本（直接一把梭） 直接使用 JSON 序列化 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 1.不支持函数</description>
         
         <dc:creator>Llane00</dc:creator>
         

@@ -1376,7 +1376,7 @@
     "datePublished": "2021-11-12T17:15:59+08:00",
     "dateModified": "2021-11-12T17:15:59+08:00",
     "url" : "http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/",
-    "description": "使用场景： 默认选项 部分修改 1.最简单版本 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 不支持函数，比如对象里有有一个 key，value 的 value",
+    "description": "深拷贝使用场景： 默认选项 部分修改 版本 0.1 最简单版本（直接一把梭） 直接使用 JSON 序列化 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 1.不支持函数",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1633,12 +1633,13 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <p>使用场景：</p>
+      <p>深拷贝使用场景：</p>
 <ol>
 <li>默认选项</li>
 <li>部分修改</li>
 </ol>
-<p>1.最简单版本</p>
+<h2 id="版本-01-最简单版本直接一把梭">版本 0.1 最简单版本（直接一把梭）</h2>
+<p>直接使用 JSON 序列化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1654,17 +1655,15 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>缺点：</p>
-<ol>
-<li>不支持函数，比如对象里有有一个 key，value 的 value 是一个函数</li>
-<li>不支持 undefined</li>
-<li>JSON 只支持树状的结构不支持环状的结构，如果原对象有一个对自己的引用，JSON 的序列化会报错</li>
-<li>不支持 Date、正则表达式、Symbol（所有 JSON 不支持的数据类型都不支持）</li>
-</ol>
-<p>其他拷贝办法：<br />
-// 浅拷贝<br />
-Object.assign({}, a)<br />
-{&hellip;a}</p>
+<p>1.不支持函数，比如对象里有有一个 key，value 的 value 是一个函数</p>
+<p>2.不支持 undefined</p>
+<p>3.JSON 只支持树状的结构不支持环状的结构，如果原对象有一个对自己的引用，JSON 的序列化会报错</p>
+<p>4.不支持 Date、正则表达式、Symbol、Set、Map（综上就是所有 JSON 不支持的数据类型都不支持）</p>
+<p>其他的浅拷贝办法：</p>
+<p>1.Object.assign({}, a)</p>
+<p>2.{&hellip;a}</p>
 <hr />
+<h2 id="版本-1-我能拷贝有不同对象的数据了">版本 1 我能拷贝有不同对象的数据了</h2>
 <p>可以看到 JSON 序列化的深拷贝方式已经不满足了，<br />
 那么现在我们得手动实现一个深拷贝了，我们用递归的形式来实现</p>
 <p>在递归的时候一定会遇到不同的数据类型，要按照不用的数据类型来分类讨论</p>
@@ -1742,6 +1741,7 @@ bigint</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<h2 id="版本-2-我能拷贝具有环结构的数据了">版本 2 我能拷贝具有环结构的数据了</h2>
 <p>到目前为止一切顺利，也没有什么大问题</p>
 <p>因为要拷贝的对象的数据是有限的 deepClone 的递归会自动结束，不用特地给一个出口</p>
 <p>但是考虑到一种情况，在讨论 JSON 序列化深拷贝的时候第三种情况是拷贝环结构，<br />
@@ -1871,6 +1871,7 @@ bigint</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<h2 id="版本-3-我需要跳过原型再拷贝">版本 3 我需要跳过原型再拷贝</h2>
 <p>现在具有环结构的对象现在也可以复制了。</p>
 <p>此外还有一个坑，我们知道每一个对象都有自己的原型，<code>__proto__</code>属性<br />
 目前还没考虑是否要拷贝对象的原型（这里原型很可能还有原型是很深的一个对象属性）<br />
@@ -2000,6 +2001,7 @@ bigint</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<h2 id="版本-4-强化拷贝函数最后的力量">版本 4 强化拷贝函数，最后的力量！</h2>
 <p>你或许有注意到，目前在函数外面有一个 cache 用于存放深拷贝时的缓存，我们在调用完后还得清空它这样很麻烦</p>
 <p>我们尝试写成一个 class，来包含 cache 变量和帮助函数 findCache</p>
 <div class="highlight"><div class="chroma">
@@ -2133,18 +2135,19 @@ bigint</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
-<p>最后的魔王（或许吧）：</p>
+<h2 id="什么最后的魔王">什么？最后的魔王</h2>
 <p>有一种情况无论是在浏览器还是在 nodejs 环境中都会存在<br />
 当对象有子属性，子属性还有子属性。。。对象的结构非常深的时候会导致递归调用很多次，会出现函数执行栈超出最大值的情况<br />
 （爆栈：RangeError: Maximum call stack size exceeded）</p>
 <p>这里设想的办法是把对象的纵向的结构换成横向的结构（放在类似数组的结构里）这样用 for 循环来避免递归过于深的情况<br />
 暂时不知道怎么解</p>
 <hr />
+<h2 id="我选择真香">我选择真香</h2>
 <p>自己写的 deepClone 总会有考虑不周全的地方<br />
 实际工作中可以借助第三方：<br />
 // Lodash<br />
 Lodash.cloneDeep()</p>
-<p>// 干脆不用深拷贝了<br />
+<p>// 干脆不用深拷贝了，使用部分修改<br />
 immutable.js 部分修改<br />
 immer.js</p>
 
@@ -2898,7 +2901,17 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#版本-01-最简单版本直接一把梭">版本 0.1 最简单版本（直接一把梭）</a></li>
+    <li><a href="#版本-1-我能拷贝有不同对象的数据了">版本 1 我能拷贝有不同对象的数据了</a></li>
+    <li><a href="#版本-2-我能拷贝具有环结构的数据了">版本 2 我能拷贝具有环结构的数据了</a></li>
+    <li><a href="#版本-3-我需要跳过原型再拷贝">版本 3 我需要跳过原型再拷贝</a></li>
+    <li><a href="#版本-4-强化拷贝函数最后的力量">版本 4 强化拷贝函数，最后的力量！</a></li>
+    <li><a href="#什么最后的魔王">什么？最后的魔王</a></li>
+    <li><a href="#我选择真香">我选择真香</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 

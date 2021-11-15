@@ -1658,7 +1658,7 @@
       <div>
         <div class="summary-classic__text p2">
           
-            使用场景： 默认选项 部分修改 1.最简单版本 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 不支持函数，比如对象里有有一个 key，value 的 value
+            深拷贝使用场景： 默认选项 部分修改 版本 0.1 最简单版本（直接一把梭） 直接使用 JSON 序列化 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 1.不支持函数
           
         </div>
       </div>
