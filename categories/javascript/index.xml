@@ -14,11 +14,91 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 08 Nov 2021 09:42:10 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Nov 2021 15:49:28 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Js实现数组拍平</title>
+        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</link>
+        <pubDate>Mon, 15 Nov 2021 15:49:28 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 15 Nov 2021 15:49:28 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</guid>
+        <description>要求拍平的原数据如下： 1 2 3 4 5 6 7 let arr = [ { id: 1, name: &amp;#39;部门1&amp;#39;, pid: 0 }, { id: 2, name: &amp;#39;部门2&amp;#39;, pid: 1 }, { id: 3, name: &amp;#</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>用js实现</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Js实现深拷贝</title>
+        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+        <pubDate>Fri, 12 Nov 2021 17:15:59 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 12 Nov 2021 17:15:59 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+        <description>使用场景： 默认选项 部分修改 1.最简单版本 1 2 3 4 let a = { a: 1, b: 2, c: 3 } let b = JSON.parse(JSON.stringify(a)) console.log(a) console.log(b) 缺点： 不支持函数，比如对象里有有一个 key，value 的 value</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>js基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>用js实现</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>菜鸟学算法-9-基数排序</title>
@@ -1021,13 +1101,13 @@
       </item>
       
       <item>
-        <title>javascript实现节流和防抖</title>
-        <link>http://llane00.github.io/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
+        <title>Js实现节流和防抖</title>
+        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
         <pubDate>Mon, 19 Jul 2021 14:30:09 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 14:30:09 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
-        <description>大招技能有冷却 == 节流（throttle） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 /** * 节流原理：在一定时间内，只能触</description>
+        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
+        <description>大招技能有冷却 == 节流（throttle） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 /** * 节流原理：在一定时间内，只能触发</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -1099,13 +1179,13 @@
       </item>
       
       <item>
-        <title>Js大数相加</title>
-        <link>http://llane00.github.io/posts/js%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
+        <title>Js实现大数相加</title>
+        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
         <pubDate>Sun, 11 Jul 2021 20:09:12 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 11 Jul 2021 20:09:12 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
-        <description>背景： 在 JavaScript 里面，数字均为双精度浮点类型，即一个介于±2−1023和±2+1024之间的数字，或约为±10−308到±10+308，数字精度为</description>
+        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
+        <description>背景： 在 JavaScript 里面，数字均为双精度浮点类型，即一个介于 ±2−1023和 ±2+1024之间的数字，或约为 ±10−308到 ±10+308，数字精度为</description>
         
         <dc:creator>Llane00</dc:creator>
         
