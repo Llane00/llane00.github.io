@@ -1608,7 +1608,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年11月09日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;6&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;7&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1640,17 +1640,50 @@ HTTP 协议是在 TCP/IP 协议的子集</p>
 <p>层次化的好处是，一个层如果需要改变设计可以尽量减少对其他层的影响（封装解藕的概念？）<br />
 每个层只需要考虑自己的工作，不需要知道完整的网络流程</p>
 <hr />
+<h2 id="dns-的缓存">DNS 的缓存</h2>
+<p>DNS 域名系统 解析域名为对应的服务器 ip，这个解析的结果会被缓存<br />
+读取 DNS 缓存的顺序</p>
+<ol>
+<li>先看浏览器的缓存，比如 Chrome 的缓存在<code>chrome://net-internals/#dns</code></li>
+<li>如果没有就再看操作系统的缓存， Host 文件是手动给操作系统添加 DNS 解析缓存</li>
+<li>如果没有最后去看 ISP 端的缓存 ISP 是通信服务商</li>
+</ol>
+<hr />
 <h2 id="三次握手">三次握手</h2>
+<p>DNS 找到 ip 后，浏览器开始建立 TCP 连接，建立 TCP 连接会进行三次握手</p>
 <p>为了准确无误地将数据送达目标处，TCP 协议采用了三次握手<br />
 使用 TCP 标志（flag）：<br />
 SYN(synchronize: 与 x 同步，同步完毕)、<br />
 ACK(acknowledgement：收到收到，确认收到)</p>
 <p>这有点像对讲机里的对话：</p>
 <ol>
-<li>发送端发送 SYN 给接收端：这里是长江，请求同步，收到请回复</li>
-<li>接收端收到后发送 SYN/ACK 给发送端：这里是黄河，确认收到你的同步请求，收到请回复</li>
-<li>发送端发送 ACK 给接收端：这里是长江，已收到你的回复确认，成功建立连接</li>
+<li>浏览器（发送端）发送 SYN(x) 给服务器（接收端）：这里是长江，请求同步信息，收到请回复</li>
+<li>服务器（接收端）收到后发送 ACK(x+1)/SYN(y) 给浏览器（发送端）：这里是黄河，确认收到你的同步信息请求，收到请回复</li>
+<li>浏览器（发送端）发送 ACK(y+1) 给服务器（接收端）：这里是长江，已收到你的回复确认，成功建立连接</li>
 </ol>
+<p>因为可能同一时间都多个请求，故使用 x，y 来标记，x 和 y 一般是从 0 开始的<br />
+SYN 是 synchronize（同步）的缩写<br />
+ACK 是 acknowledge（获悉，收到）的缩写</p>
+<p>三次握手确保：</p>
+<ol>
+<li>A 可以向 B 发信息</li>
+<li>B 可以收到该信息，B 也可以向 A 发信息</li>
+<li>A 可以收到该信息</li>
+</ol>
+<p>此时双方都知道了对方准备好了，完全建立了通讯，A 就可以正式发送 HTTP 请求了</p>
+<p>当省略第三步的时候，服务器会认为 A 无法接收信息，A 或许已经断开连接了，建立就失败</p>
+<hr />
+<h2 id="四次挥手">四次挥手</h2>
+<ol>
+<li>A 对 B 说 FIN(x)</li>
+<li>B 回复 A ACK(x+1)</li>
+<li>B 回复 A FIN(y)</li>
+<li>A 回复 B ACK(y+1)</li>
+</ol>
+<p>之后就可以正式关闭 HTTP 连接了，避免资源的浪费</p>
+<p>在步骤 2 和步骤 3 中可能有其他 B 最后要发送给 A 的信息，所以没有像 3 次握手时合并</p>
+<p>关闭时 x 和 y 一般不是 0<br />
+FIN finish</p>
 <hr />
 <h2 id="一次简单的浏览-web-页">一次简单的浏览 web 页</h2>
 <p>一次浏览 web 页面：<br />
@@ -2482,7 +2515,9 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#http">HTTP</a></li>
+    <li><a href="#dns-的缓存">DNS 的缓存</a></li>
     <li><a href="#三次握手">三次握手</a></li>
+    <li><a href="#四次挥手">四次挥手</a></li>
     <li><a href="#一次简单的浏览-web-页">一次简单的浏览 web 页</a></li>
     <li><a href="#uri--url">URI | URL</a></li>
     <li><a href="#http-无状态">HTTP 无状态</a></li>
