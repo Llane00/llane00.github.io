@@ -14,11 +14,29 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 18 Nov 2021 11:47:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 18 Nov 2021 14:06:05 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>学习函数柯里化</title>
+        <link>http://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</link>
+        <pubDate>Thu, 18 Nov 2021 14:06:05 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 18 Nov 2021 14:06:05 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</guid>
+        <description>从直观上理解柯里化，但是原本需要一次传 n 个参数才可以执行一个函数， 柯里化后我可以每次只传一个单独的参数来运行一个函数 例子 1： 把特定的函数柯里</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>优化递归方法的思考</title>
