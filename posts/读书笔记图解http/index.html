@@ -1788,10 +1788,10 @@ Range: bytes=500-10000 或 bytes=500-<br />
 User-Agent 创建请求的浏览器或用户代理的名称和信息等</p>
 <hr />
 <h2 id="网络安全">网络安全</h2>
-<p>Xss (跨站脚本攻击 Cross Site Scripting)<br />
-被动攻击 通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序</p>
-<p>csrf(跨站请求伪造 Cross-site request forgery)<br />
-被动攻击 一种挟制用户在当前已登录（利用 cookie 或者 session 会话）的 Web 应用程序上执行非本意的操作的攻击方法</p>
+<h3 id="xss-跨站脚本攻击-cross-site-scripting">Xss (跨站脚本攻击 Cross Site Scripting)</h3>
+<p>被动攻击 通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序</p>
+<h3 id="csrf跨站请求伪造-cross-site-request-forgery">csrf(跨站请求伪造 Cross-site request forgery)</h3>
+<p>被动攻击 一种挟制用户在当前已登录（利用 cookie 或者 session 会话）的 Web 应用程序上执行非本意的操作的攻击方法</p>
 <p>Chrome 51 开始，浏览器的 Cookie 新增加了一个 SameSite 属性，用来防止 CSRF 攻击和用户追踪。<a href="https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html">cookie samesiteSite 文章</a></p>
 
     </article>
@@ -2529,7 +2529,12 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#保护资源缓存">保护资源缓存</a></li>
     <li><a href="#缓存的有效期">缓存的有效期</a></li>
     <li><a href="#常见的-http-请求首部">常见的 HTTP 请求首部</a></li>
-    <li><a href="#网络安全">网络安全</a></li>
+    <li><a href="#网络安全">网络安全</a>
+      <ul>
+        <li><a href="#xss-跨站脚本攻击-cross-site-scripting">Xss (跨站脚本攻击 Cross Site Scripting)</a></li>
+        <li><a href="#csrf跨站请求伪造-cross-site-request-forgery">csrf(跨站请求伪造 Cross-site request forgery)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
