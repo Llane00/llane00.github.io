@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-28T09:34:41+08:00",
     "dateModified": "2021-10-28T09:34:41+08:00",
     "url" : "http://llane00.github.io/restart-js/11-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0bind/",
-    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 MDN对bing的定义 bind()方法会创建一个新函数。当这个函数被调用时，",
+    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 MDN 对 bing 的定义 bind()方法会创建一个新函数。当这个函数被调用时，bind(",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1637,12 +1637,12 @@
 <p>这个系列是我读<a href="https://github.com/mqyqingfeng/Blog">冴羽老师博客</a>的感悟，<br />
 加入了个人的解读和练习题的解答</p>
 </blockquote>
-<h2 id="mdn对bing的定义">MDN对bing的定义</h2>
-<p>bind()方法会创建一个新函数。当这个函数被调用时，bind()的第一个参数将作为它运行时的this，之后的一序列参数将会在传递的实参前传入作为它的参数</p>
+<h2 id="mdn-对-bing-的定义">MDN 对 bing 的定义</h2>
+<p>bind()方法会创建一个新函数。当这个函数被调用时，bind()的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数</p>
 <p>bind 函数的两个特点：<br />
 1.返回一个函数<br />
 2.可以传入参数</p>
-<p>例子1:</p>
+<p>例子 1:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1658,10 +1658,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -1681,15 +1681,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
-<p>刚才的定义中提到bind还支持传参数来看个例子：</p>
+<p>刚才的定义中提到 bind 还支持传参数来看个例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1707,22 +1707,20 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
-</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
-<span class="p">};</span>
-
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
-
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">);</span>
-<span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">)</span>
+<span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">)</span>
 <span class="c1">// 1
 </span><span class="c1">// daisy
 </span><span class="c1">// 18
@@ -1743,10 +1741,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">myBind</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
   <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
     <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
   <span class="p">}</span>
@@ -1754,8 +1752,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><hr />
-<p>此时到了最难的部分，bind还有一个特性：<br />
-一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
+<p>此时到了最难的部分，bind 还有一个特性：<br />
+一个绑定函数也能使用 new 操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
 <p>来看例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1786,29 +1784,29 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span>
-<span class="p">};</span>
-
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">habit</span> <span class="o">=</span> <span class="s1">&#39;shopping&#39;</span><span class="p">;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="nx">bar</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">friend</span> <span class="o">=</span> <span class="s1">&#39;kevin&#39;</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">habit</span> <span class="o">=</span> <span class="s1">&#39;shopping&#39;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+<span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">);</span>
+<span class="nx">bar</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">friend</span> <span class="o">=</span> <span class="s1">&#39;kevin&#39;</span>
 
-<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">bindFoo</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="s1">&#39;daisy&#39;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bindFoo</span><span class="p">(</span><span class="s1">&#39;18&#39;</span><span class="p">)</span>
 <span class="c1">// undefined 提供的this值被忽略
 </span><span class="c1">// daisy 调用bind时的参数被一起提供了
 </span><span class="c1">// 18
-</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">habit</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">friend</span><span class="p">);</span>
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">habit</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">friend</span><span class="p">)</span>
 <span class="c1">// shopping
 </span><span class="c1">// kevin
 </span></code></pre></td></tr></table>
@@ -1871,7 +1869,7 @@
     <span class="kd">var</span> <span class="nx">bindArgs</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
     <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span> <span class="nx">instanceOf</span> <span class="nx">fNop</span><span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bindArgs</span><span class="p">))</span>
   <span class="p">}</span>
-  
+
 
   <span class="nx">fNop</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
   <span class="nx">fBound</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">fNop</span><span class="p">()</span>
@@ -1925,6 +1923,107 @@
   <span class="k">return</span> <span class="nx">fBound</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
+</div>
+</div><hr />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">bind</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newThis</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span>
+  <span class="kr">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">resultFn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">args2</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="nx">self</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span> <span class="k">instanceof</span> <span class="nx">self</span> <span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="nx">newThis</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">args2</span><span class="p">))</span>
+  <span class="p">}</span>
+  <span class="nx">resultFn</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="k">return</span> <span class="nx">resultFn</span>
+<span class="p">}</span>
+
+<span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bind2</span> <span class="o">=</span> <span class="nx">bind</span>
+
+<span class="kd">function</span> <span class="nx">test1</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">testFn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kr">const</span> <span class="nx">bindFn</span> <span class="o">=</span> <span class="nx">testFn</span><span class="p">.</span><span class="nx">bind2</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Neo&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="mi">123</span>
+  <span class="p">)</span>
+
+  <span class="nx">bindFn</span><span class="p">(</span><span class="mi">456</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">test2</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
+  <span class="p">}</span>
+  <span class="nx">a</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayHi</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kr">const</span> <span class="nx">aaa</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">bind2</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+  <span class="kr">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">aaa</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="nx">object</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">object</span><span class="p">))</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">object</span><span class="p">.</span><span class="nx">sayHi</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">test1</span><span class="p">()</span> <span class="c1">//测试 bind api是否正常
+</span><span class="c1"></span><span class="nx">test2</span><span class="p">()</span> <span class="c1">//测试 bind 是否支持new
+</span></code></pre></td></tr></table>
 </div>
 </div>
     </article>
@@ -2679,7 +2778,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="false" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#mdn对bing的定义">MDN对bing的定义</a></li>
+    <li><a href="#mdn-对-bing-的定义">MDN 对 bing 的定义</a></li>
     <li><a href="#第一版">第一版</a></li>
     <li><a href="#第二版">第二版</a></li>
     <li><a href="#第三版">第三版</a></li>

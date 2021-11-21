@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-28T10:19:05+08:00",
     "dateModified": "2021-10-28T10:19:05+08:00",
     "url" : "http://llane00.github.io/restart-js/12-%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0new/",
-    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 我们先分析一下new做了什么， 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 function Person(name, age) {",
+    "description": "这个系列是我读冴羽老师博客的感悟， 加入了个人的解读和练习题的解答 new Fn() 一共做了 4 件事： 生成一个临时空对象 var temp = {} 临时对象的原型为构造函数 Fn 的原",
     "keywords": ["js基础","学习笔记"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1637,7 +1637,14 @@
 <p>这个系列是我读<a href="https://github.com/mqyqingfeng/Blog">冴羽老师博客</a>的感悟，<br />
 加入了个人的解读和练习题的解答</p>
 </blockquote>
-<p>我们先分析一下new做了什么，</p>
+<p>new Fn() 一共做了 4 件事：</p>
+<ol>
+<li>生成一个临时空对象 <code>var temp = {}</code></li>
+<li>临时对象的原型为构造函数 Fn 的原型 <code>temp.__proto__ = Fn.prototype</code></li>
+<li>执行 Fn 函数，把 temp 作为 this，<code>F.call(temp)</code></li>
+<li>在 Fn 里 <code>return this</code></li>
+</ol>
+<p>看一个例子</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1658,34 +1665,32 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
 <span class="p">}</span>
 
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">runSpeed</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 10km/h
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">runSpeed</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">// 10km/h
 </span><span class="c1"></span>
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">run</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;running&#34;</span><span class="p">);</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">run</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;running&#39;</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//Neo
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span> <span class="c1">//20
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">runSpeed</span><span class="p">)</span> <span class="c1">//10
 </span><span class="c1"></span>
 <span class="nx">theOne</span><span class="p">.</span><span class="nx">run</span><span class="p">()</span> <span class="c1">//running
-</span><span class="c1"></span>
-</code></pre></td></tr></table>
+</span></code></pre></td></tr></table>
 </div>
-</div><p>js中的关键词new 可以创建一个新对象，这个新对象的原型是new后面跟的构造函数的原型，<br />
-在上面这个例子中，实例theOne的原型是Person，实例theOne可以：<br />
-1.访问到构造函数Person的属性<br />
-2.访问到构造函数Person的原型的属性</p>
+</div><p>js 中的关键词 new 可以创建一个新对象，这个新对象的原型是 new 后面跟的构造函数的原型，<br />
+在上面这个例子中，实例 theOne 的原型是 Person，实例 theOne 可以：<br />
+1.访问到构造函数 Person 的属性<br />
+2.访问到构造函数 Person 的原型的属性</p>
 <p>尝试模拟：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1707,23 +1712,23 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">objectFactory</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// 创造一个空对象
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">({});</span> 
-  
+</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">({})</span>
+
   <span class="c1">//函数的第一个参数是obj的构造函数，使得obj可以访问构造函数的原型的属性
-</span><span class="c1"></span>  <span class="nx">Constructor</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">shift</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span> 
-  
+</span><span class="c1"></span>  <span class="nx">Constructor</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">shift</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+
   <span class="c1">//空对象的原型是构造函数的原型
-</span><span class="c1"></span>  <span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> 
-  
+</span><span class="c1"></span>  <span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">prototype</span>
+
   <span class="c1">//重新指向this为obj后，执行构造函数，使得obj可以访问构造函数的内部属性
-</span><span class="c1"></span>  <span class="nx">Constructor</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span> 
-  <span class="k">return</span> <span class="nx">obj</span><span class="p">;</span>
+</span><span class="c1"></span>  <span class="nx">Constructor</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">obj</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
 <p>还有一种情况需要考虑，就是构造函数有返回值时，<br />
-obj访问构造函数内部的属性就有了限制，为了实现封装</p>
+obj 访问构造函数内部的属性就有了限制，为了实现封装</p>
 <p>比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1746,16 +1751,16 @@ obj访问构造函数内部的属性就有了限制，为了实现封装</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
 
   <span class="k">return</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="nx">name</span><span class="p">,</span>
-    <span class="nx">sex</span><span class="o">:</span> <span class="s1">&#39;male&#39;</span>
+    <span class="nx">sex</span><span class="o">:</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="c1">//实例theOne只能返回构造函数返回的对象中的属性
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//Neo
@@ -1781,20 +1786,20 @@ obj访问构造函数内部的属性就有了限制，为了实现封装</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
 
-  <span class="k">return</span> <span class="s2">&#34;warning: no access&#34;</span>
+  <span class="k">return</span> <span class="s1">&#39;warning: no access&#39;</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">theOne</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="c1">//相当于没有返回值进行处理
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">//undefined
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">theOne</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span> <span class="c1">//undefined
 </span></code></pre></td></tr></table>
 </div>
-</div><p>好的，我们来完善一下objectFactory方法：</p>
+</div><p>好的，我们来完善一下 objectFactory 方法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1811,7 +1816,7 @@ obj访问构造函数内部的属性就有了限制，为了实现封装</p>
   <span class="nx">Constructor</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">shift</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
   <span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">prototype</span>
   <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
-  <span class="k">return</span> <span class="k">typeof</span> <span class="nx">result</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="o">?</span> <span class="nx">result</span> <span class="o">:</span> <span class="nx">obj</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">typeof</span> <span class="nx">result</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">?</span> <span class="nx">result</span> <span class="o">:</span> <span class="nx">obj</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
