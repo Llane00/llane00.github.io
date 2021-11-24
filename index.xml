@@ -14,7 +14,7 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 18 Nov 2021 14:06:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Nov 2021 12:25:35 +0800</lastBuildDate>
     
         <atom:link href="http://llane00.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -40,6 +40,24 @@
         
       
 
+      
+      <item>
+        <title>Web性能优化学习</title>
+        <link>http://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Wed, 24 Nov 2021 12:25:35 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 24 Nov 2021 12:25:35 +0800</atom:modified>
+        <guid>http://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
+        <description>浏览器的主要组成 浏览器的主要组成有： 浏览器核心 网络模块 渲染引擎 JS 解释器 其他 浏览器核心调用网络模块发送 HTTP 请求，渲染引擎根据 HTTP 的响应信息渲染页面</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>学习函数柯里化</title>
