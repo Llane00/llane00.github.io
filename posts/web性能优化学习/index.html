@@ -1608,7 +1608,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年11月24日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;4&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;7&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1719,9 +1719,93 @@ Composite 对多层次的内容合并成一层的内容，对处于同一个位�
 <p>HTTP 1.1 已经自带了并行连接，但是并行连接有最大并行数量（如果是以域名为标记的，比如对 a.com 的访问最多并行数是 12，那如果 cdn 换多个子域名就可以突破并行限制了；浏览器本身也有一个最大请求并行上限）</p>
 <p>把 js 和 css 各自拆成 2-4 个可以利用并行同时下载，提高下载速度</p>
 <hr />
-<h2 id="http-管道化-pipelining">HTTP 管道化 pipelining</h2>
-<p>设想是在一次 HTTP 请求中并行发多个请求，各自的请求返回各自的结果，但是由于 HTTP 是无状态的加上网络传输的不确定性，无法知道哪个结果是哪个请求的</p>
-<p>所以在 HTTP1 中管道化是一个有 bug 的设计</p>
+<h2 id="http1-管道化-pipelining">HTTP/1 管道化 pipelining</h2>
+<p>设想是在一次 HTTP/1 请求中并行发多个请求，各自的请求返回各自的结果，但是由于 HTTP/1 是无状态的加上网络传输的不确定性，无法知道哪个结果是哪个请求的</p>
+<p>所以在 HTTP/1 中管道化是一个有 bug 的设计</p>
+<hr />
+<h2 id="http2-多路复用和服务器推送">HTTP/2 多路复用和服务器推送</h2>
+<p>在 HTTP/2 中提出了帧和流的概念，就能做到 HTTP/1 管道化想做到的事情，即：在一次连接中发送多个请求，且接收端可以请求时的 id 来标记，就知道哪个结果是哪个请求发送的了，而且由于帧概念的提出资源的单位更小了也响应加上了自动整合帧的功能。</p>
+<p>更多信息可以看这个博客：<a href="https://segmentfault.com/a/1190000011172823">浅析 HTTP/2 的多路复用</a></p>
+<p>HTTP/2 还可以做服务器推送，比如在浏览器第一次请求时服务器就可以预先响应推送多个 css 和 js 给浏览器，预判浏览器接下来需要请求的内容，提前一次性推送给浏览器。之后在解析 HTML 的过程中再遇到这几个 css 和 js 时，浏览器就会直接返回响应内容。</p>
+<p>要达到服务器推送需要预先人为设置，可以在服务器中设置 HTTP2_push 的文件，也可以在服务器的响应头里添加设置。但是目前前端的 js 和 css 名字在打包后是带 hash 的经常会更新改动，导致人为预先设置会很麻烦，所以在实际情况里很少使用服务器推送。</p>
+<hr />
+<h2 id="http11-中的-web-性能优化">HTTP/1.1 中的 web 性能优化：</h2>
+<p>合并、内联、压缩、精简<br />
+CDN、缓存</p>
+<h3 id="合并资源">合并资源</h3>
+<p>css 雪碧图（把多个图片合并到一个大图中，用 css 绝对定位来取区块内容）webpack 有插件方便实现 webpack-spritesmith</p>
+<p>Icon Font （把多个图标合并变成一个字体文件，用 css 的 class 来选择使用<span class="fontFamily"/>）<br />
+SVG Symbols (把多个图标合并变成一个 icon.svg 文件，用<use xlink:href="#home"/>，相比 Icon Font 支持渐变，.svg 文件编辑更方便）</p>
+<h3 id="资源内联">资源内联</h3>
+<p>把小文件的内容直接内联写到 html 中<br />
+图片用 Data URLs，webpack 也有相应的插件 url-loader，加设置 limit：xxx，小于 xxx 的图片会自动转为 Data URLs<br />
+css 文件 用<style></style>，webpack 插件有： inlineSourcePlugin（不再维护，依赖 html-webpack-plugin)、 inlineChunkHtmlPlugin<br />
+js 文件 用<script></script></p>
+<h3 id="资源压缩">资源压缩</h3>
+<p>常用的压缩方式是 gzip，一般在服务器端设置开始压缩<br />
+在请求头中有字段 Accept-Encoding: gzip, deflate 表示用户代理支持的内容编码方式和优先级</p>
+<h3 id="代码精简">代码精简</h3>
+<p>HTML 删空格、闭合<br />
+CSS 删除未使用<br />
+JS 改名，tree Shaking（分析 import 的内容哪些用了哪些没用，但是 require 不能很好地分析，require(变量)）<br />
+SVG 删除无用标签，属性<br />
+图片 减少内容（无损、有损压缩）</p>
+<h3 id="cdn-内容分发网络">CDN 内容分发网络</h3>
+<p>在物理的角度上缩短请求的距离，在距离请求近的地方做缓存服务器<br />
+DNS 解析有负载均衡同一个域名可能会有多个 ip 的选择</p>
+<p>CDN 一般不和主站在同级域名，防止在请求中带有主站的 cookie，来减少请求信息</p>
+<p>可以用命令行上传文件到 cdn，再用相关命令修改文件的路径为 cdn 路径<br />
+npm build publicUrl = &lsquo;<a href="https://1.cdnx.com">https://1.cdnx.com</a>&rsquo;</p>
+<p>CDN 好处：</p>
+<ol>
+<li>cookie free</li>
+<li>并行请求/多路复用</li>
+<li>下载速度快，只用在静态内容</li>
+</ol>
+<p>CDN 害处：</p>
+<ol>
+<li>要钱</li>
+<li>部署变复杂</li>
+<li>可控性变差</li>
+<li>跨域 可以用 CORS 解决，<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html">关于 CORS</a></li>
+</ol>
+<p><a href="https://juejin.cn/post/6844903727820718094">跨域的脚本 Error 拿不到具体的错误信息和堆栈信息-解决办法</a></p>
+<hr />
+<h2 id="缓存--内容协商">缓存 &amp; 内容协商</h2>
+<p>也称为（强缓存和弱缓存）</p>
+<p>Cache-Control:<br />
+public/private,<br />
+max-age: 3600,<br />
+must-revalidate</p>
+<p>public 公开的信息，中间的节点都可以缓存<br />
+private 私人的信息 只有用户端和服务器端可以缓存<br />
+max-age 缓存时间，最久有效期单位秒 3600 代表一个小时<br />
+must-revalidate 如果缓存过期，必须重新校验</p>
+<p>协商请求过程：</p>
+<ol>
+<li>用户向 CDN 服务器请求 main-1.js</li>
+<li>服务器返回响应内容，响应头中有 Cache-Control 1 小时，ETag xxx</li>
+<li>用户的浏览器缓存 main-1.js</li>
+<li>一个小时后 main-1.js 过期了，如果还需要获取 main-1.js，就需要再次请求服务器<br />
+这次的请求就是协商请求会带上 main-1.js 的 ETag，请求头有 If-None-Match: xxx(ETag 的值)</li>
+<li>服务器把接收的 ETag 和实际文件的 ETag 做对比，<br />
+如果没变就返回 304 且没有响应体也就是没有变可以继续沿用过期的内容，<br />
+如果变了就返回 200 和新的 main-1.js 的内容，那就需要删除（没有 cache-control 或者 max-age=0）或更新（有 cache-control）覆盖缓存中 main-1.js 的内容</li>
+</ol>
+<p>ETag 是文件的哈希散列值</p>
+<hr />
+<h2 id="服务器主动禁用缓存">服务器主动禁用缓存</h2>
+<p>如果响应中不加 Cache-Control，浏览器也会默认缓存的</p>
+<p>禁止缓存可以在响应头里添加：<br />
+Cache-Control: max-age=0, must-revalidate 不缓存，有协商<br />
+Cache-Control: no-cache 不缓存，有协商<br />
+Cache-Control: no-store 不协商，不协商</p>
+<hr />
+<h2 id="浏览器主动禁用缓存">浏览器主动禁用缓存</h2>
+<p>方法 1 只要 url 不一样就会跳过缓存</p>
+<p>比如：get 请求 xxx.com/home 如果改为 xxx.com/home?a=1 加一个随机数</p>
+<p>方法 2 设置请求头<br />
+Cache-Control: no-cache no-store max-age=0</p>
 <hr />
 
     </article>
@@ -2447,7 +2531,20 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#dns-优化-预解析">DNS 优化-预解析</a></li>
     <li><a href="#tcp-优化连接复用">TCP 优化连接复用</a></li>
     <li><a href="#tcp-优化并行连接">TCP 优化并行连接</a></li>
-    <li><a href="#http-管道化-pipelining">HTTP 管道化 pipelining</a></li>
+    <li><a href="#http1-管道化-pipelining">HTTP/1 管道化 pipelining</a></li>
+    <li><a href="#http2-多路复用和服务器推送">HTTP/2 多路复用和服务器推送</a></li>
+    <li><a href="#http11-中的-web-性能优化">HTTP/1.1 中的 web 性能优化：</a>
+      <ul>
+        <li><a href="#合并资源">合并资源</a></li>
+        <li><a href="#资源内联">资源内联</a></li>
+        <li><a href="#资源压缩">资源压缩</a></li>
+        <li><a href="#代码精简">代码精简</a></li>
+        <li><a href="#cdn-内容分发网络">CDN 内容分发网络</a></li>
+      </ul>
+    </li>
+    <li><a href="#缓存--内容协商">缓存 &amp; 内容协商</a></li>
+    <li><a href="#服务器主动禁用缓存">服务器主动禁用缓存</a></li>
+    <li><a href="#浏览器主动禁用缓存">浏览器主动禁用缓存</a></li>
   </ul>
 </nav>
   </div>
