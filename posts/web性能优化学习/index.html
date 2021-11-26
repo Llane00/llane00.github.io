@@ -1608,7 +1608,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2021年11月24日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;7&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;8&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1806,6 +1806,128 @@ Cache-Control: no-store 不协商，不协商</p>
 <p>比如：get 请求 xxx.com/home 如果改为 xxx.com/home?a=1 加一个随机数</p>
 <p>方法 2 设置请求头<br />
 Cache-Control: no-cache no-store max-age=0</p>
+<hr />
+<h2 id="代码的位置">代码的位置</h2>
+<p>css 放在头部的原因：<br />
+1 css 不阻塞 html 的解析，而且用户最先关注的是页面的显示，所以 css 应该尽早下载<br />
+2 此外也可以防止 css 被 js 阻塞</p>
+<p>内联的 js 推荐放在头部的 css 前的原因：<br />
+1 内联的 js 没有网络请求执行起来很快，不用等 css 下载解析</p>
+<p>js 放在 body 最后的原因：<br />
+1 可直接访问页面的 DOM，无需监听 DOM ready<br />
+2 避免阻塞 html 的解析过程</p>
+<hr />
+<h2 id="代码拆分">代码拆分</h2>
+<p>js 和 css 都做区分，如果都放在一个文件里，每次更新用户都需要重新下载，</p>
+<p>拆分后不变的部分用户可以用缓存，变的部分再重新请求</p>
+<hr />
+<h2 id="js-动态导入">js 动态导入</h2>
+<p>使用库时的动态导入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;库名字&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">fun1</span> <span class="o">=</span> <span class="nx">x</span><span class="p">.</span><span class="nx">fun1</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>路由加载组件的动态导入<br />
+Vue</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+  <span class="nx">routes</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/home&#39;</span><span class="p">,</span> <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./Home.vue&#39;</span><span class="p">)</span> <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;/about&#39;</span><span class="p">,</span>
+      <span class="nx">component</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+        <span class="nx">component</span><span class="o">:</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./About.vue&#39;</span><span class="p">),</span>
+        <span class="nx">loading</span><span class="o">:</span> <span class="nx">LoadingComponent</span><span class="p">,</span>
+        <span class="nx">error</span><span class="o">:</span> <span class="nx">ErrorComponent</span><span class="p">,</span>
+      <span class="p">}),</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>React</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Suspense</span><span class="p">,</span> <span class="nx">lazy</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">BrowserRouter</span> <span class="nx">as</span> <span class="nx">Router</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span> <span class="nx">Switch</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-router-dom&#39;</span>
+
+<span class="kr">const</span> <span class="nx">Home</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./routes/Home&#39;</span><span class="p">))</span>
+<span class="kr">const</span> <span class="nx">About</span> <span class="o">=</span> <span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./routes/About&#39;</span><span class="p">))</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="o">&lt;</span><span class="nx">Router</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Suspense</span> <span class="nx">fallback</span><span class="o">=</span><span class="p">{</span><span class="nx">LoadingComponent</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">exact</span> <span class="nx">path</span><span class="o">=</span><span class="s2">&#34;/&#34;</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Home</span><span class="p">}</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Rpute</span> <span class="nx">path</span><span class="o">=</span><span class="s2">&#34;/about&#34;</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">About</span><span class="p">}</span><span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">/Suspense&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Router</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
+<h2 id="图片懒加载">图片懒加载</h2>
+<pre tabindex="0"><code>1. &lt;img src=&quot;product1.jpg&quot;/&gt;
+2. &lt;img src=&quot;placeholder.png&quot;
+     data-src=&quot;prodcut1.jpg/&gt;
+3. 监听windows on scroll
+   findImgs().each img 每有一个img就生成一个新的new image对象
+     new Image()
+      .src = img.data.src 去请求真正的图片
+      .onload img.src = img.dataset.src //请求完毕后替换placeholder的图片
+</code></pre><p>预加载 提前出发懒加载的时间，优化用户体验</p>
+<hr />
+<h2 id="css-代码优化">css 代码优化</h2>
+<p>删除无用 css</p>
+<p>减少重排比如 left 动画改成 transform</p>
+<p>link 可以并行加载<br />
+@import 只能串行加载</p>
+<p>启用 GPU 硬件加速：给元素加上 transform: translate3d(0,0,0)</p>
+<p>缩写 #FFFFFF -&gt; #FFF ; 0.1 -&gt; .1 ; 0px -&gt; 0</p>
+<p>砍需求</p>
 <hr />
 
     </article>
@@ -2545,6 +2667,11 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#缓存--内容协商">缓存 &amp; 内容协商</a></li>
     <li><a href="#服务器主动禁用缓存">服务器主动禁用缓存</a></li>
     <li><a href="#浏览器主动禁用缓存">浏览器主动禁用缓存</a></li>
+    <li><a href="#代码的位置">代码的位置</a></li>
+    <li><a href="#代码拆分">代码拆分</a></li>
+    <li><a href="#js-动态导入">js 动态导入</a></li>
+    <li><a href="#图片懒加载">图片懒加载</a></li>
+    <li><a href="#css-代码优化">css 代码优化</a></li>
   </ul>
 </nav>
   </div>
