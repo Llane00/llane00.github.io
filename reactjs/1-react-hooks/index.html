@@ -1376,7 +1376,7 @@
     "datePublished": "2021-10-23T09:36:00+08:00",
     "dateModified": "2021-10-23T09:36:00+08:00",
     "url" : "http://llane00.github.io/reactjs/1-react-hooks/",
-    "description": "React理念：UI = f(data) 纯函数在加载不同数据后产生了不同的UI useState 1 2 3 4 const [n, setN] = useState(0); console.log(n) //读 onClick = () =\u0026gt; (setN(n+1)) //写 onClick2 = () =\u0026gt; (setN(i …",
+    "description": "React 理念：UI = f(data) 纯函数在加载不同数据后产生了不同的 UI useState 1 2 3 4 const [n, setN] = useState(0) console.log(n) //读 onClick = () =\u0026gt; setN(n + 1) //写 onClick2 = () =\u0026gt; …",
     "keywords": ["React"],
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -1631,8 +1631,8 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <p>React理念：UI = f(data)<br />
-纯函数在加载不同数据后产生了不同的UI</p>
+      <p>React 理念：UI = f(data)<br />
+纯函数在加载不同数据后产生了不同的 UI</p>
 <h2 id="usestate">useState</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1642,17 +1642,17 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="p">[</span><span class="nx">n</span><span class="p">,</span> <span class="nx">setN</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="p">[</span><span class="nx">n</span><span class="p">,</span> <span class="nx">setN</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="c1">//读
-</span><span class="c1"></span><span class="nx">onClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="c1">//写
-</span><span class="c1"></span><span class="nx">onClick2</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">setN</span><span class="p">(</span><span class="nx">i</span> <span class="p">=&gt;</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//也支持传入一个匿名函数
+</span><span class="c1"></span><span class="nx">onClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//写
+</span><span class="c1"></span><span class="nx">onClick2</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setN</span><span class="p">((</span><span class="nx">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//也支持传入一个匿名函数
 </span></code></pre></td></tr></table>
 </div>
-</div><p>随着组件更新render，useState会产生多个n，但每次get的n是最新的n</p>
+</div><p>随着组件更新 render，useState 会产生多个 n，但每次 get 的 n 是最新的 n</p>
 <p>组件每次重新渲染，组件里的函数都会重新执行，<br />
-对应的所有state都会出现重复分身<br />
+对应的所有 state 都会出现重复分身<br />
 如果你不希望出现重复分身的变量<br />
-可以用useRef/useContext等<br />
+可以用 useRef/useContext 等<br />
 如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1661,17 +1661,17 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">nRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nRef</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span> 
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">nRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nRef</span><span class="p">.</span><span class="nx">current</span><span class="p">)</span>
 <span class="nx">onClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">nRef</span><span class="p">.</span><span class="nx">current</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
 <p>useState 不能局部更新<br />
-useState 如果数据地址没变那么react就不会重新render更新</p>
-<p>如果useState的对象生成复杂建议把初始值写成一个匿名函数，不然每次重新渲染时都要做多余的计算开销<br />
+useState 如果数据地址没变那么 react 就不会重新 render 更新</p>
+<p>如果 useState 的对象生成复杂建议把初始值写成一个匿名函数，不然每次重新渲染时都要做多余的计算开销<br />
 useState(() =&gt; ({ name: ’neo' }))</p>
-<p>setState会合并多个同级别的对n的操作，<br />
+<p>setState 会合并多个同级别的对 n 的操作，<br />
 如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1681,9 +1681,9 @@ useState(() =&gt; ({ name: ’neo' }))</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c1">//这段代码只会执行会后一行的setN(n+1)
 </span></code></pre></td></tr></table>
 </div>
@@ -1695,27 +1695,21 @@ useState(() =&gt; ({ name: ’neo' }))</p>
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
-<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nx">setN</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1">//同上也只会执行最后的setN(n+3)
 </span></code></pre></td></tr></table>
 </div>
-</div><p>所以setState 建议传入一个匿名函数方法，可以防止上面的合并操作，也可以防止代码出现过时的闭包，<br />
+</div><p>所以 setState 建议传入一个匿名函数方法，可以防止上面的合并操作，也可以防止代码出现过时的闭包，<br />
 比如: setN(i =&gt; i + 1)</p>
 <hr />
 <h2 id="usereducer">useReducer</h2>
-<p>useReducer 是一个把对state的所有操作都聚拢在内的useState<br />
-用来践行flux思想，具体过程如下：<br />
-1.创建初始值 initialState<br />
-2.创建所有操作 reducer(state, action)<br />
-3.传给useReducer，得到读和写api<br />
-4.调用时写 ({ type: ‘操作类型' })</p>
-<p>redux主要做到了：<br />
-1.集中管理全局状态和对状态的操作<br />
-2.提供所有子组件可以在上下文中读写全局状态</p>
+<p>useReducer 是一个把对 state 的所有操作都聚拢在内的 useState<br />
+用来践行 flux 思想，具体过程如下： 1.创建初始值 initialState 2.创建所有操作 reducer(state, action) 3.传给 useReducer，得到读和写 api 4.调用时写 ({ type: ‘操作类型' })</p>
+<p>redux 主要做到了： 1.集中管理全局状态和对状态的操作 2.提供所有子组件可以在上下文中读写全局状态</p>
 <h2 id="usecontext">useContext</h2>
-<p>现在可以用useState/useReducer和useContext来代替redux</p>
+<p>现在可以用 useState/useReducer 和 useContext 来代替 redux</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1794,7 +1788,7 @@ useState(() =&gt; ({ name: ’neo' }))</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//在组件A和组件B中就可以获取context中的vaule 
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//在组件A和组件B中就可以获取context中的vaule
 </span><span class="c1">//const {name, setName, personInfo, dispatch} = useContext(AppContext)
 </span><span class="c1"></span>
 <span class="nx">setName</span><span class="p">(</span><span class="s1">&#39;Neo&#39;</span><span class="p">)</span>
@@ -1804,30 +1798,30 @@ useState(() =&gt; ({ name: ’neo' }))</p>
 </div>
 </div><hr />
 <h2 id="useeffect">useEffect</h2>
-<p>useEffect（定义：执行在render后的副作用）<br />
+<p>useEffect（定义：执行在 render 后的副作用）<br />
 依赖参数中数组里的值的变化来决定是否要执行函数</p>
 <p>App() -&gt; 执行 -&gt; VDOM(VNode)<br />
 -&gt; DOM -&gt;useLayoutEffect -&gt; 浏览器改变外观 -&gt; useEffect</p>
-<p>useEffect在浏览器渲染完成后执行<br />
+<p>useEffect 在浏览器渲染完成后执行<br />
 useLayoutEffect 在浏览器渲染前执行<br />
-useLayoutEffect总是比useEffect先执行，<br />
-useLayoutEffect里的任务最好是影响了useEffect</p>
+useLayoutEffect 总是比 useEffect 先执行，<br />
+useLayoutEffect 里的任务最好是影响了 useEffect</p>
 <hr />
 <h2 id="usememo--usecallback">useMemo &amp;&amp; useCallBack</h2>
-<p>useMemo 可以实现函数的重用，防止在多次render的时候做不必要的重复创建和执行函数<br />
+<p>useMemo 可以实现函数的重用，防止在多次 render 的时候做不必要的重复创建和执行函数<br />
 第一个参数是 ()=&gt;value<br />
 第二个参数是依赖 [m,n]<br />
-只有当依赖不变时，才会计算新的value，<br />
-如果依赖不变，那么就重用之前的value<br />
+只有当依赖不变时，才会计算新的 value，<br />
+如果依赖不变，那么就重用之前的 value<br />
 （vue2 computed？）</p>
-<p>如果value是一个函数，那么要写成<br />
+<p>如果 value 是一个函数，那么要写成<br />
 ()=&gt; ((x)=&gt; console.log(x))<br />
-可以用useCallBack简化<br />
+可以用 useCallBack 简化<br />
 useCallback(x=&gt;log(x), [m]) 等价于<br />
 useMemo(() =&gt; x =&gt; log(x), [m])</p>
 <hr />
 <h2 id="useref">useRef</h2>
-<p>useRef的目的：在组件不断render时，需要一个值保持不变，比如可以累积计算之类的<br />
+<p>useRef 的目的：在组件不断 render 时，需要一个值保持不变，比如可以累积计算之类的<br />
 useRef 原理：用对象的形式来存变量，在对象里可以做到改变对象的值，而不变对象的地址<br />
 为了保证值不变，所以使用引用</p>
 <p>初始化：const count = useRef(0)<br />
@@ -1835,15 +1829,15 @@ useRef 原理：用对象的形式来存变量，在对象里可以做到改变�
 <hr />
 <h2 id="汇总">汇总</h2>
 <p>App() 重复 rendering…<br />
-每次变 useState/useRender，setN会触发重新render<br />
-有条件时变 useMemo/useCallBack，防止函数有多余的render<br />
-不变 useRef ，改变值不会触发重新render<br />
-（vue3 ref值有变化会自动render）</p>
+每次变 useState/useRender，setN 会触发重新 render<br />
+有条件时变 useMemo/useCallBack，防止函数有多余的 render<br />
+不变 useRef ，改变值不会触发重新 render<br />
+（vue3 ref 值有变化会自动 render）</p>
 <hr />
 <h2 id="reactforwardref">React.forwardRef</h2>
-<p>我们可以给一个函数组件一个ref来方便引用一个组件（就可以不用getElementById了），<br />
-但是函数式组件不能直接用useRef产生的ref（class组件可以直接用），因为函数式组件的props里不包含ref<br />
-此时需要用React.forwardRef包裹一下函数组件来获得ref</p>
+<p>我们可以给一个函数组件一个 ref 来方便引用一个组件（就可以不用 getElementById 了），<br />
+但是函数式组件不能直接用 useRef 产生的 ref（class 组件可以直接用），因为函数式组件的 props 里不包含 ref<br />
+此时需要用 React.forwardRef 包裹一下函数组件来获得 ref</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1869,20 +1863,19 @@ useRef 原理：用对象的形式来存变量，在对象里可以做到改变�
     <span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kr">const</span> <span class="nx">Button2</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">forward</span><span class="p">((</span><span class="nx">props</span><span class="p">,</span> <span class="nx">ref</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">Button2</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">forwardRef</span><span class="p">((</span><span class="nx">props</span><span class="p">,</span> <span class="nx">ref</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;red&#34;</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="p">{</span><span class="err">…</span><span class="na">props</span><span class="p">}</span> <span class="p">/&gt;</span>
 <span class="p">})</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="useimpreativehandle">useImpreativeHandle</h2>
-<p>useImpreativeHandle 可以以ref为参数返回一个自定义的ref对象</p>
-<h2 id="自定义hooks">自定义hooks</h2>
-<p>自定义hooks是 对已有的基础react hooks互相组合的封装</p>
+<p>useImpreativeHandle 可以以 ref 为参数返回一个自定义的 ref 对象，封装 ref 对象，隐藏一些属性。</p>
+<h2 id="自定义-hooks">自定义 hooks</h2>
+<p>自定义 hooks 是 对已有的基础 react hooks 互相组合的封装</p>
 <hr />
-<p>记录日常遇到的问题：<br />
-1.表单像input是用useState还是useRef，有什么区别？</p>
+<p>记录日常遇到的问题： 1.表单像 input 是用 useState 还是 useRef，有什么区别？</p>
 <p>如果将表单值保持在状态（即受控组件），一个好处是可以在更改时立即访问值，例如，如果你希望在用户在输入框中键入某些内容时禁用某些按钮。<br />
-如果采用ref方法（也称为非受控组件），一个好处是不必每次用户键入时都重新呈现组件（因为调用state update会重新呈现）</p>
+如果采用 ref 方法（也称为非受控组件），一个好处是不必每次用户键入时都重新呈现组件（因为调用 state update 会重新呈现）</p>
 
     </article>
     
@@ -2607,7 +2600,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#汇总">汇总</a></li>
     <li><a href="#reactforwardref">React.forwardRef</a></li>
     <li><a href="#useimpreativehandle">useImpreativeHandle</a></li>
-    <li><a href="#自定义hooks">自定义hooks</a></li>
+    <li><a href="#自定义-hooks">自定义 hooks</a></li>
   </ul>
 </nav>
   </div>
