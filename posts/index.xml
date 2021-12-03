@@ -301,7 +301,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 14:30:09 +0800</atom:modified>
         <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
-        <description>大招技能有冷却 == 节流（throttle） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 /** * 节流原理：在一定时间内，只能触发</description>
+        <description>吟唱类技能会被中途打断 == 防抖（debounce） 防止抖动，以免把一次事件误认为多次 场景: 登录、发短信等按钮避免用户点击太快，以致于发送了多次</description>
         
         <dc:creator>Llane00</dc:creator>
         
