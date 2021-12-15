@@ -1738,8 +1738,14 @@ useState(() =&gt; ({ name: ’neo' }))</p>
 <hr />
 <h2 id="usereducer">useReducer</h2>
 <p>useReducer 是一个把对 state 的所有操作都聚拢在内的 useState<br />
-用来践行 flux 思想，具体过程如下： 1.创建初始值 initialState 2.创建所有操作 reducer(state, action) 3.传给 useReducer，得到读和写 api 4.调用时写 ({ type: ‘操作类型' })</p>
-<p>redux 主要做到了： 1.集中管理全局状态和对状态的操作 2.提供所有子组件可以在上下文中读写全局状态</p>
+用来践行 flux 思想，具体过程如下：<br />
+1.创建初始值 initialState<br />
+2.创建所有操作 reducer(state, action)<br />
+3.传给 useReducer，得到读和写 api<br />
+4.调用时写 ({ type: ‘操作类型' })</p>
+<p>redux 主要做到了：<br />
+1.集中管理全局状态和对状态的操作<br />
+2.提供所有子组件可以在上下文中读写全局状态</p>
 <h2 id="usecontext">useContext</h2>
 <p>现在可以用 useState/useReducer 和 useContext 来代替 redux</p>
 <div class="highlight"><div class="chroma">
