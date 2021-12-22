@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Reactjs on Llane00&#39;s Blog</title>
-    <link>http://llane00.github.io/reactjs/</link>
+    <link>https://llane00.github.io/reactjs/</link>
     <description>Recent content in Reactjs on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,17 +16,17 @@
     <copyright>©2021, All Rights Reserved</copyright>
     <lastBuildDate>Fri, 29 Oct 2021 15:22:40 +0800</lastBuildDate>
     
-        <atom:link href="http://llane00.github.io/reactjs/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://llane00.github.io/reactjs/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>学习React_hooks_2</title>
-        <link>http://llane00.github.io/reactjs/2-react-hooks/</link>
+        <link>https://llane00.github.io/reactjs/2-react-hooks/</link>
         <pubDate>Fri, 29 Oct 2021 15:22:40 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 29 Oct 2021 15:22:40 +0800</atom:modified>
-        <guid>http://llane00.github.io/reactjs/2-react-hooks/</guid>
+        <guid>https://llane00.github.io/reactjs/2-react-hooks/</guid>
         <description>从函数的角度来理解hooks的概念 React理念：UI = f(data) 视图UI会根据自变量变化 自变量： useState 定义自变量 useReducer(复杂版的useS</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -58,11 +58,11 @@
       
       <item>
         <title>学习React_hooks_1</title>
-        <link>http://llane00.github.io/reactjs/1-react-hooks/</link>
+        <link>https://llane00.github.io/reactjs/1-react-hooks/</link>
         <pubDate>Sat, 23 Oct 2021 09:36:00 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sat, 23 Oct 2021 09:36:00 +0800</atom:modified>
-        <guid>http://llane00.github.io/reactjs/1-react-hooks/</guid>
+        <guid>https://llane00.github.io/reactjs/1-react-hooks/</guid>
         <description>React 理念：UI = f(data) 纯函数在加载不同数据后产生了不同的 UI useState 1 2 3 4 const [n, setN] = useState(0) console.log(n) //读 onClick = () =&amp;gt; setN(n + 1) //写 onClick2 = () =&amp;gt; setN((i) =&amp;gt; i + 1) //也支持传入一个匿名</description>
         
         <dc:creator>Llane00</dc:creator>

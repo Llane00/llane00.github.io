@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Posts on Llane00&#39;s Blog</title>
-    <link>http://llane00.github.io/posts/</link>
+    <link>https://llane00.github.io/posts/</link>
     <description>Recent content in Posts on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,17 +16,17 @@
     <copyright>©2021, All Rights Reserved</copyright>
     <lastBuildDate>Thu, 09 Dec 2021 10:57:46 +0800</lastBuildDate>
     
-        <atom:link href="http://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://llane00.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>Webpack配置总结</title>
-        <link>http://llane00.github.io/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</link>
+        <link>https://llane00.github.io/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</link>
         <pubDate>Thu, 09 Dec 2021 10:57:46 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 09 Dec 2021 10:57:46 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</guid>
+        <guid>https://llane00.github.io/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</guid>
         <description>启动 webpack ./node_modules/.bin/webpack npx webpack package.json 中加上 1 2 3 &amp;#34;script&amp;#34;: { &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34; } 让 webpack 支持 IE 根目录加上配置文件.browserlistrc [production] &amp;gt; 1% //要支持大于1%的浏览器 ie 9 //要支持i</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -40,11 +40,11 @@
       
       <item>
         <title>Web性能优化学习</title>
-        <link>http://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+        <link>https://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
         <pubDate>Wed, 24 Nov 2021 12:25:35 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Wed, 24 Nov 2021 12:25:35 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
+        <guid>https://llane00.github.io/posts/web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
         <description>浏览器的主要组成 浏览器的主要组成有： 浏览器核心 网络模块 渲染引擎 JS 解释器 其他 浏览器核心调用网络模块发送 HTTP 请求，渲染引擎根据 HTTP 的响应信息渲染页面</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -58,11 +58,11 @@
       
       <item>
         <title>学习函数柯里化</title>
-        <link>http://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</link>
+        <link>https://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</link>
         <pubDate>Thu, 18 Nov 2021 14:06:05 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 18 Nov 2021 14:06:05 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</guid>
+        <guid>https://llane00.github.io/posts/%E5%AD%A6%E4%B9%A0%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/</guid>
         <description>从直观上理解柯里化，就是原本需要一次传 n 个参数才可以执行一个函数， 柯里化后我可以每次只传一个单独的参数来运行一个函数 例子 1： 把特定的函数柯里</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -76,11 +76,11 @@
       
       <item>
         <title>优化递归方法的思考</title>
-        <link>http://llane00.github.io/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</link>
+        <link>https://llane00.github.io/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</link>
         <pubDate>Thu, 18 Nov 2021 11:47:23 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 18 Nov 2021 11:47:23 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+        <guid>https://llane00.github.io/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
         <description>递归的问题 js 中的递归操作会在执行栈中不断压入函数执行栈，再不断弹出函数执行栈 在实际的执行环境中，无论是浏览器还是 Node.js 都有最大栈数的限制，一不注</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -94,11 +94,11 @@
       
       <item>
         <title>Js实现数组拍平</title>
-        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</link>
+        <link>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</link>
         <pubDate>Mon, 15 Nov 2021 15:49:28 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 15 Nov 2021 15:49:28 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</guid>
+        <guid>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%95%B0%E7%BB%84%E6%8B%8D%E5%B9%B3/</guid>
         <description>API: 数组+初始 pid（一般为 0） 实现思路：用递归或者轮询数组一步步创建一个新的数组对象 要求拍平的原数据如下： 1 2 3 4 5 6 7 let arr = [ { id: 1, name: &amp;#</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -134,11 +134,11 @@
       
       <item>
         <title>Js实现深拷贝</title>
-        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
+        <link>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</link>
         <pubDate>Fri, 12 Nov 2021 17:15:59 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 12 Nov 2021 17:15:59 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
+        <guid>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</guid>
         <description>深拷贝使用场景： 默认选项 部分修改 API: 接收一个对象或者基本类型，对象的类型包括 Array、function、普通 Object、RegExp 正则表</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -174,11 +174,11 @@
       
       <item>
         <title>如何评估你的技术团队</title>
-        <link>http://llane00.github.io/posts/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%BD%A0%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F/</link>
+        <link>https://llane00.github.io/posts/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%BD%A0%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F/</link>
         <pubDate>Wed, 10 Nov 2021 16:53:45 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Wed, 10 Nov 2021 16:53:45 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%BD%A0%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F/</guid>
+        <guid>https://llane00.github.io/posts/%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%BD%A0%E7%9A%84%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F/</guid>
         <description>这篇文章来自 StackOverFlow 的创始人 Joel 在 20 年前写下的一篇文章原文 现在我翻译成中文 你可以用 13 个问题来衡量你的技术团队 分数评估： &amp;gt;= 10 优秀 &amp;gt;= 7 还可以 &amp;gt;= 5 需要加强</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -192,11 +192,11 @@
       
       <item>
         <title>读书笔记《图解HTTP》</title>
-        <link>http://llane00.github.io/posts/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E5%9B%BE%E8%A7%A3http/</link>
+        <link>https://llane00.github.io/posts/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E5%9B%BE%E8%A7%A3http/</link>
         <pubDate>Tue, 09 Nov 2021 10:35:07 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Tue, 09 Nov 2021 10:35:07 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E5%9B%BE%E8%A7%A3http/</guid>
+        <guid>https://llane00.github.io/posts/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E5%9B%BE%E8%A7%A3http/</guid>
         <description>HTTP HTTP 全称是 HyperText Transfer Protocol 超文本转移（传输）协议 目前主流的 Http 版本是 1.1，于 1997 年 1 月发布 通常使用的网络是在 Tcp/IP 协议的基础上运行的 HTTP 协议是在 TCP/IP 协议的子集 TCP/IP</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -210,11 +210,11 @@
       
       <item>
         <title>Vim使用笔记2</title>
-        <link>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</link>
+        <link>https://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</link>
         <pubDate>Fri, 29 Oct 2021 11:03:27 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 29 Oct 2021 11:03:27 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</guid>
+        <guid>https://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/</guid>
         <description>由于我目前还是用vscode居多，vscode的插件和环境配置对前端开发更加友好，我打算还是在vscode上开发，辅助用vscode+vim</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -244,11 +244,11 @@
       
       <item>
         <title>Vim使用笔记</title>
-        <link>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+        <link>https://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 11 Oct 2021 15:09:31 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 11 Oct 2021 15:09:31 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://llane00.github.io/posts/vim%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
         <description>normal 模式 insert 模式 visual 模式 control + [ 从insert/visual回到normal esc 也是从insert/visual回到normal normal 模式下 hjkl 移动光标左下</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -278,11 +278,11 @@
       
       <item>
         <title>Js实现节流和防抖</title>
-        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
+        <link>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</link>
         <pubDate>Mon, 19 Jul 2021 14:30:09 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 14:30:09 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
+        <guid>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96/</guid>
         <description>吟唱类技能会被中途打断 == 防抖（debounce） 防止抖动，以免把一次事件误认为多次 场景: 登录、发短信等按钮避免用户点击太快，以致于发送了多次</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -318,11 +318,11 @@
       
       <item>
         <title>Js原型</title>
-        <link>http://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</link>
+        <link>https://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</link>
         <pubDate>Mon, 19 Jul 2021 09:06:52 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 19 Jul 2021 09:06:52 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</guid>
+        <guid>https://llane00.github.io/posts/js%E5%8E%9F%E5%9E%8B/</guid>
         <description>关于Js原型 1 2 3 4 5 6 7 8 9 10 11 // 例子 function Person() { } var person = new Person(); console.log(person.__proto__ == Person.prototype) // true console.log(Person.prototype.constructor == Person) // true // 顺便学习一个ES5的方法,可以获得对象的原型 console.log(Object.getPrototypeOf(person) === Person.prototype) // true 实例与</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -356,11 +356,11 @@
       
       <item>
         <title>重新理解BFC</title>
-        <link>http://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</link>
+        <link>https://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</link>
         <pubDate>Tue, 13 Jul 2021 20:09:51 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Tue, 13 Jul 2021 20:09:51 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</guid>
+        <guid>https://llane00.github.io/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3bfc/</guid>
         <description>常见的定位方案 普通流(normal flow) 在普通流中，元素按照其在HTML中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到一行被占满</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -394,11 +394,11 @@
       
       <item>
         <title>Js实现大数相加</title>
-        <link>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
+        <link>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</link>
         <pubDate>Sun, 11 Jul 2021 20:09:12 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 11 Jul 2021 20:09:12 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
+        <guid>https://llane00.github.io/posts/js%E5%AE%9E%E7%8E%B0%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0/</guid>
         <description>背景： 在 JavaScript 里面，数字均为双精度浮点类型，即一个介于 ±2−1023和 ±2+1024之间的数字，或约为 ±10−308到 ±10+308，数字精度为</description>
         
         <dc:creator>Llane00</dc:creator>
@@ -434,11 +434,11 @@
       
       <item>
         <title>使用命令行快速压缩图片</title>
-        <link>http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
+        <link>https://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
         <pubDate>Sun, 06 Dec 2020 13:31:42 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 06 Dec 2020 13:31:42 +0800</atom:modified>
-        <guid>http://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
+        <guid>https://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
         <description>这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt 1 npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support</description>
         
         <dc:creator>Llane00</dc:creator>
