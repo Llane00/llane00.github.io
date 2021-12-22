@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://llane00.github.io/en/categories/</loc>
+    <loc>https://llane.xyz/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://llane00.github.io/categories/"
+                href="https://llane.xyz/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://llane00.github.io/en/categories/"
+                href="https://llane.xyz/en/categories/"
                 />
   </url><url>
-    <loc>https://llane00.github.io/en/</loc>
+    <loc>https://llane.xyz/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://llane00.github.io/"
+                href="https://llane.xyz/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://llane00.github.io/en/"
+                href="https://llane.xyz/en/"
                 />
   </url><url>
-    <loc>https://llane00.github.io/en/series/</loc>
+    <loc>https://llane.xyz/en/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://llane00.github.io/series/"
+                href="https://llane.xyz/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://llane00.github.io/en/series/"
+                href="https://llane.xyz/en/series/"
                 />
   </url><url>
-    <loc>https://llane00.github.io/en/tags/</loc>
+    <loc>https://llane.xyz/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://llane00.github.io/tags/"
+                href="https://llane.xyz/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://llane00.github.io/en/tags/"
+                href="https://llane.xyz/en/tags/"
                 />
   </url>
 </urlset>

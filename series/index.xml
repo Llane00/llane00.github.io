@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Series on Llane00&#39;s Blog</title>
-    <link>https://llane00.github.io/series/</link>
+    <link>https://llane.xyz/series/</link>
     <description>Recent content in Series on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,17 +16,17 @@
     <copyright>©2021, All Rights Reserved</copyright>
     <lastBuildDate>Mon, 15 Nov 2021 15:49:28 +0800</lastBuildDate>
     
-        <atom:link href="https://llane00.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://llane.xyz/series/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>用js实现</title>
-        <link>https://llane00.github.io/series/%E7%94%A8js%E5%AE%9E%E7%8E%B0/</link>
+        <link>https://llane.xyz/series/%E7%94%A8js%E5%AE%9E%E7%8E%B0/</link>
         <pubDate>Mon, 15 Nov 2021 15:49:28 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/series/%E7%94%A8js%E5%AE%9E%E7%8E%B0/</guid>
+        <guid>https://llane.xyz/series/%E7%94%A8js%E5%AE%9E%E7%8E%B0/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -40,11 +40,11 @@
       
       <item>
         <title>菜鸟算法</title>
-        <link>https://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</link>
+        <link>https://llane.xyz/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</link>
         <pubDate>Mon, 08 Nov 2021 09:42:10 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</guid>
+        <guid>https://llane.xyz/series/%E8%8F%9C%E9%B8%9F%E7%AE%97%E6%B3%95/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -58,11 +58,11 @@
       
       <item>
         <title>从头学习js</title>
-        <link>https://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</link>
+        <link>https://llane.xyz/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</link>
         <pubDate>Thu, 04 Nov 2021 10:21:52 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</guid>
+        <guid>https://llane.xyz/series/%E4%BB%8E%E5%A4%B4%E5%AD%A6%E4%B9%A0js/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -76,11 +76,11 @@
       
       <item>
         <title>React</title>
-        <link>https://llane00.github.io/series/react/</link>
+        <link>https://llane.xyz/series/react/</link>
         <pubDate>Fri, 29 Oct 2021 15:22:40 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/series/react/</guid>
+        <guid>https://llane.xyz/series/react/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -94,11 +94,11 @@
       
       <item>
         <title>菜鸟学vim</title>
-        <link>https://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</link>
+        <link>https://llane.xyz/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</link>
         <pubDate>Fri, 29 Oct 2021 11:03:27 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</guid>
+        <guid>https://llane.xyz/series/%E8%8F%9C%E9%B8%9F%E5%AD%A6vim/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>

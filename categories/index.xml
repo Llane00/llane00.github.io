@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Categories on Llane00&#39;s Blog</title>
-    <link>https://llane00.github.io/categories/</link>
+    <link>https://llane.xyz/categories/</link>
     <description>Recent content in Categories on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,17 +16,17 @@
     <copyright>©2021, All Rights Reserved</copyright>
     <lastBuildDate>Mon, 15 Nov 2021 15:49:28 +0800</lastBuildDate>
     
-        <atom:link href="https://llane00.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://llane.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>javascript</title>
-        <link>https://llane00.github.io/categories/javascript/</link>
+        <link>https://llane.xyz/categories/javascript/</link>
         <pubDate>Mon, 15 Nov 2021 15:49:28 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/categories/javascript/</guid>
+        <guid>https://llane.xyz/categories/javascript/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -40,11 +40,11 @@
       
       <item>
         <title>React</title>
-        <link>https://llane00.github.io/categories/react/</link>
+        <link>https://llane.xyz/categories/react/</link>
         <pubDate>Fri, 29 Oct 2021 15:22:40 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/categories/react/</guid>
+        <guid>https://llane.xyz/categories/react/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -58,11 +58,11 @@
       
       <item>
         <title>css</title>
-        <link>https://llane00.github.io/categories/css/</link>
+        <link>https://llane.xyz/categories/css/</link>
         <pubDate>Tue, 13 Jul 2021 20:09:51 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/categories/css/</guid>
+        <guid>https://llane.xyz/categories/css/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>
@@ -76,11 +76,11 @@
       
       <item>
         <title>日常工具</title>
-        <link>https://llane00.github.io/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</link>
+        <link>https://llane.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</link>
         <pubDate>Sun, 06 Dec 2020 13:31:42 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         
-        <guid>https://llane00.github.io/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</guid>
+        <guid>https://llane.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</guid>
         <description></description>
         
         <dc:creator>Llane00</dc:creator>

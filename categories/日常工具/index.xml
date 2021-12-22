@@ -7,7 +7,7 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>日常工具 on Llane00&#39;s Blog</title>
-    <link>https://llane00.github.io/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</link>
+    <link>https://llane.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 日常工具 on Llane00&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
@@ -16,17 +16,17 @@
     <copyright>©2021, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 06 Dec 2020 13:31:42 +0800</lastBuildDate>
     
-        <atom:link href="https://llane00.github.io/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://llane.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
 
       
       <item>
         <title>使用命令行快速压缩图片</title>
-        <link>https://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
+        <link>https://llane.xyz/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</link>
         <pubDate>Sun, 06 Dec 2020 13:31:42 +0800</pubDate>
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Sun, 06 Dec 2020 13:31:42 +0800</atom:modified>
-        <guid>https://llane00.github.io/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
+        <guid>https://llane.xyz/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BF%AB%E9%80%9F%E5%8E%8B%E7%BC%A9%E5%9B%BE%E7%89%87/</guid>
         <description>这次推荐的压缩工具是 optimizt 稍微看了下，算是一个压缩图片的工具合集 安装optimizt 1 npm i -g @funboxteam/optimizt 也支持WebStorm, PhpStorm等插件 also support</description>
         
         <dc:creator>Llane00</dc:creator>
