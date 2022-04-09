@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>代码与生活 on Llane00&#39;s Blog</title>
+    <link>https://llane.xyz/tags/%E4%BB%A3%E7%A0%81%E4%B8%8E%E7%94%9F%E6%B4%BB/</link>
+    <description>Recent content in 代码与生活 on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2022, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 09 Apr 2022 08:53:19 +0800</lastBuildDate>
+    
+        <atom:link href="https://llane.xyz/tags/%E4%BB%A3%E7%A0%81%E4%B8%8E%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Bash和抢菜</title>
+        <link>https://llane.xyz/posts/bash%E5%92%8C%E6%8A%A2%E8%8F%9C/</link>
+        <pubDate>Sat, 09 Apr 2022 08:53:19 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sat, 09 Apr 2022 08:53:19 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/bash%E5%92%8C%E6%8A%A2%E8%8F%9C/</guid>
+        <description>疫情封闭太久，我已经连续4天早起没抢到菜了 我在偶然间看到阮一峰老师的周刊里有一片文章是关于如何从安卓手机翻录电子书 https://shkspr.mobi/blog/2021/12/quick-and-dirty-way-to-rip-an-ebook-from-android/ 嗯？我好像可以试试用ba</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>代码与生活</category>
+            
+          
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

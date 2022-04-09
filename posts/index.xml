@@ -13,12 +13,36 @@
     <language>zh</language>
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
-    <copyright>©2021, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 10:57:46 +0800</lastBuildDate>
+    <copyright>©2022, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 09 Apr 2022 08:53:19 +0800</lastBuildDate>
     
         <atom:link href="https://llane.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Bash和抢菜</title>
+        <link>https://llane.xyz/posts/bash%E5%92%8C%E6%8A%A2%E8%8F%9C/</link>
+        <pubDate>Sat, 09 Apr 2022 08:53:19 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sat, 09 Apr 2022 08:53:19 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/bash%E5%92%8C%E6%8A%A2%E8%8F%9C/</guid>
+        <description>疫情封闭太久，我已经连续4天早起没抢到菜了 我在偶然间看到阮一峰老师的周刊里有一片文章是关于如何从安卓手机翻录电子书 https://shkspr.mobi/blog/2021/12/quick-and-dirty-way-to-rip-an-ebook-from-android/ 嗯？我好像可以试试用ba</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>代码与生活</category>
+            
+          
+        
+        
+        
+      </item>
       
       <item>
         <title>Webpack配置总结</title>
