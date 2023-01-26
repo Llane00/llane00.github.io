@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Vue on Llane00&#39;s Blog</title>
+    <link>https://llane.xyz/tags/vue/</link>
+    <description>Recent content in Vue on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2023, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 11 Jan 2022 14:42:49 +0800</lastBuildDate>
+    
+        <atom:link href="https://llane.xyz/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Vue的运行原理梳理</title>
+        <link>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+        <pubDate>Tue, 11 Jan 2022 14:42:49 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Tue, 11 Jan 2022 14:42:49 +0800</atom:modified>
+        <guid>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+        <description>1 Vue 是一个 Class 是一个构造函数， 在实例化后，Vue 会调用_init 函数来进行初始化， 他会初始化生命周期、事件、props、methods、dat</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

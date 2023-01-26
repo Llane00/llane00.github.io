@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>NestJs&#43;GraphQl on Llane00&#39;s Blog</title>
+    <link>https://llane.xyz/series/nestjs&#43;graphql/</link>
+    <description>Recent content in NestJs&#43;GraphQl on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2023, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 13 Mar 2022 12:11:48 +0800</lastBuildDate>
+    
+        <atom:link href="https://llane.xyz/series/nestjs+graphql/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>1-NestJs&#43;GraphQl-安装与最简实例</title>
+        <link>https://llane.xyz/posts/1-nestjs&#43;graphql/</link>
+        <pubDate>Sun, 13 Mar 2022 12:11:48 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 13 Mar 2022 12:11:48 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/1-nestjs&#43;graphql/</guid>
+        <description>本篇文章将会讲解 NestJs+GraphQl 的安装部署，最后会实现一个最简实例 安装 Nest npm i -g @nestjs/cli 创建与运行 Nest 应用 nest g application 填写你的 app 名，完成后进入对应的 app 文件夹，运行npm i</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+          
+            
+              <category>NestJs&#43;GraphQl</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

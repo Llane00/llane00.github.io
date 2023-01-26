@@ -13,8 +13,8 @@
     <language>zh</language>
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
-    <copyright>©2022, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 08:53:19 +0800</lastBuildDate>
+    <copyright>©2023, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 26 Jan 2023 10:58:56 +0800</lastBuildDate>
     
         <atom:link href="https://llane.xyz/index.xml" rel="self" type="application/rss+xml" />
     
@@ -42,6 +42,24 @@
 
       
       <item>
+        <title>NestJs 先导篇</title>
+        <link>https://llane.xyz/nestjs/1-start/</link>
+        <pubDate>Thu, 26 Jan 2023 10:58:56 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 26 Jan 2023 10:58:56 +0800</atom:modified>
+        <guid>https://llane.xyz/nestjs/1-start/</guid>
+        <description>NestJs 是一个可扩展的Node.js后端框架，底层支持Express和Fastify（可切换，只要开发时使用Nest的语法）。 这个系列文章会总结一</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
         <title>Bash和抢菜</title>
         <link>https://llane.xyz/posts/bash%E5%92%8C%E6%8A%A2%E8%8F%9C/</link>
         <pubDate>Sat, 09 Apr 2022 08:53:19 +0800</pubDate>
@@ -66,6 +84,66 @@
       </item>
       
       <item>
+        <title>1-NestJs&#43;GraphQl-安装与最简实例</title>
+        <link>https://llane.xyz/posts/1-nestjs&#43;graphql/</link>
+        <pubDate>Sun, 13 Mar 2022 12:11:48 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 13 Mar 2022 12:11:48 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/1-nestjs&#43;graphql/</guid>
+        <description>本篇文章将会讲解 NestJs+GraphQl 的安装部署，最后会实现一个最简实例 安装 Nest npm i -g @nestjs/cli 创建与运行 Nest 应用 nest g application 填写你的 app 名，完成后进入对应的 app 文件夹，运行npm i</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+          
+            
+              <category>NestJs&#43;GraphQl</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Vue的运行原理梳理</title>
+        <link>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+        <pubDate>Tue, 11 Jan 2022 14:42:49 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Tue, 11 Jan 2022 14:42:49 +0800</atom:modified>
+        <guid>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+        <description>1 Vue 是一个 Class 是一个构造函数， 在实例化后，Vue 会调用_init 函数来进行初始化， 他会初始化生命周期、事件、props、methods、dat</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+        
+          
+            
+              <category>Vue</category>
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Webpack配置总结</title>
         <link>https://llane.xyz/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</link>
         <pubDate>Thu, 09 Dec 2021 10:57:46 +0800</pubDate>
@@ -80,6 +158,46 @@
         
         
         
+        
+      </item>
+      
+      <item>
+        <title>菜鸟学算法-10-对算法的思考</title>
+        <link>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</link>
+        <pubDate>Fri, 26 Nov 2021 13:18:42 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 26 Nov 2021 13:18:42 +0800</atom:modified>
+        <guid>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+        <description>我想知道这是为什么 &amp;ndash;费曼 算法的优化比工程的优化（提高服务器配置）效率更高 算法的时间复杂度 O(1) 哈希桶/数组随机寻址（常数） 无论问题的</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>算法基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>菜鸟算法</category>
+            
+          
         
       </item>
       
@@ -127,6 +245,42 @@
         <atom:modified>Thu, 18 Nov 2021 11:47:23 +0800</atom:modified>
         <guid>https://llane.xyz/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
         <description>递归的问题 js 中的递归操作会在执行栈中不断压入函数执行栈，再不断弹出函数执行栈 在实际的执行环境中，无论是浏览器还是 Node.js 都有最大栈数的限制，一不注</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Eventloop的理解</title>
+        <link>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <pubDate>Wed, 17 Nov 2021 13:00:16 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 17 Nov 2021 13:00:16 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        <description>javascript 是一门单线程语言，但是其中涉及到了需要很多异步的场景 比如所有的请求是异步的，读取资源是异步的，计时器也是异步的 那么这究竟是怎么实现的？ nodejs 的</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Js实现Promise</title>
+        <link>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</link>
+        <pubDate>Mon, 15 Nov 2021 16:53:58 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 15 Nov 2021 16:53:58 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</guid>
+        <description>es6 中的 Promise 可以简化 callback hell“回调地狱，回调套回调”造成的代码结构上的多级缩进 让代码看起来像同步的，消除多级缩进，从结构上简化代码（之后有 await 语</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -608,6 +762,42 @@
           
             
               <category>从头学习js</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>3-React-哲学</title>
+        <link>https://llane.xyz/reactjs/3-react-%E5%93%B2%E5%AD%A6/</link>
+        <pubDate>Fri, 29 Oct 2021 17:26:43 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 29 Oct 2021 17:26:43 +0800</atom:modified>
+        <guid>https://llane.xyz/reactjs/3-react-%E5%93%B2%E5%AD%A6/</guid>
+        <description>我们可以在React官网-React哲学这里找到React对自己的定义： 我们认为，React 是用 JavaScript 构建快速响应的大型 Web 应用程序的首选方式。 关</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
+            
+          
+        
+        
+          
+            
+              <category>React</category>
             
           
         

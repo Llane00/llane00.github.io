@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Nestjs on Llane00&#39;s Blog</title>
+    <link>https://llane.xyz/nestjs/</link>
+    <description>Recent content in Nestjs on Llane00&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
+    <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
+    <copyright>©2023, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 26 Jan 2023 10:58:56 +0800</lastBuildDate>
+    
+        <atom:link href="https://llane.xyz/nestjs/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>NestJs 先导篇</title>
+        <link>https://llane.xyz/nestjs/1-start/</link>
+        <pubDate>Thu, 26 Jan 2023 10:58:56 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Thu, 26 Jan 2023 10:58:56 +0800</atom:modified>
+        <guid>https://llane.xyz/nestjs/1-start/</guid>
+        <description>NestJs 是一个可扩展的Node.js后端框架，底层支持Express和Fastify（可切换，只要开发时使用Nest的语法）。 这个系列文章会总结一</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
