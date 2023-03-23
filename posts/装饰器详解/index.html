@@ -2324,6 +2324,31 @@ index 参数在函数参数列表中的索引</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<h3 id="装饰器的调用顺序">装饰器的调用顺序</h3>
+<p>参数 -&gt; 方法 -&gt; get/set/属性 -&gt; 类<br />
+当对一个被装饰者调用多个装饰器的时候</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">@A</span>
+<span class="kd">@B</span>
+<span class="nx">getName</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上述代码相当与A(B(getName))<br />
+它们的调用步骤类似剥洋葱法，即：</p>
+<ol>
+<li>由上至下依次对装饰器表达式求值。</li>
+<li>求值的结果会被当作函数，由下至上依次调用。</li>
+</ol>
 
     </article>
     
@@ -3049,6 +3074,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#3-方法装饰器">3. 方法装饰器</a></li>
         <li><a href="#4-参数装饰器">4. 参数装饰器</a></li>
         <li><a href="#5-访问器装饰器">5. 访问器装饰器</a></li>
+        <li><a href="#装饰器的调用顺序">装饰器的调用顺序</a></li>
       </ul>
     </li>
   </ul>
