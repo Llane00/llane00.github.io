@@ -27,7 +27,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Thu, 26 Jan 2023 10:58:56 +0800</atom:modified>
         <guid>https://llane.xyz/nestjs/1-start/</guid>
-        <description>NestJs 是一个可扩展的Node.js后端框架，底层支持Express和Fastify（可切换，只要开发时使用Nest的语法）。 这个系列文章会总结一</description>
+        <description>NestJs 是一个可扩展的Node.js后端框架，底层支持Express和Fastify。 这个系列文章会总结一些NestJs的概念和最佳实践。 install npm i -g</description>
         
         <dc:creator>Llane00</dc:creator>
         
