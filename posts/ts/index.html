@@ -1538,14 +1538,14 @@
         
         
           
+        
+          
           
             
               
                 <a href="https://llane.xyz/posts/ts/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
               
             
-          
-        
           
         
       
@@ -1660,7 +1660,29 @@
 <p>any 支持任何类型，全集。<br />
 unknow 表示尚不清楚的类型。当一个值是从外部获取的不能提前知道类型，等使用的时候我们再去做断言类型操作。<br />
 never 不包含任何元素，空集。当在处理异常和错误情况时，never可以表示该变量为不应该出现的类型。</p>
+<h3 id="2-type和interface有什么区别">2. type和interface有什么区别？</h3>
+<p>type 类型别名<br />
+interface 声明接口（ts的interface描述一个对象的属性，java c#中的interface为描述功能）<br />
+interface用面向对的方式解释type，关键词extends 相当于type中联合类型</p>
+<p>区别1：<br />
+type 可以描述所有数据：基本类型和对象<br />
+interface 只能描述对象</p>
+<p>区别2：<br />
+type 只是类型的别名（ts会推导出已存在的类型）<br />
+interface 则是声明类型（interface会创建一个新的类型）</p>
+<p>区别3：<br />
+type不可以重新赋值<br />
+而interface会自动合并，可以进行字段扩展（理解：描述对象的时候可以加一个属性）<br />
+所以对外API尽量使用interface，方便扩展。<br />
+对内API尽量使用type，防止代码分散。</p>
+<pre tabindex="0"><code>interface Person {
+	name: string
+}
 
+interface Person {
+	age: number
+}
+</code></pre>
     </article>
     
     
@@ -2378,6 +2400,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <li>
       <ul>
         <li><a href="#1-如何理解ts中的anyunknow和never">1. 如何理解TS中的any、unknow和never?</a></li>
+        <li><a href="#2-type和interface有什么区别">2. type和interface有什么区别？</a></li>
       </ul>
     </li>
   </ul>
@@ -2983,14 +3006,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
+      
+        
         
           
             
               <a href="https://llane.xyz/posts/ts/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
-        
-      
         
       
     
