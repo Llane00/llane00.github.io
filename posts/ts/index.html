@@ -1682,7 +1682,7 @@ type不可以重新赋值<br />
 interface Person {
 	age: number
 }
-</code></pre><h3 id="3-联合类型变量怎么使用">3. 联合类型变量怎么使用？</h3>
+</code></pre><h3 id="3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</h3>
 <p>联合类型变量在定义的时候是多个类型的并集，在使用的时候需要区分类型（类型收窄 narrowing）</p>
 <ol>
 <li>用typeof（有局限，数组对象、普通对象、日期对象、null，typeof都返回object）</li>
@@ -2451,7 +2451,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <ul>
         <li><a href="#1-如何理解ts中的anyunknow和never">1. 如何理解TS中的any、unknow和never？</a></li>
         <li><a href="#2-type和interface有什么区别">2. type和interface有什么区别？</a></li>
-        <li><a href="#3-联合类型变量怎么使用">3. 联合类型变量怎么使用？</a></li>
+        <li><a href="#3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</a></li>
       </ul>
     </li>
   </ul>
