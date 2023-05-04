@@ -1708,6 +1708,7 @@ interface Person {
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">type</span> <span class="nx">Rect</span> <span class="o">=</span> <span class="p">{</span>
@@ -1722,8 +1723,9 @@ interface Person {
 	<span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">isRect</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">Rect</span> <span class="o">|</span> <span class="nx">Circle</span><span class="p">)</span><span class="o">:</span> <span class="nx">x</span> <span class="k">is</span> <span class="nx">Rect</span> <span class="p">{</span> <span class="c1">// 这里使用is后，isRect使用的时候a的类型会判断为Rect，反之如果只写boolean则a的类型不会自动判断
-</span><span class="c1"></span>	<span class="k">return</span> <span class="s1">&#39;height&#39;</span> <span class="k">in</span> <span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="s1">&#39;width&#39;</span> <span class="k">in</span> <span class="nx">x</span><span class="p">;</span>
+<span class="c1">// 这里使用is后，isRect使用的时候a的类型会判断为Rect，反之如果只写boolean则a的类型不会自动判断
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">isRect</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">Rect</span> <span class="o">|</span> <span class="nx">Circle</span><span class="p">)</span><span class="o">:</span> <span class="nx">x</span> <span class="k">is</span> <span class="nx">Rect</span> <span class="p">{</span> 
+	<span class="k">return</span> <span class="s1">&#39;height&#39;</span> <span class="k">in</span> <span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="s1">&#39;width&#39;</span> <span class="k">in</span> <span class="nx">x</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
