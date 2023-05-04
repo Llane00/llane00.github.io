@@ -1679,8 +1679,13 @@
 如果key对应的是静态方法的名字，target就是类<br />
 在descriptor中可以获取到这个方法的描述符，比如value、writable、enumerable、configurable等<br />
 如果key对应的是一个方法名，value就是这个方法的引用</p>
-<p>于是我们可以自定义一个函数来生成一个有新的（包含登录日志逻辑）login方法的User类。<br />
-这个就是类装饰器想要达到的目的。</p>
+<p>模拟装饰器的实现步骤：</p>
+<ol>
+<li>获取类原本的方法内容(即descriptor)，可以通过Object.getOwnPropertyDescriptor(target, key);。</li>
+<li>修改这个方法，比如在原有的方法上加入登录日志逻辑。</li>
+<li>用新的方法覆盖原有的方法，可以通过Object.defineProperty(target, key, descriptor); 。</li>
+</ol>
+<p>这个就是类装饰器想要达到的目的。</p>
 <hr />
 <h3 id="装饰器不同类型">装饰器不同类型</h3>
 <h3 id="1-类装饰器">1. 类装饰器</h3>
