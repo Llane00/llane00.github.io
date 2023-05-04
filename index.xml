@@ -48,7 +48,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Mon, 24 Apr 2023 11:11:50 +0800</atom:modified>
         <guid>https://llane.xyz/posts/ts/</guid>
-        <description>1. 如何理解TS中的any、unknow和never？ any 支持任何类型，全集。 unknow 表示尚不清楚的类型。当一个值是从外部获取的不能提前知道类型，等使</description>
+        <description>1. 如何理解TS中的any、unknow和never？ any 支持几乎任何类型，不包含never、unknown、any、void。 unknow 表示尚不清楚的</description>
         
         <dc:creator>Llane00</dc:creator>
         
