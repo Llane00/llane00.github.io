@@ -1682,14 +1682,17 @@ type不可以重新赋值<br />
 interface Person {
 	age: number
 }
-</code></pre><h3 id="3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</h3>
+</code></pre><p>区别4：<br />
+interface在extends时如果有属性冲突会直接报错（报错更明显）<br />
+而type不会报错，会将该属性的类型变为never，甚至直接把当前type变为never</p>
+<h3 id="3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</h3>
 <p>联合类型变量在定义的时候是多个类型的并集，在使用的时候需要区分类型（类型收窄 narrowing）</p>
 <ol>
 <li>用typeof（有局限，数组对象、普通对象、日期对象、null，typeof都返回object）</li>
 <li>使用instanceof区分类型（有局限，不支持string、number、boolean、TS独有类型）</li>
 <li>结合1和2，普通类型使用typeof，对象类型使用instanceof（局限：TS类型无法区分）</li>
 <li>在3的基础上，使用keyA in TypeA，关键词in来区分TS类型</li>
-<li>以上4点都是使用js的方法来区分类型，那还使用TS的类型谓词is来判断任意类型（支持所有类型，但是需要声明一个函数）</li>
+<li>以上4点都是使用js的方法来区分类型，可以使用TS的类型谓词is来判断任意类型（支持所有类型，但比较麻烦需要声明一个函数）</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1732,7 +1735,23 @@ interface Person {
 </div><ol start="6">
 <li>自己在对象类型中添加一个可识别字段，比如kind: &lsquo;xx&rsquo;，我定义圆形类型的kind一定为circle，方形类型的kind一定为rect，这样就可以通过kind来区分类型了。一般使用kind、type，要求所有要区分的类型都有kind字段；是kind需要时基本类型；各类型间的kind可区分。</li>
 </ol>
+<h3 id="4-当交叉类型有字段类型冲突的时候该字段会是什么类型">4. 当交叉类型有字段类型冲突的时候，该字段会是什么类型？</h3>
+<p>答案是never。<br />
+例如：</p>
+<pre tabindex="0"><code>type A = {
+	age: number;
+}
 
+type B = {
+	age: string;
+}
+
+type C = A &amp; B;
+
+const c: C = {
+	age: '123' // age的类型是never
+}
+</code></pre>
     </article>
     
     
@@ -2452,6 +2471,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#1-如何理解ts中的anyunknow和never">1. 如何理解TS中的any、unknow和never？</a></li>
         <li><a href="#2-type和interface有什么区别">2. type和interface有什么区别？</a></li>
         <li><a href="#3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</a></li>
+        <li><a href="#4-当交叉类型有字段类型冲突的时候该字段会是什么类型">4. 当交叉类型有字段类型冲突的时候，该字段会是什么类型？</a></li>
       </ul>
     </li>
   </ul>
