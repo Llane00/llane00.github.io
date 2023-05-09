@@ -1538,14 +1538,14 @@
         
         
           
-        
-          
           
             
               
                 <a href="https://llane.xyz/posts/ts/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
               
             
+          
+        
           
         
       
@@ -1640,7 +1640,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2023年04月24日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;3&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;4&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1685,6 +1685,7 @@ interface Person {
 </code></pre><p>区别4：<br />
 interface在extends时如果有属性冲突会直接报错（报错更明显）<br />
 而type不会报错，会将该属性的类型变为never，甚至直接把当前type变为never</p>
+<hr />
 <h3 id="3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</h3>
 <p>联合类型变量在定义的时候是多个类型的并集，在使用的时候需要区分类型（类型收窄 narrowing）</p>
 <ol>
@@ -1735,6 +1736,7 @@ interface在extends时如果有属性冲突会直接报错（报错更明显）<
 </div><ol start="6">
 <li>自己在对象类型中添加一个可识别字段，比如kind: &lsquo;xx&rsquo;，我定义圆形类型的kind一定为circle，方形类型的kind一定为rect，这样就可以通过kind来区分类型了。一般使用kind、type，要求所有要区分的类型都有kind字段；是kind需要时基本类型；各类型间的kind可区分。</li>
 </ol>
+<hr />
 <h3 id="4-当交叉类型有字段类型冲突的时候该字段会是什么类型">4. 当交叉类型有字段类型冲突的时候，该字段会是什么类型？</h3>
 <p>答案是never。<br />
 例如：</p>
@@ -1751,7 +1753,8 @@ type C = A &amp; B;
 const c: C = {
 	age: '123' // age的类型是never
 }
-</code></pre><h3 id="5-如何断言绑定事件的回调函数">5. 如何断言绑定事件的回调函数？</h3>
+</code></pre><hr />
+<h3 id="5-如何断言绑定事件的回调函数">5. 如何断言绑定事件的回调函数？</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1804,7 +1807,52 @@ const c: C = {
 </div>
 </div><p>或者 在tsconifg中把straictFunctionTypes设置为false</p>
 <p>或者用 as unknown as xxx</p>
+<hr />
+<h3 id="6-as-const-怎么使用">6. as const 怎么使用？</h3>
+<p>as const 可以用来收紧类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="p">;</span> <span class="c1">// a的类型为string
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="p">;</span> <span class="c1">// b的类型为&#39;1&#39;，因为const无法赋值，类型收紧了
+</span><span class="c1"></span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="c1">// c的类型为number[]
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="kr">as</span> <span class="kr">const</span><span class="p">;</span> <span class="c1">// d的类型为readonly [1, 2]
+</span><span class="c1"></span>
+<span class="kd">let</span> <span class="nx">e</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">2</span> <span class="p">};</span> <span class="c1">// e的类型为{ x: number, y: number }
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">2</span> <span class="p">}</span> <span class="kr">as</span> <span class="kr">const</span><span class="p">;</span> <span class="c1">// f的类型为{ readonly x: 1, readonly y: 2 }
+</span><span class="c1"></span>
+<span class="c1">// as const 经常会应用在对象和数组上，用于类型收紧
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">number</span><span class="p">,</span> <span class="p">...</span><span class="nx">array</span>: <span class="kt">number</span><span class="p">[])</span> <span class="p">{</span>
+	<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="kr">as</span> <span class="kr">const</span><span class="p">;</span> <span class="c1">// 虽然数组a是const，但是依然可以push，使用as const后可收紧类型为readonly	 [1, 2]，长度为2
+</span><span class="c1"></span>	<span class="nx">f</span><span class="p">(...</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// f的参数只有两个，as const前a的长度不确定会报错
+</span><span class="c1"></span><span class="p">}</span>
 
+<span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
@@ -2526,6 +2574,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#3-联合类型变量在使用时怎么类型收窄什么是类型收窄">3. 联合类型变量在使用时怎么类型收窄？(什么是类型收窄？)</a></li>
         <li><a href="#4-当交叉类型有字段类型冲突的时候该字段会是什么类型">4. 当交叉类型有字段类型冲突的时候，该字段会是什么类型？</a></li>
         <li><a href="#5-如何断言绑定事件的回调函数">5. 如何断言绑定事件的回调函数？</a></li>
+        <li><a href="#6-as-const-怎么使用">6. as const 怎么使用？</a></li>
       </ul>
     </li>
   </ul>
@@ -3131,14 +3180,14 @@ document.addEventListener('DOMContentLoaded', function () {
       
       
         
-      
-        
         
           
             
               <a href="https://llane.xyz/posts/ts/" data-lang="zh" class="dropdown-item is-active">Chinese</a>
             
           
+        
+      
         
       
     
