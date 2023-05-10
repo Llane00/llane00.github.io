@@ -1830,6 +1830,7 @@ const c: C = {
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="p">;</span> <span class="c1">// a的类型为string
@@ -1843,8 +1844,9 @@ const c: C = {
 </span><span class="c1"></span>
 <span class="c1">// as const 经常会应用在对象和数组上，用于类型收紧
 </span><span class="c1"></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">number</span><span class="p">,</span> <span class="p">...</span><span class="nx">array</span>: <span class="kt">number</span><span class="p">[])</span> <span class="p">{</span>
-	<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="kr">as</span> <span class="kr">const</span><span class="p">;</span> <span class="c1">// 虽然数组a是const，但是依然可以push，使用as const后可收紧类型为readonly	 [1, 2]，长度为2
-</span><span class="c1"></span>	<span class="nx">f</span><span class="p">(...</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// f的参数只有两个，as const前a的长度不确定会报错
+	<span class="c1">// 虽然数组a是const，但是依然可以push，使用as const后可收紧类型为readonly [1, 2]，长度为2
+</span><span class="c1"></span>	<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="kr">as</span> <span class="kr">const</span><span class="p">;</span>
+	<span class="nx">f</span><span class="p">(...</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// f的参数只有两个，as const前a的长度不确定会报错
 </span><span class="c1"></span><span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">b</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
@@ -1852,7 +1854,16 @@ const c: C = {
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><hr />
+<h3 id="7-ts有哪些语法可以从类型中创造新类型">7. ts有哪些语法可以从类型中创造新类型？</h3>
+<p>extends 包含于<br />
+keyof 获取一个对象类型的所有key<br />
+T[&lsquo;name&rsquo;] 获取类型T中下标为name的类型，其中name extends keyof T<br />
+in keyof 主要在map类型中使用<br />
+-readonly[] 使得对应类型从只读变为可操作<br />
+-? 使得可选类型变为必填类型<br />
+as 断言操作，对一个类型做进一步的判断</p>
+
     </article>
     
     
@@ -2575,6 +2586,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#4-当交叉类型有字段类型冲突的时候该字段会是什么类型">4. 当交叉类型有字段类型冲突的时候，该字段会是什么类型？</a></li>
         <li><a href="#5-如何断言绑定事件的回调函数">5. 如何断言绑定事件的回调函数？</a></li>
         <li><a href="#6-as-const-怎么使用">6. as const 怎么使用？</a></li>
+        <li><a href="#7-ts有哪些语法可以从类型中创造新类型">7. ts有哪些语法可以从类型中创造新类型？</a></li>
       </ul>
     </li>
   </ul>
