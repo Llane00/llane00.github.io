@@ -1640,7 +1640,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2023年04月24日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;4&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;5&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1863,6 +1863,41 @@ in keyof 主要在map类型中使用<br />
 -readonly[] 使得对应类型从只读变为可操作<br />
 -? 使得可选类型变为必填类型<br />
 as 断言操作，对一个类型做进一步的判断</p>
+<hr />
+<h3 id="8-interface和class的区别">8. interface和class的区别？</h3>
+<p>interface只有成员类型没有实现<br />
+class必须有成员的类型和实现（这里不讨论抽象类）<br />
+所以class一般用于实现interface，而且一个class可以同时实现多个interface</p>
+<p>ps: 在class中也可以使用索引签名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">class</span> <span class="nx">Hash</span> <span class="p">{</span>
+	<span class="p">[</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">]</span><span class="o">:</span> <span class="kt">unknown</span>
+
+	<span class="kr">set</span><span class="p">(</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">value</span>: <span class="kt">unknown</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kr">get</span><span class="p">(</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr />
 
     </article>
     
@@ -2587,6 +2622,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#5-如何断言绑定事件的回调函数">5. 如何断言绑定事件的回调函数？</a></li>
         <li><a href="#6-as-const-怎么使用">6. as const 怎么使用？</a></li>
         <li><a href="#7-ts有哪些语法可以从类型中创造新类型">7. ts有哪些语法可以从类型中创造新类型？</a></li>
+        <li><a href="#8-interface和class的区别">8. interface和class的区别？</a></li>
       </ul>
     </li>
   </ul>
