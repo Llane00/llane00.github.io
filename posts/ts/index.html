@@ -1899,7 +1899,23 @@ abstract class（抽象类）的成员类型可以实现也可以不实现</p>
 </code></pre></td></tr></table>
 </div>
 </div><hr />
+<h3 id="9-什么是infer">9. 什么是infer？</h3>
+<p>infer可以显式地声明一个泛型变量。这样描述很抽象来看例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// 这里infer是对Item的引用
+</span><span class="c1">// 可以不用考虑Array里Item的具体类型，就可以直接返回改类型
+</span><span class="c1"></span><span class="kr">type</span> <span class="nx">Flatten</span><span class="p">&lt;</span><span class="nt">Type</span><span class="p">&gt;</span> <span class="o">=</span> <span class="nx">Type</span> <span class="kr">extends</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">infer</span> <span class="na">Item</span><span class="p">&gt;</span> <span class="o">?</span> <span class="nx">Item</span> : <span class="kt">Type</span><span class="p">;</span>
 
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
@@ -2624,6 +2640,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#6-as-const-怎么使用">6. as const 怎么使用？</a></li>
         <li><a href="#7-ts有哪些语法可以从类型中创造新类型">7. ts有哪些语法可以从类型中创造新类型？</a></li>
         <li><a href="#8-interface和class的区别">8. interface和class的区别？</a></li>
+        <li><a href="#9-什么是infer">9. 什么是infer？</a></li>
       </ul>
     </li>
   </ul>
