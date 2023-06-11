@@ -1640,7 +1640,7 @@
 <div class="single__infos">
   <time class="single__info" title="创建日期">📅&nbsp;2023年04月24日 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;5&nbsp;分钟 </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="阅读时长"> ☕&nbsp;6&nbsp;分钟 </span>
   
   <span class="single__info">
     
@@ -1915,7 +1915,19 @@ abstract class（抽象类）的成员类型可以实现也可以不实现</p>
 
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><h3 id="10-类型声明文件和类型作用域有什么关系">10. 类型声明文件和类型作用域有什么关系?</h3>
+<p>默认情况下*.d.ts中的type和interface全局生效,<br />
+但是如果*.d.ts文件中有import或者export则type和interface只在当前模块生效,<br />
+此时可以用declare global包裹type和interface使其全局生效;</p>
+<p>当为js文件写类型声明文件时,如果是全局作用域的类型则可以直接对应js文件中的变量和函数,如果是局部作用域的类型则可以用declare module包裹或者用同名文件(如下);</p>
+<pre tabindex="0"><code>main.js
+main.d.js
+同名文件可以有一一对应的关系,可以视作在一个作用域中.
+</code></pre><h3 id="11-全局变量中的document和element类型是谁声明的">11 全局变量中的document和Element类型是谁声明的?</h3>
+<p>我们可以在tsconfig中的compilerOptions.lib中添加DOM来支持DOM相关方法的类型.<br />
+相同的全局变量中的Object,Array,Set,Map&hellip;是由ESNext来支持相关类型的.</p>
+<p>默认会加载@types包下所有的类型文件,如果需要指定加载的类型文件可以在tsconfig中的compilerOptions.types中指定.</p>
+
     </article>
     
     
@@ -2641,6 +2653,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#7-ts有哪些语法可以从类型中创造新类型">7. ts有哪些语法可以从类型中创造新类型？</a></li>
         <li><a href="#8-interface和class的区别">8. interface和class的区别？</a></li>
         <li><a href="#9-什么是infer">9. 什么是infer？</a></li>
+        <li><a href="#10-类型声明文件和类型作用域有什么关系">10. 类型声明文件和类型作用域有什么关系?</a></li>
+        <li><a href="#11-全局变量中的document和element类型是谁声明的">11 全局变量中的document和Element类型是谁声明的?</a></li>
       </ul>
     </li>
   </ul>
