@@ -1684,6 +1684,9 @@ JS 解释器<br />
 <p>首先在执行 js 的时候不能解析 HTML 依然不变</p>
 <p>defer 可以让下载 js 时可以继续解析 HTML，当 js 下载并执行完毕后才会触发 DOM ready</p>
 <p>async 也可以让下载 js 时可以继续解析 HTML，当 HTML 解析完毕后触发 DOM ready</p>
+<p>defer与async的区别:<br />
+defer：多个带有defer属性的脚本会按照它们在文档中的顺序执行。<br />
+async：多个带有async属性的脚本的执行顺序不确定，取决于下载完成的时间。</p>
 <p><img src="/async-vs-defer.jpeg" alt="" /></p>
 <p>另外还有</p>
 <div class="highlight"><div class="chroma">
