@@ -1667,7 +1667,7 @@
 最终，我成功使用homemade-react实现了一个Todo List应用。<br />
 完整代码可以看我的github,<a href="https://github.com/Llane00/homemade-react">https://github.com/Llane00/homemade-react</a>。</p>
 <p>在这篇文章中，我将分享我对React原理的理解，以及如何实现一个自己的React库。</p>
-<p>现在开始我们的mini-react实现之旅:</p>
+<p>现在开始我们的homemade-react实现之旅:</p>
 <h2 id="从fiber到dom">从Fiber到DOM</h2>
 <p>当用户与页面进行交互时，页面的视图会发生改变，而视图的改变实际上就是DOM的改变。React通过Fiber结构对DOM层进行了抽象，实现了局部更新和异步更新，优化了对DOM的繁琐的增、删、改、查和事件绑定操作。</p>
 <ol>
@@ -1809,7 +1809,7 @@
 </div><h2 id="实现可中断的workloop">实现可中断的workLoop</h2>
 <p>在早期的React版本中使用了递归的方式来解析和执行渲染树,而递归是无法中断的;<br />
 由于JavaScript是单线程的，如果fiber树很大很深递归就会耗费更多的时间,这就导致页面和用户交互时会出现卡顿;<br />
-在我自己实现的mini-react中，使用了requestIdleCallback来在浏览器空闲时执行渲染任务，再结合Fiber让渲染树分割为一个个fiber工作任务点,就可以实现渲染任务的中断和重新执行;</p>
+在我自己实现的homemade-react中，使用了requestIdleCallback来在浏览器空闲时执行渲染任务，再结合Fiber让渲染树分割为一个个fiber工作任务点,就可以实现渲染任务的中断和重新执行;</p>
 <p>requestIdleCallback会在浏览器空闲时执行workLoop函数，workLoop函数中会开始执行当前任务并给出下一个任务,当前任务结束后会再执行requestIdleCallback,这样就形成了一个循环;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2409,7 +2409,7 @@
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>以上就是关于React原理的简要介绍。通过实现mini-react，我更深入地理解了React的工作原理，包括Fiber结构、局部更新、异步更新、useState和useEffect等核心概念。希望这篇文章对你有所帮助！</p>
+</div><p>以上就是关于React原理的简要介绍。通过实现homemade-react，我更深入地理解了React的工作原理，包括Fiber结构、局部更新、异步更新、useState和useEffect等核心概念。希望这篇文章对你有所帮助！</p>
 
     </article>
     
