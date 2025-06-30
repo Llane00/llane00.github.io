@@ -13,12 +13,52 @@
     <language>zh</language>
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
-    <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 15 Nov 2021 15:49:28 +0800</lastBuildDate>
+    <copyright>©2025, All Rights Reserved</copyright>
+    <lastBuildDate>Fri, 26 Nov 2021 13:18:42 +0800</lastBuildDate>
     
         <atom:link href="https://llane.xyz/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>菜鸟学算法-10-对算法的思考</title>
+        <link>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</link>
+        <pubDate>Fri, 26 Nov 2021 13:18:42 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 26 Nov 2021 13:18:42 +0800</atom:modified>
+        <guid>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+        <description>我想知道这是为什么 &amp;ndash;费曼 算法的优化比工程的优化（提高服务器配置）效率更高 算法的时间复杂度 O(1) 哈希桶/数组随机寻址（常数） 无论问题的</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>算法基础</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>菜鸟算法</category>
+            
+          
+        
+      </item>
       
       <item>
         <title>Js实现数组拍平</title>

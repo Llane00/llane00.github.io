@@ -13,12 +13,48 @@
     <language>zh</language>
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
-    <copyright>©2024, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 24 Apr 2023 11:11:50 +0800</lastBuildDate>
+    <copyright>©2025, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 30 Jun 2025 16:17:54 +0800</lastBuildDate>
     
         <atom:link href="https://llane.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Ai提示词工程与格式化输出最佳实践</title>
+        <link>https://llane.xyz/posts/ai%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+        <pubDate>Mon, 30 Jun 2025 16:17:54 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 30 Jun 2025 16:17:54 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/ai%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+        <description>基于Microsoft vscode-copilot-chat开源项目的深度分析，总结现代AI助手中提示词构建和响应格式控制的完整解决方案。 📋</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>使用Tailwind CSS</title>
+        <link>https://llane.xyz/posts/tailwindcss/</link>
+        <pubDate>Sun, 30 Apr 2023 15:30:17 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 30 Apr 2023 15:30:17 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/tailwindcss/</guid>
+        <description>Tailwind css 可以让你快速构建自定义的用户界面，而不需要编写任何 CSS。 而且它支持定制化，这篇文章会先介绍基本使用方法，然后介绍如何定制化。 一、安装 官</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>TypeScript快问快答</title>
@@ -39,6 +75,24 @@
       </item>
       
       <item>
+        <title>数据库基础</title>
+        <link>https://llane.xyz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Sun, 23 Apr 2023 16:45:12 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 23 Apr 2023 16:45:12 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</guid>
+        <description>数据库解决了什么问题 数据怎么储存？ 数据库提供结构化数据的持久化储存 数据的查询效率？ 数据库的索引可以保证数据查询的速度 操作数据时的安全性？事务</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
         <title>装饰器是什么</title>
         <link>https://llane.xyz/posts/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Thu, 23 Mar 2023 10:41:32 +0800</pubDate>
@@ -46,6 +100,24 @@
         <atom:modified>Thu, 23 Mar 2023 10:41:32 +0800</atom:modified>
         <guid>https://llane.xyz/posts/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/</guid>
         <description>在NestJs中大量使用了装饰器，所以学习NestJs前首先需要了解装饰器的基本用法。 装饰器可以解决的问题： 一个类、一个方法应该专注于处理一</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>GraphQl 先导篇</title>
+        <link>https://llane.xyz/posts/graphql%E5%85%88%E5%AF%BC%E7%AF%87/</link>
+        <pubDate>Sun, 05 Feb 2023 10:39:29 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 05 Feb 2023 10:39:29 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/graphql%E5%85%88%E5%AF%BC%E7%AF%87/</guid>
+        <description>这篇文章是介绍GraphQl的作用和在前后端的使用例子。 后端使用NestJs。 GraphQl解决的问题 1.请求数据资源过多 我们经常会遇到在请</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -77,6 +149,30 @@
           
         
         
+        
+      </item>
+      
+      <item>
+        <title>1-NestJs&#43;GraphQl-安装与最简实例</title>
+        <link>https://llane.xyz/posts/1-nestjs&#43;graphql/</link>
+        <pubDate>Sun, 13 Mar 2022 12:11:48 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Sun, 13 Mar 2022 12:11:48 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/1-nestjs&#43;graphql/</guid>
+        <description>本篇文章将会讲解 NestJs+GraphQl 的安装部署，最后会实现一个最简实例 安装 Nest npm i -g @nestjs/cli 创建与运行 Nest 应用 nest g application 填写你的 app 名，完成后进入对应的 app 文件夹，运行npm i</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+          
+            
+              <category>NestJs&#43;GraphQl</category>
+            
+          
         
       </item>
       
@@ -142,6 +238,42 @@
         <atom:modified>Thu, 18 Nov 2021 11:47:23 +0800</atom:modified>
         <guid>https://llane.xyz/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
         <description>递归的问题 js 中的递归操作会在执行栈中不断压入函数执行栈，再不断弹出函数执行栈 在实际的执行环境中，无论是浏览器还是 Node.js 都有最大栈数的限制，一不注</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Eventloop的理解</title>
+        <link>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <pubDate>Wed, 17 Nov 2021 13:00:16 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Wed, 17 Nov 2021 13:00:16 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        <description>javascript 是一门单线程语言，但是其中涉及到了需要很多异步的场景 比如所有的请求是异步的，读取资源是异步的，计时器也是异步的 那么这究竟是怎么实现的？ nodejs 的</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>Js实现Promise</title>
+        <link>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</link>
+        <pubDate>Mon, 15 Nov 2021 16:53:58 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Mon, 15 Nov 2021 16:53:58 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</guid>
+        <description>es6 中的 Promise 可以简化 callback hell“回调地狱，回调套回调”造成的代码结构上的多级缩进 让代码看起来像同步的，消除多级缩进，从结构上简化代码（之后有 await 语</description>
         
         <dc:creator>Llane00</dc:creator>
         
