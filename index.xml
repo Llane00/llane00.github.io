@@ -48,7 +48,7 @@
         <author>bluetinestyle@126.com (Llane00)</author>
         <atom:modified>Fri, 01 Aug 2025 16:53:45 +0800</atom:modified>
         <guid>https://llane.xyz/posts/ai%E5%BA%94%E7%94%A8%E5%89%8D%E7%BD%AE%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97%E4%BB%8E70%E6%88%90%E6%9C%AC%E8%8A%82%E7%9C%81%E8%AF%B4%E8%B5%B7/</guid>
-        <description>最近Manus团队分享了一个有趣的案例：仅仅通过解决JSON序列化问题，他们的AI应用缓存命中率从20%提升到80%，成本直接下降70%。这</description>
+        <description>最近Manus团队分享了一个有趣的案例：仅仅通过解决JSON序列化问题，他们的AI应用缓存命中率从20%提升到80%，成本直接下降70%。我</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -132,24 +132,6 @@
       </item>
       
       <item>
-        <title>使用Tailwind CSS</title>
-        <link>https://llane.xyz/posts/tailwindcss/</link>
-        <pubDate>Sun, 30 Apr 2023 15:30:17 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Sun, 30 Apr 2023 15:30:17 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/tailwindcss/</guid>
-        <description>Tailwind css 可以让你快速构建自定义的用户界面，而不需要编写任何 CSS。 而且它支持定制化，这篇文章会先介绍基本使用方法，然后介绍如何定制化。 一、安装 官</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
         <title>TypeScript快问快答</title>
         <link>https://llane.xyz/posts/ts/</link>
         <pubDate>Mon, 24 Apr 2023 11:11:50 +0800</pubDate>
@@ -168,24 +150,6 @@
       </item>
       
       <item>
-        <title>数据库基础</title>
-        <link>https://llane.xyz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Sun, 23 Apr 2023 16:45:12 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Sun, 23 Apr 2023 16:45:12 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</guid>
-        <description>数据库解决了什么问题 数据怎么储存？ 数据库提供结构化数据的持久化储存 数据的查询效率？ 数据库的索引可以保证数据查询的速度 操作数据时的安全性？事务</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
         <title>装饰器是什么</title>
         <link>https://llane.xyz/posts/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Thu, 23 Mar 2023 10:41:32 +0800</pubDate>
@@ -193,42 +157,6 @@
         <atom:modified>Thu, 23 Mar 2023 10:41:32 +0800</atom:modified>
         <guid>https://llane.xyz/posts/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/</guid>
         <description>在NestJs中大量使用了装饰器，所以学习NestJs前首先需要了解装饰器的基本用法。 装饰器可以解决的问题： 一个类、一个方法应该专注于处理一</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>GraphQl 先导篇</title>
-        <link>https://llane.xyz/posts/graphql%E5%85%88%E5%AF%BC%E7%AF%87/</link>
-        <pubDate>Sun, 05 Feb 2023 10:39:29 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Sun, 05 Feb 2023 10:39:29 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/graphql%E5%85%88%E5%AF%BC%E7%AF%87/</guid>
-        <description>这篇文章是介绍GraphQl的作用和在前后端的使用例子。 后端使用NestJs。 GraphQl解决的问题 1.请求数据资源过多 我们经常会遇到在请</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>NestJs 先导篇</title>
-        <link>https://llane.xyz/nestjs/1-start/</link>
-        <pubDate>Thu, 26 Jan 2023 10:58:56 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Thu, 26 Jan 2023 10:58:56 +0800</atom:modified>
-        <guid>https://llane.xyz/nestjs/1-start/</guid>
-        <description>NestJs 是一个可扩展的Node.js后端框架，底层支持Express和Fastify。 这个系列文章会总结一些NestJs的概念和最佳实践。 install npm i -g</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -264,66 +192,6 @@
       </item>
       
       <item>
-        <title>1-NestJs&#43;GraphQl-安装与最简实例</title>
-        <link>https://llane.xyz/posts/1-nestjs&#43;graphql/</link>
-        <pubDate>Sun, 13 Mar 2022 12:11:48 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Sun, 13 Mar 2022 12:11:48 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/1-nestjs&#43;graphql/</guid>
-        <description>本篇文章将会讲解 NestJs+GraphQl 的安装部署，最后会实现一个最简实例 安装 Nest npm i -g @nestjs/cli 创建与运行 Nest 应用 nest g application 填写你的 app 名，完成后进入对应的 app 文件夹，运行npm i</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-          
-            
-              <category>NestJs&#43;GraphQl</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>Vue的运行原理梳理</title>
-        <link>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
-        <pubDate>Tue, 11 Jan 2022 14:42:49 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Tue, 11 Jan 2022 14:42:49 +0800</atom:modified>
-        <guid>https://llane.xyz/vue/1-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
-        <description>1 Vue 是一个 Class 是一个构造函数， 在实例化后，Vue 会调用_init 函数来进行初始化， 他会初始化生命周期、事件、props、methods、dat</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>Vue</category>
-            
-          
-        
-        
-          
-            
-              <category>Vue</category>
-            
-          
-        
-        
-          
-            
-              <category>Vue</category>
-            
-          
-        
-      </item>
-      
-      <item>
         <title>Webpack配置总结</title>
         <link>https://llane.xyz/posts/webpack%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</link>
         <pubDate>Thu, 09 Dec 2021 10:57:46 +0800</pubDate>
@@ -338,46 +206,6 @@
         
         
         
-        
-      </item>
-      
-      <item>
-        <title>菜鸟学算法-10-对算法的思考</title>
-        <link>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</link>
-        <pubDate>Fri, 26 Nov 2021 13:18:42 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Fri, 26 Nov 2021 13:18:42 +0800</atom:modified>
-        <guid>https://llane.xyz/algorithm/10-%E5%AF%B9%E7%AE%97%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
-        <description>我想知道这是为什么 &amp;ndash;费曼 算法的优化比工程的优化（提高服务器配置）效率更高 算法的时间复杂度 O(1) 哈希桶/数组随机寻址（常数） 无论问题的</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>算法基础</category>
-            
-          
-            
-              <category>学习笔记</category>
-            
-          
-        
-        
-          
-            
-              <category>javascript</category>
-            
-          
-        
-        
-          
-            
-              <category>菜鸟算法</category>
-            
-          
         
       </item>
       
@@ -425,42 +253,6 @@
         <atom:modified>Thu, 18 Nov 2021 11:47:23 +0800</atom:modified>
         <guid>https://llane.xyz/posts/%E4%BC%98%E5%8C%96%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E7%9A%84%E6%80%9D%E8%80%83/</guid>
         <description>递归的问题 js 中的递归操作会在执行栈中不断压入函数执行栈，再不断弹出函数执行栈 在实际的执行环境中，无论是浏览器还是 Node.js 都有最大栈数的限制，一不注</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>Eventloop的理解</title>
-        <link>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</link>
-        <pubDate>Wed, 17 Nov 2021 13:00:16 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Wed, 17 Nov 2021 13:00:16 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/eventloop%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
-        <description>javascript 是一门单线程语言，但是其中涉及到了需要很多异步的场景 比如所有的请求是异步的，读取资源是异步的，计时器也是异步的 那么这究竟是怎么实现的？ nodejs 的</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>Js实现Promise</title>
-        <link>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</link>
-        <pubDate>Mon, 15 Nov 2021 16:53:58 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Mon, 15 Nov 2021 16:53:58 +0800</atom:modified>
-        <guid>https://llane.xyz/posts/js%E5%AE%9E%E7%8E%B0promise/</guid>
-        <description>es6 中的 Promise 可以简化 callback hell“回调地狱，回调套回调”造成的代码结构上的多级缩进 让代码看起来像同步的，消除多级缩进，从结构上简化代码（之后有 await 语</description>
         
         <dc:creator>Llane00</dc:creator>
         
@@ -942,42 +734,6 @@
           
             
               <category>从头学习js</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>3-React-哲学</title>
-        <link>https://llane.xyz/reactjs/3-react-%E5%93%B2%E5%AD%A6/</link>
-        <pubDate>Fri, 29 Oct 2021 17:26:43 +0800</pubDate>
-        <author>bluetinestyle@126.com (Llane00)</author>
-        <atom:modified>Fri, 29 Oct 2021 17:26:43 +0800</atom:modified>
-        <guid>https://llane.xyz/reactjs/3-react-%E5%93%B2%E5%AD%A6/</guid>
-        <description>我们可以在React官网-React哲学这里找到React对自己的定义： 我们认为，React 是用 JavaScript 构建快速响应的大型 Web 应用程序的首选方式。 关</description>
-        
-        <dc:creator>Llane00</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>React</category>
-            
-          
-        
-        
-          
-            
-              <category>React</category>
-            
-          
-        
-        
-          
-            
-              <category>React</category>
             
           
         
