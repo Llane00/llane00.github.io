@@ -14,11 +14,47 @@
     <managingEditor>bluetinestyle@126.com (Llane00)</managingEditor>
     <webMaster>bluetinestyle@126.com (Llane00)</webMaster>
     <copyright>©2025, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 30 Jun 2025 16:17:54 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Aug 2025 16:53:45 +0800</lastBuildDate>
     
         <atom:link href="https://llane.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>AI应用前置缓存优化指南：从70%成本节省说起</title>
+        <link>https://llane.xyz/posts/ai%E5%BA%94%E7%94%A8%E5%89%8D%E7%BD%AE%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97%E4%BB%8E70%E6%88%90%E6%9C%AC%E8%8A%82%E7%9C%81%E8%AF%B4%E8%B5%B7/</link>
+        <pubDate>Fri, 01 Aug 2025 16:53:45 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 01 Aug 2025 16:53:45 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/ai%E5%BA%94%E7%94%A8%E5%89%8D%E7%BD%AE%E7%BC%93%E5%AD%98%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97%E4%BB%8E70%E6%88%90%E6%9C%AC%E8%8A%82%E7%9C%81%E8%AF%B4%E8%B5%B7/</guid>
+        <description>最近Manus团队分享了一个有趣的案例：仅仅通过解决JSON序列化问题，他们的AI应用缓存命中率从20%提升到80%，成本直接下降70%。这</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>RAG系统实战指南：从零构建AI客服助手的文档问答能力</title>
+        <link>https://llane.xyz/posts/rag%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</link>
+        <pubDate>Fri, 01 Aug 2025 16:53:45 +0800</pubDate>
+        <author>bluetinestyle@126.com (Llane00)</author>
+        <atom:modified>Fri, 01 Aug 2025 16:53:45 +0800</atom:modified>
+        <guid>https://llane.xyz/posts/rag%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</guid>
+        <description>前言 RAG（检索增强生成）已成为AI应用的核心技术。本文从开发者实战角度，解析如何构建高效的文档问答系统，并对比自建与云服务方案的优劣。 核心</description>
+        
+        <dc:creator>Llane00</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>Ai提示词工程与格式化输出最佳实践</title>
